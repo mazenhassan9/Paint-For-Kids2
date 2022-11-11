@@ -15,7 +15,7 @@
 
 /////////////////////////////////////////////////////////////////////////////
 // English (United States) resources
-
+/*
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE 1, 3
 
@@ -46,7 +46,7 @@ END
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
-
+*/
 
 
 #ifndef APSTUDIO_INVOKED
