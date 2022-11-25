@@ -1,6 +1,7 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
 #include "operations\opAddCircle.h"
+#include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
 
 
@@ -42,7 +43,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_TRI :
 			pOp = new opAddTri(this);
 			break;
-
+		case DRAW_SQAURE:
+			pOp = new opAddSquare(this);
+			break;
 		case EXIT:
 			///create Exitoperation here
 			

@@ -168,12 +168,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="operations\opAddSquare.cpp" />
     <ClCompile Include="operations\opAddTri.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Polygon.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
+    <ClCompile Include="Shapes\Square.cpp" />
     <ClCompile Include="Shapes\Triangle .cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +204,7 @@
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddCircle.h" />
     <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\opAddSquare.h" />
     <ClInclude Include="operations\opAddTri.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="resource.h" />
@@ -210,6 +213,7 @@
     <ClInclude Include="Shapes\Polygon.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
+    <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Shapes\Triangle .h" />
   </ItemGroup>
   <ItemGroup>

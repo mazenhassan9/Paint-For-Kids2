@@ -1,5 +1,6 @@
 #include "GUI.h"
 
+
 GUI::GUI()
 {
 	//Initialize user interface parameters
@@ -91,6 +92,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_TRI: return DRAW_TRI;
 			case ICON_LINE: return DRAW_LINE;
+			case ICON_SQUARE:return DRAW_SQAURE;
 			
 			case ICON_EXIT: return EXIT;
 
@@ -248,6 +250,33 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+
+}
+
+void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const
+{
+	color DrawingClr;
+	if (SquareGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = SquareGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, SquareGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (SquareGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(SquareGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	if ((P1.x - P2.x) == (P1.y - P2.y)) {
+		pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else
+		PrintMessage("There is an error");
+	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);*/
 
 }
 void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
