@@ -1,16 +1,20 @@
 #include "Polygon.h"
 
-Polygon::Polygon(Point* C, int N, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)
+Polygon::Polygon(vector <Point*> C, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)
 {
-	for (int i = 0; i < N; i++)
+	int i = 0;
+	while (C[i] != nullptr)
 	{
-
+		Corners.push_back(C[i]);
+		i++;
 	}
+	vertices = i;
 
 }
 
 Polygon::~Polygon()
 {
+
 }
 
 void Polygon::Draw(GUI* pUI) const
