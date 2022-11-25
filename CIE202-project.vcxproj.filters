@@ -135,6 +135,7 @@
     <ClCompile Include="Shapes\Polygon.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
+    <ClCompile Include="operations\opAddTri.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -229,6 +230,9 @@
     </ClInclude>
     <ClInclude Include="Shapes\Polygon.h">
       <Filter>Shapes&amp;Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opAddTri.h">
+      <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

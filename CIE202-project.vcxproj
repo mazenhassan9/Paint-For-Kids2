@@ -168,6 +168,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="operations\opAddTri.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Polygon.cpp" />
@@ -201,6 +202,7 @@
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddCircle.h" />
     <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\opAddTri.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
