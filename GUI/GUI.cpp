@@ -251,8 +251,9 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	}
 	else
 		style = FRAME;
+	pWind->DrawRectangle(P1.x, P1.y, P2.x,P2.y, style);
 	
-	pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);
+	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);*/
 
 }
 
