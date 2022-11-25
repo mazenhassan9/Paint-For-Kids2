@@ -42,6 +42,8 @@ class GUI
 		ICON_TRI ,    
 		ICON_LINE,
 		ICON_SQUARE,
+		ICON_Reg ,
+		ICON_Irreg ,
 
 
 
