@@ -41,6 +41,8 @@ class GUI
 		ICON_CIRC, 		//Circle icon in menu 
 		ICON_TRI ,    
 		ICON_LINE,
+		ICON_SQUARE,
+
 
 
 
