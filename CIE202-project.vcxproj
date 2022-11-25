@@ -167,6 +167,7 @@
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
+    <ClCompile Include="operations\OpAddPoly.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="operations\opAddSquare.cpp" />
     <ClCompile Include="operations\opAddTri.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddCircle.h" />
+    <ClInclude Include="operations\OpAddPoly.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\opAddSquare.h" />
     <ClInclude Include="operations\opAddTri.h" />

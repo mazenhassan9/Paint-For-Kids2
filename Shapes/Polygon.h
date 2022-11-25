@@ -2,14 +2,14 @@
 #include "shape.h"
 #include <vector>
 
-class Polygon : public shape
+class polygon : public shape
 {
 private:
-	vector <Point*> Corners;
+	vector <Point> Corners;
 	int vertices;
 
 public:
-	Polygon(vector <Point*>, GfxInfo shapeGfxInfo);
-	virtual ~Polygon();
+	polygon(vector <Point>, GfxInfo shapeGfxInfo);
+	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
 };
