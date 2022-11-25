@@ -51,7 +51,8 @@ void opAddPoly::Execute()
 	Points.push_back(P1);
 	Points.push_back(P2);
 	Points.push_back(P3);
-	while (((side2 - side1) == 0) && (angle1 - angle2 == 0) && n <6 )
+	//((side2 - side1) == 0) && (angle1 - angle2 == 0) &&
+	while ( n <6 )
 	{
 		x_be = P3.x;
 		y_be = P3.y;
@@ -67,8 +68,8 @@ void opAddPoly::Execute()
 
 	}
 	pUI->ClearStatusBar();
-	if (n == 5)
-	{
+	
+	
 		//Preapre all rectangle parameters
 		GfxInfo PolyGfxInfo;
 
@@ -83,14 +84,14 @@ void opAddPoly::Execute()
 
 
 		//Create a rectangle with the above parameters
-		polygon* Poly = new polygon(Points, PolyGfxInfo);
+		polygon* Poly = new polygon(Points,n ,PolyGfxInfo);
 
 		//Get a pointer to the graph
 		Graph* pGr = pControl->getGraph();
 
 		//Add the rectangle to the list of shapes
 		pGr->Addshape(Poly);
-	}
+	
 
 
 	

@@ -1,14 +1,13 @@
 #include "Polygon.h"
 
-polygon::polygon(vector <Point> C, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)
+polygon::polygon(vector <Point> C,int N, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)
 {
-	int i = 0;
-	while (C[i].x)
+	for(int i =0; i < N;i++)
 	{
 		Corners.push_back(C[i]);
-		i++;
+		
 	}
-	vertices = i;
+	vertices = N;
 
 }
 

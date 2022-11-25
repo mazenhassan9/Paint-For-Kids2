@@ -9,7 +9,7 @@ private:
 	int vertices;
 
 public:
-	polygon(vector <Point>, GfxInfo shapeGfxInfo);
+	polygon(vector <Point>, int,GfxInfo shapeGfxInfo);
 	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
 };
