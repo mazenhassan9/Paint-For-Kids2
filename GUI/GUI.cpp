@@ -248,7 +248,30 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 
 }
+void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const
 
+
+{
+	color DrawingClr;
+	if (RectGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = RectGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (RectGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RectGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y,p3.x ,p3.y , style);
+
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()
