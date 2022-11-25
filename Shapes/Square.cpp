@@ -1,9 +1,9 @@
 #include "Square.h"
 
-Square::Square(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
+Square::Square(Point P1, double sidelen, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
-	Corner1 = P1;
-	Corner2 = P2;
+	origin = P1;
+	sidelent = sidelen;
 }
 
 Square::~Square()
@@ -12,5 +12,5 @@ Square::~Square()
 void Square::Draw(GUI* pUI) const
 {
 	//Call Output::DrawRect to draw a rectangle on the screen	
-	pUI->DrawSquare(Corner1, Corner2, ShpGfxInfo);
+	pUI->DrawSquare(origin,sidelent , ShpGfxInfo);
 }

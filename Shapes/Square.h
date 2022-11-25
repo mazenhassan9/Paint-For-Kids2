@@ -4,10 +4,10 @@
 class Square : public shape
 {
 private:
-	Point Corner1;
-	Point Corner2;
+	Point origin;
+	double sidelent;
 public:
-	Square(Point, Point, GfxInfo shapeGfxInfo);
+	Square(Point, double sidelen, GfxInfo shapeGfxInfo);
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
 };

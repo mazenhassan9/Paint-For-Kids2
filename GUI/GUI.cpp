@@ -253,7 +253,7 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 
 }
 
-void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const
+void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 {
 	color DrawingClr;
 	if (SquareGfxInfo.isSelected)	//shape is selected
@@ -271,13 +271,10 @@ void GUI::DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const
 	}
 	else
 		style = FRAME;
-	if ((P1.x - P2.x) == (P1.y - P2.y)) {
-		pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
-	}
-	else
-		PrintMessage("There is an error");
-	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);*/
-
+	
+		
+	pWind->DrawRectangle(P1.x, P1.y,P1.x+sidelen,P1.y+sidelen, style);
+	
 }
 void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 	color DrawingClr;

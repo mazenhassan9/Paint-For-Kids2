@@ -113,7 +113,7 @@ public:
 	void DrawTri(Point P1, Point P2,Point p4 , GfxInfo RectGfxInfo) const;
 
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
-	void DrawSquare(Point P1, Point P2, GfxInfo SquareGfxInfo) const;
+	void DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const;
 
 	///Make similar functions for drawing all other shapes.
 

@@ -23,11 +23,12 @@ void opAddSquare::Execute()
 	pUI->GetPointClicked(P1.x, P1.y);
 
 	string msg = "First corner is at (" + to_string(P1.x) + ", " + to_string(P1.y) + " )";
-	msg += " ... Click at the second corner";
+	msg += " ... Enter the sidelength of the square";
 	pUI->PrintMessage(msg);
 	//Read 2nd corner and store in point P2
-	pUI->GetPointClicked(P2.x, P2.y);
+	double sl = stod(pUI->GetSrting());
 	pUI->ClearStatusBar();
+	
 
 	//Preapre all rectangle parameters
 	GfxInfo SquareGfxInfo;
@@ -43,7 +44,7 @@ void opAddSquare::Execute()
 
 
 	//Create a Square with the above parameters
-	Square* R = new Square(P1, P2, SquareGfxInfo);
+	Square* R = new Square(P1, sl, SquareGfxInfo);
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
