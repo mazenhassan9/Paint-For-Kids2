@@ -275,7 +275,9 @@ void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 	}
 	else
 		style = FRAME;
-	
+	//mena was here:)
+	//just trial
+
 		
 	pWind->DrawRectangle(P1.x, P1.y,P1.x+sidelen,P1.y+sidelen, style);
 	
