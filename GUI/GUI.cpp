@@ -324,6 +324,38 @@ void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 	
 }
 
+void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const {
+
+	int* X = new int[N];
+	int* Y = new int[N];
+	for (int i = 0; i < N; i++)
+	{
+		X[i] = Points[i].x;
+		Y[i] = Points[i].y;
+	}
+	color DrawingClr;
+	if (PolyGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = PolyGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, PolyGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (PolyGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(PolyGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(X, Y, N, style);
+
+	
+
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()

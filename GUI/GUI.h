@@ -4,7 +4,7 @@
 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
-
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -114,6 +114,8 @@ public:
 
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
 	void DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const;
+
+	void DrawPoly(vector<Point> Points,const int N, GfxInfo RectGfxInfo) const;
 
 	///Make similar functions for drawing all other shapes.
 
