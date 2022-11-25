@@ -93,7 +93,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_TRI: return DRAW_TRI;
 			case ICON_LINE: return DRAW_LINE;
 			case ICON_SQUARE:return DRAW_SQAURE;
-			
+			case ICON_Reg: return DRAW_POLY;
+			case ICON_Irreg: return DRAW_IRPOLY;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -166,6 +167,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_TRI] = "images\\MenuIcons\\Menu_Tri.jpg";
 	MenuIconImages[ICON_LINE] = "images\\MenuIcons\\Menu_LINE.jpg";
 	MenuIconImages[ICON_SQUARE] = "images\\MenuIcons\\Menu_SQUARE.jpg";
+	MenuIconImages[ICON_Reg] = "images\\MenuIcons\\Menu_REG.JPG";
+	MenuIconImages[ICON_Irreg] = "images\\MenuIcons\\Menu_IRREG.JPG";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list

@@ -32,11 +32,11 @@ void opAddTri::Execute()
 	 msg += "Second corner is at (" + to_string(P2.x) + ", " + to_string(P2.y) + " )";
 	msg += " ... Click at third corner";
 	pUI->PrintMessage(msg);
-	//Read 2nd corner and store in point P2
+	//Read 3nd corner and store in point P2
 	pUI->GetPointClicked(P3.x, P3.y);
 	pUI->ClearStatusBar();
 
-	//Preapre all rectangle parameters
+	//Preapre all triangle parameters
 	GfxInfo RectGfxInfo;
 
 	//get drawing, filling colors and pen width from the interface
@@ -49,13 +49,13 @@ void opAddTri::Execute()
 	RectGfxInfo.isSelected = false;	//defualt is not selected
 
 
-	//Create a rectangle with the above parameters
+	//Create a triangle with the above parameters
 	Triangle* R = new Triangle(P1, P2,P3 , RectGfxInfo);
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 
-	//Add the rectangle to the list of shapes
+	//Add the triangle to the list of shapes
 	pGr->Addshape(R);
 
 }
