@@ -250,6 +250,32 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 }
 void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const
 
+void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
+{
+	int R = sqrt(pow(center.x - edge.x, 2) + pow(center.y - edge.y, 2));
+	
+		color DrawingClr;
+		if (CircleGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = CircleGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, CircleGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (CircleGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(CircleGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawCircle(center.x, center.y, R, style);
+
+	
+}
+
 
 {
 	color DrawingClr;
