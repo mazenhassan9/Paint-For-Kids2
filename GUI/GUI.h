@@ -107,12 +107,11 @@ public:
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
-<<<<<<< Updated upstream
+
 	void DrawTri(Point P1, Point P2,Point p4 , GfxInfo RectGfxInfo) const;
-=======
+
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
 
->>>>>>> Stashed changes
 	///Make similar functions for drawing all other shapes.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
