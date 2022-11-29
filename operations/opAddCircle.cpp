@@ -13,6 +13,7 @@ opAddCircle::~opAddCircle()
 //Execute the operation
 void opAddCircle::Execute()
 {
+	//circle second trial 
 	Point P1, P2;
 	
 	//Get a Pointer to the Input / Output Interfaces

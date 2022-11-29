@@ -9,7 +9,7 @@ public:
 	opAddCircle(controller* pCont);
 	virtual ~opAddCircle();
 
-	//Add rectangle to the controller
+	//Add circle to the controller
 	virtual void Execute();
 
 };

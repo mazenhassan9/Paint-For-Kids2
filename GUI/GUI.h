@@ -115,7 +115,7 @@ public:
 	void DrawTri(Point P1, Point P2,Point p4 , GfxInfo RectGfxInfo) const;
 
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
-	void DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const;
+	void DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const; // Draw a square
 
 	void DrawPoly(vector<Point> Points,const int N, GfxInfo RectGfxInfo) const;
 
@@ -125,9 +125,10 @@ public:
 
 	color getCrntDrawColor() const;	//get current drwawing color
 	color getCrntFillColor() const;	//get current filling color
+
 	int getCrntPenWidth() const;		//get current pen width
 
-
+	color colorpalette(Point);
 	~GUI();
 };
 

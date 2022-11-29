@@ -218,6 +218,12 @@ color GUI::getCrntDrawColor() const	//get current drwawing color
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
+color GUI::colorpalette(Point p) {
+
+	color Color = pWind->GetColor(p.x, p.y);
+	return Color;
+}
+
 color GUI::getCrntFillColor() const	//get current filling color
 {
 	return FillColor;
@@ -361,6 +367,7 @@ void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const
 	
 
 }
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
