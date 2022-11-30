@@ -30,6 +30,7 @@ public:
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
+	/*shape* shapecheck(int x,int y);*/
 
 };
 

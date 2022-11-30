@@ -4,6 +4,7 @@
 #include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
 #include "operations\opAddPoly.h"
+#include "operations\opAddExit.h"
 
 
 //Constructor
@@ -21,6 +22,10 @@ operationType controller::GetUseroperation() const
 	//Ask the input to get the operation from the user.
 	return pGUI->GetUseroperation();		
 }
+//shape* controller::shapecheck(int x, int y)
+//{
+//
+//}
 ////////////////////////////////////////////////////////////////////////////////////
 //Creates an operation and executes it
 operation* controller::createOperation(operationType OpType)
@@ -54,8 +59,12 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case EXIT:
 			///create Exitoperation here
-			
+			pOp = new opAddExit(this);
 			break;
+		case FILL_COLOR:
+
+			break;
+
 		
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
