@@ -80,6 +80,20 @@ void controller::UpdateInterface() const
 {	
 	pGraph->Draw(pGUI);
 }
+
+void controller::colorall(color c)
+{
+	for(int i =0;i<pGraph->getlistofshspes().size(); i++)
+	{
+		pGraph->getlistofshspes()[i]->ChngFillClr(c);
+		/*pGraph->getlistofshspes()[i]->ChngDrawClr(c);*/
+		
+	}
+	
+	
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////////
 //Return a pointer to the UI
 GUI *controller::GetUI() const

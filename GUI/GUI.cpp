@@ -15,7 +15,7 @@ GUI::GUI()
 	StatusBarHeight = 50;
 	ToolBarHeight = 50;
 	MenuIconWidth = 80;
-
+	
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = GREEN;	//default Filling color
 	MsgColor = BLACK;		//Messages color
@@ -95,6 +95,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_SQUARE:return DRAW_SQAURE;
 			case ICON_Reg: return DRAW_POLY;
 			case ICON_Irreg: return DRAW_IRPOLY;
+			case ICON_Fillcolor: return FILL_COLOR;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -215,6 +216,7 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 
 color GUI::getCrntDrawColor() const	//get current drwawing color
 {
+
 	return DrawColor;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -234,10 +236,10 @@ color GUI::colorpalette() {
 	wp->SetPen(LIGHTGREY, 1); wp->SetBrush(LIGHTGREY);
 	wp->DrawRectangle(x21, y21, x22, y22);
 
-	wp->SetPen(LIGHTGREEN, 1); wp->SetBrush(LIGHTGREEN);
+	wp->SetPen(TAN, 1); wp->SetBrush(TAN);
 	wp->DrawRectangle(x31, y31, x32, y32);
 
-	wp->SetPen(BLUEVIOLET, 1); wp->SetBrush(BLUEVIOLET);
+	wp->SetPen(ROSYBROWN, 1); wp->SetBrush(ROSYBROWN);
 	wp->DrawRectangle(x41, y41, x42, y42);
 	
 	wp->WaitMouseClick(x, y);
@@ -252,21 +254,22 @@ color GUI::colorpalette() {
 	}
 	if (x >= x31 && y >= y31 && x < x32 && y < y32)
 	{
-		return LIGHTGREEN;
+		return TAN;
 	}
 	if (x >= x11 && y >= y11 && x < x12 && y < y42)
 	{
-		return BLUEVIOLET;
+		return ROSYBROWN;
 
 	}
 	
-	return SKYBLUE;
+	return SKYBLUE, ROSYBROWN,LIGHTGRAY, TAN;
 }
 
 color GUI::getCrntFillColor() const	//get current filling color
 {
+	
 
-	return FillColor; //how to fillcolor?
+	return FillColor; 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

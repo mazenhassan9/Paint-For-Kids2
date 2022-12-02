@@ -28,7 +28,10 @@ void Graph::Draw(GUI* pUI) const
 	for (auto shapePointer : shapesList)
 		shapePointer->Draw(pUI);
 }
-
+vector <shape*>Graph::getlistofshspes()
+{
+	return shapesList;
+}
 
 shape* Graph::Getshape(int x, int y) const
 {

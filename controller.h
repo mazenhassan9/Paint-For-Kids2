@@ -26,7 +26,7 @@ public:
 	void Run();
 	
 	Graph* getGraph() const;
-	
+	void colorall(color c);
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	
