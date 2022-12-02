@@ -5,6 +5,7 @@
 #include "operations/opAddTri.h"
 #include "operations\opAddPoly.h"
 #include "operations\opAddExit.h"
+#include "operations\opGeneralfillcolor.h"
 
 
 //Constructor
@@ -22,10 +23,7 @@ operationType controller::GetUseroperation() const
 	//Ask the input to get the operation from the user.
 	return pGUI->GetUseroperation();		
 }
-//shape* controller::shapecheck(int x, int y)
-//{
-//
-//}
+
 ////////////////////////////////////////////////////////////////////////////////////
 //Creates an operation and executes it
 operation* controller::createOperation(operationType OpType)
@@ -62,7 +60,7 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opAddExit(this);
 			break;
 		case FILL_COLOR:
-
+			pOp = new opGeneralfillcolor(this);
 			break;
 
 		
@@ -115,6 +113,8 @@ void controller::Run()
 	operationType OpType;
 	do
 	{
+
+		
 		//1. Ask the GUI to read the required operation from the user
 		OpType = GetUseroperation();
 

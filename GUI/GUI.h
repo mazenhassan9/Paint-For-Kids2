@@ -44,6 +44,8 @@ class GUI
 		ICON_SQUARE,
 		ICON_Reg ,
 		ICON_Irreg ,
+		ICON_Fillcolor,
+
 
 
 
@@ -128,7 +130,7 @@ public:
 
 	int getCrntPenWidth() const;		//get current pen width
 
-	color colorpalette(Point);
+	color colorpalette();
 	~GUI();
 };
 

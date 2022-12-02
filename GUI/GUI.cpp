@@ -170,6 +170,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Reg] = "images\\MenuIcons\\Menu_REG.JPG";
 	MenuIconImages[ICON_Irreg] = "images\\MenuIcons\\Menu_IRREG.JPG";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_Fillcolor] = "images\\MenuIcons\\Menu_Fillcolor.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -218,15 +219,54 @@ color GUI::getCrntDrawColor() const	//get current drwawing color
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-color GUI::colorpalette(Point p) {
+color GUI::colorpalette() {
+	int x, y;
+	window* wp = CreateWind(300,300,300,300);
+	//color Color = pWind->GetColor(p.x, p.y);
+	int x11 = 0; int y11 = 0; int x12 = 150; int y12 = 150; 
+	int x21 = 150; int y21 = 0; int x22 = 300; int y22 = 150;
+	int x31 = 150; int y31 = 150; int x32 = 300; int y32 = 300;
+	int x41 = 0; int y41 = 150; int x42 = 150; int y42 = 300;
 
-	color Color = pWind->GetColor(p.x, p.y);
-	return Color;
+	wp->SetPen(SKYBLUE, 1); wp->SetBrush(SKYBLUE);
+	wp->DrawRectangle(x11, y11, x12, y12);
+
+	wp->SetPen(LIGHTGREY, 1); wp->SetBrush(LIGHTGREY);
+	wp->DrawRectangle(x21, y21, x22, y22);
+
+	wp->SetPen(LIGHTGREEN, 1); wp->SetBrush(LIGHTGREEN);
+	wp->DrawRectangle(x31, y31, x32, y32);
+
+	wp->SetPen(BLUEVIOLET, 1); wp->SetBrush(BLUEVIOLET);
+	wp->DrawRectangle(x41, y41, x42, y42);
+	
+	wp->WaitMouseClick(x, y);
+	delete wp;
+	if (x >= x11 && y>=y11 && x<x12 && y< y12 )
+	{
+		return SKYBLUE;
+	}
+	if (x >= x21 && y >= y21 && x < x22 && y < y22)
+	{
+		return LIGHTGREY;
+	}
+	if (x >= x31 && y >= y31 && x < x32 && y < y32)
+	{
+		return LIGHTGREEN;
+	}
+	if (x >= x11 && y >= y11 && x < x12 && y < y42)
+	{
+		return BLUEVIOLET;
+
+	}
+	
+	return SKYBLUE;
 }
 
 color GUI::getCrntFillColor() const	//get current filling color
 {
-	return FillColor;
+
+	return FillColor; //how to fillcolor?
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 

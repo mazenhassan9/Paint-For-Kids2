@@ -9,7 +9,7 @@ class shape
 protected:
 	int ID;		//Each shape has an ID
 	GfxInfo ShpGfxInfo;	//shape graphis info
-	
+	/*bool Issaved;*/
 	/// Add more parameters if needed.
 
 public:
