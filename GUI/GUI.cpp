@@ -95,7 +95,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_SQUARE:return DRAW_SQAURE;
 			case ICON_Reg: return DRAW_POLY;
 			case ICON_Irreg: return DRAW_IRPOLY;
-			case ICON_Fillcolor: return FILL_COLOR;
+			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_Fillcolor: return CHNG_FILL_CLR;
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar

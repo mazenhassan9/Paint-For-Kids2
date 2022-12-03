@@ -59,7 +59,7 @@ operation* controller::createOperation(operationType OpType)
 			///create Exitoperation here
 			pOp = new opAddExit(this);
 			break;
-		case FILL_COLOR:
+		case CHNG_FILL_CLR:
 			pOp = new opGeneralfillcolor(this);
 			break;
 
