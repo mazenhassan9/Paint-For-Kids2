@@ -224,7 +224,6 @@ color GUI::getCrntDrawColor() const	//get current drwawing color
 color GUI::colorpalette() {
 	int x, y;
 	window* wp = CreateWind(300,300,300,300);
-	//color Color = pWind->GetColor(p.x, p.y);
 	int x11 = 0; int y11 = 0; int x12 = 150; int y12 = 150; 
 	int x21 = 150; int y21 = 0; int x22 = 300; int y22 = 150;
 	int x31 = 150; int y31 = 150; int x32 = 300; int y32 = 300;
@@ -262,14 +261,21 @@ color GUI::colorpalette() {
 
 	}
 	
-	return SKYBLUE, ROSYBROWN,LIGHTGRAY, TAN;
+	return SKYBLUE;
 }
 
 color GUI::getCrntFillColor() const	//get current filling color
 {
 	
-
 	return FillColor; 
+} 
+bool GUI::getisfilled()
+{
+	return isFilled ;
+}
+void GUI::setisfilled(bool filling)
+{
+	isFilled = filling ;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
@@ -368,6 +374,7 @@ void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 		drawstyle style;
 		if (CircleGfxInfo.isFilled)
 		{
+
 			style = FILLED;
 			pWind->SetBrush(CircleGfxInfo.FillClr);
 		}
@@ -411,7 +418,12 @@ void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const
 
 }
 
-
+void GUI::setFillColor(color c)
+{
+	
+	FillColor=c;
+	
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()

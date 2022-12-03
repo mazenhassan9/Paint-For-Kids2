@@ -16,7 +16,9 @@ void shape::ChngDrawClr(color Dclr)
 
 void shape::ChngFillClr(color Fclr)
 {	
+	
 	ShpGfxInfo.isFilled = true;
 	ShpGfxInfo.FillClr = Fclr; 
 }
+
 

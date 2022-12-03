@@ -20,6 +20,7 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 	bool isFilled;	//shape Filled or not
 	int BorderWdth;	//Width of shape borders
 	bool isSelected;	//true if the shape is selected.
+
 };
 
 
@@ -86,6 +87,7 @@ class GUI
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
 	int PenWidth;			//width of the pen that draws shapes
+	bool isFilled=0;
 
 	/// Add more members if needed
 
@@ -129,8 +131,10 @@ public:
 	color getCrntFillColor() const;	//get current filling color
 
 	int getCrntPenWidth() const;		//get current pen width
-
+	void setFillColor(color c);
 	color colorpalette();
+	bool getisfilled();
+	void setisfilled(bool filling);
 	~GUI();
 };
 

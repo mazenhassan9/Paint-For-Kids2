@@ -16,7 +16,10 @@ void opGeneralfillcolor::Execute()
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
 	pUI->PrintMessage("pick a color from the window");
-	color piked = pUI->colorpalette();
-	pControl->colorall(piked);  
+	color picked = pUI->colorpalette();
+	
+	pUI->setFillColor(picked);
+	pUI->setisfilled(true);
+	
 	
 }
