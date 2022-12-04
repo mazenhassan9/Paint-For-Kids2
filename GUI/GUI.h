@@ -121,7 +121,7 @@ public:
 
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
 	void DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const; // Draw a square
-
+	void DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const;
 	void DrawPoly(vector<Point> Points,const int N, GfxInfo RectGfxInfo) const;
 
 	///Make similar functions for drawing all other shapes.

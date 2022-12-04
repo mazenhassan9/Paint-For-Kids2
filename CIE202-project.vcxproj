@@ -165,6 +165,7 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="controller.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddExit.cpp" />
@@ -173,6 +174,7 @@
     <ClCompile Include="operations\opAddSquare.cpp" />
     <ClCompile Include="operations\opAddTri.cpp" />
     <ClCompile Include="operations\opGeneralfillcolor.cpp" />
+    <ClCompile Include="oppAddLine.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Polygon.cpp" />
@@ -205,6 +207,7 @@
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="operations\opAddCircle.h" />
     <ClInclude Include="operations\opAddExit.h" />
     <ClInclude Include="operations\OpAddPoly.h" />
@@ -213,6 +216,7 @@
     <ClInclude Include="operations\opAddTri.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="operations\opGeneralfillcolor.h" />
+    <ClInclude Include="oppAddLine.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />
