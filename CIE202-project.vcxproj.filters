@@ -156,6 +156,7 @@
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="oppAddLine.cpp" />
     <ClCompile Include="Oval.cpp" />
+    <ClCompile Include="oppAddOval.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -272,6 +273,7 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="oppAddLine.h" />
     <ClInclude Include="Oval.h" />
+    <ClInclude Include="oppAddOval.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

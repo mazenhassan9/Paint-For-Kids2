@@ -4,8 +4,11 @@
 #include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
 #include "operations\opAddPoly.h"
+#include "oppAddOval.h"
+#include "oppAddLine.h"
 #include "operations\opAddExit.h"
 #include "operations\opGeneralfillcolor.h"
+
 
 
 //Constructor
@@ -41,16 +44,18 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DRAW_POLY:
 			pOp = new opAddPoly(this);
-
+			break;
 		case DRAW_LINE:
-			///create AddLineoperation here
-
+			pOp = new opAddLine(this);
 			break;
 		case DRAW_TRI :
 			pOp = new opAddTri(this);
 			break;
 		case DRAW_SQAURE:
 			pOp = new opAddSquare(this);
+			break;
+		case DRAW_OVAL:
+			pOp = new opAddOval(this);
 			break;
 		case DRAWING_AREA:
 			//pOp = new Select(this);
@@ -63,7 +68,6 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opGeneralfillcolor(this);
 			break;
 
-		
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
 	}
