@@ -153,6 +153,8 @@
     <ClCompile Include="operations\opGeneralfillcolor.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="Line.cpp" />
+    <ClCompile Include="oppAddLine.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -266,6 +268,8 @@
     <ClInclude Include="operations\opGeneralfillcolor.h">
       <Filter>Operations</Filter>
     </ClInclude>
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="oppAddLine.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">

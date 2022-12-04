@@ -414,6 +414,27 @@ void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const
 	
 
 }
+void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
+{
+	color DrawingClr;
+	if (LineGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = LineGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (LineGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LineGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+
+}
 
 void GUI::setFillColor(color c)
 {
