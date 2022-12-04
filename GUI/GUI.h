@@ -88,7 +88,7 @@ class GUI
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
 	int PenWidth;			//width of the pen that draws shapes
-	bool isFilled=0;
+	bool defaultFill=0;
 
 	/// Add more members if needed
 
@@ -136,8 +136,8 @@ public:
 	int getCrntPenWidth() const;		//get current pen width
 	void setFillColor(color c);
 	color colorpalette();
-	bool getisfilled();
-	void setisfilled(bool filling);
+	void changedefaultfilled(bool defill);
+	bool getdefaultfilled();
 	~GUI();
 };
 

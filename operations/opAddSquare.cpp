@@ -39,7 +39,7 @@ void opAddSquare::Execute()
 	SquareGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	SquareGfxInfo.isFilled = pUI->getisfilled();	//default is not filled
+	SquareGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled
 	SquareGfxInfo.isSelected = false;	//defualt is not selected
 
 

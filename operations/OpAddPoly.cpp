@@ -79,7 +79,7 @@ void opAddPoly::Execute()
 		PolyGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-		PolyGfxInfo.isFilled = pUI->getisfilled();	//default is not filled
+		PolyGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled
 		PolyGfxInfo.isSelected = false;	//defualt is not selected
 
 

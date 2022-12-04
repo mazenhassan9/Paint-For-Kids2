@@ -45,7 +45,7 @@ void opAddTri::Execute()
 	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RectGfxInfo.isFilled = pUI->getisfilled();	//default is not filled
+	RectGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled
 	RectGfxInfo.isSelected = false;	//defualt is not selected
 
 
