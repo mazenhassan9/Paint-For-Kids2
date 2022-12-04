@@ -175,6 +175,7 @@
     <ClCompile Include="operations\opAddTri.cpp" />
     <ClCompile Include="operations\opGeneralfillcolor.cpp" />
     <ClCompile Include="oppAddLine.cpp" />
+    <ClCompile Include="Oval.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Polygon.cpp" />
@@ -217,6 +218,7 @@
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="operations\opGeneralfillcolor.h" />
     <ClInclude Include="oppAddLine.h" />
+    <ClInclude Include="Oval.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />

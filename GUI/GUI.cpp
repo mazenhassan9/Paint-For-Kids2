@@ -442,6 +442,30 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 
 }
 
+void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
+{
+	color DrawingClr;
+	if (OvalGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = OvalGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, OvalGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (OvalGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(OvalGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+
+	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);*/
+
+}
+
 void GUI::setFillColor(color c)
 {
 	
