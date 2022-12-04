@@ -15,11 +15,17 @@ void opGeneralfillcolor::Execute()
 {
 	//Get a Pointer to the Input / Output Interfaces
 	GUI* pUI = pControl->GetUI();
+	pUI->PrintMessage("Do you want the shape fill or not? yes: 0 || no: 1");
+	string usss = pUI->GetSrting();
+	if (usss == "1")
+	{
+		pUI->changedefaultfilled(false);
+		return;
+	}
 	pUI->PrintMessage("pick a color from the window");
 	color picked = pUI->colorpalette();
-	
 	pUI->setFillColor(picked);
-	pUI->setisfilled(true);
+	pUI->changedefaultfilled(true);
 	
 	
 }

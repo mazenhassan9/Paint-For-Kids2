@@ -272,14 +272,8 @@ color GUI::getCrntFillColor() const	//get current filling color
 	
 	return FillColor; 
 } 
-bool GUI::getisfilled()
-{
-	return isFilled ;
-}
-void GUI::setisfilled(bool filling)
-{
-	isFilled = filling ;
-}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 int GUI::getCrntPenWidth() const		//get current pen width
@@ -426,6 +420,14 @@ void GUI::setFillColor(color c)
 	
 	FillColor=c;
 	
+}
+void GUI::changedefaultfilled(bool defill)
+{
+	defaultFill = defill;
+}
+bool GUI::getdefaultfilled()
+{
+	return defaultFill;
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////
