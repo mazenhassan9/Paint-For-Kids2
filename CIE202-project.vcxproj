@@ -169,6 +169,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddCircle.cpp" />
     <ClCompile Include="operations\opAddExit.cpp" />
+    <ClCompile Include="operations\OpAddIrPoly.cpp" />
     <ClCompile Include="operations\OpAddPoly.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="operations\opAddSquare.cpp" />
@@ -212,6 +213,7 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="operations\opAddCircle.h" />
     <ClInclude Include="operations\opAddExit.h" />
+    <ClInclude Include="operations\OpAddIrPoly.h" />
     <ClInclude Include="operations\OpAddPoly.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\opAddSquare.h" />

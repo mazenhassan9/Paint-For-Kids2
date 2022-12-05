@@ -157,6 +157,9 @@
     <ClCompile Include="oppAddLine.cpp" />
     <ClCompile Include="Oval.cpp" />
     <ClCompile Include="oppAddOval.cpp" />
+    <ClCompile Include="operations\OpAddIrPoly.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -274,6 +277,9 @@
     <ClInclude Include="oppAddLine.h" />
     <ClInclude Include="Oval.h" />
     <ClInclude Include="oppAddOval.h" />
+    <ClInclude Include="operations\OpAddIrPoly.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Operations">
