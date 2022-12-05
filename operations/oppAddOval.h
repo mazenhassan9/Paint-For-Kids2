@@ -1,5 +1,5 @@
 #pragma once
-#include "operations/operation.h"
+#include "operation.h"
 
 //Add Oval operation class
 class opAddOval : public operation

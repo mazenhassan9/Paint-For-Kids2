@@ -4,8 +4,8 @@
 #include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
 #include "operations\opAddPoly.h"
-#include "oppAddOval.h"
-#include "oppAddLine.h"
+#include "operations\oppAddOval.h"
+#include "operations\oppAddLine.h"
 #include "operations\opAddExit.h"
 #include "operations\opGeneralfillcolor.h"
 

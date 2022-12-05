@@ -1,6 +1,6 @@
 #pragma once //Line.cpp
 #include "Line.h"
-#include "GUI/GUI.h"
+
 
 
 Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)

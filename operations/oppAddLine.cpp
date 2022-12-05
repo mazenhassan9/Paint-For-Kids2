@@ -1,8 +1,10 @@
-#include "oppAddLine.h"    //oppAddLine.cpp
-#include "Line.h"
-#include "controller.h"
-#include "GUI/GUI.h"
-#include "operations/operation.h"
+#include "oppAddLine.h"
+
+#include "..\Shapes\Line.h"
+
+#include "..\controller.h"
+
+#include "..\GUI\GUI.h"
 
 
 opAddLine::opAddLine(controller* pCont) :operation(pCont)
