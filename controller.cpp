@@ -4,9 +4,8 @@
 #include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
 #include "operations\opAddPoly.h"
-#include "operations/OpAddIrPoly.h"
-#include "oppAddOval.h"
-#include "oppAddLine.h"
+#include "operations\oppAddOval.h"
+#include "operations\oppAddLine.h"
 #include "operations\opAddExit.h"
 #include "operations\opGeneralfillcolor.h"
 
@@ -45,9 +44,6 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DRAW_POLY:
 			pOp = new opAddPoly(this);
-			break;
-		case DRAW_IRPOLY:
-			pOp = new opAddIrPoly(this);
 			break;
 		case DRAW_LINE:
 			pOp = new opAddLine(this);

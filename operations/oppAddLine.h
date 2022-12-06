@@ -1,6 +1,5 @@
-#pragma once       //oppAddLine.h
-#include "oppAddLine.h"
-#include "operations/operation.h"
+#pragma once
+#include "operation.h"
 
 //Add Line operation class
 class opAddLine : public operation

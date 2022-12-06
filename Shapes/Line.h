@@ -1,5 +1,5 @@
 #pragma once   //Line.h
-#include "Shapes/Shape.h"
+#include "Shape.h"
 
 class Line : public shape
 {
