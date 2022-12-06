@@ -8,7 +8,7 @@
 #include "operations\oppAddLine.h"
 #include "operations\opAddExit.h"
 #include "operations\opGeneralfillcolor.h"
-
+#include"operations/OpAddIrPoly.h"
 
 
 //Constructor
@@ -47,6 +47,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DRAW_LINE:
 			pOp = new opAddLine(this);
+			break;
+		case DRAW_IRPOLY:
+			pOp = new opAddIrPoly(this);
 			break;
 		case DRAW_TRI :
 			pOp = new opAddTri(this);
