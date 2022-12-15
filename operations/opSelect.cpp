@@ -35,6 +35,10 @@ void opSelect::Execute()
 			S1->SetSelected(true);
 		}
 	}
+	else
+	{
+		pUI->PrintMessage("Select Operation, No Shape Selected");
+	}
 	pUI->ClearStatusBar();
 
 
