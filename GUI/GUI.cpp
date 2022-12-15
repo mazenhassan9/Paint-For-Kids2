@@ -97,6 +97,13 @@ operationType GUI::GetUseroperation() const
 			case ICON_Irreg: return DRAW_IRPOLY;
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
+			case ICON_Select: return CHNG_FILL_CLR;
+			case ICON_Delete: return DEL;
+			case Icon_Save: return SAVE;
+			case Icon_Resize: return RESIZE ;
+			case ICON_Rotate: return ROTATE;
+			case ICON_Load: return LOAD;
+
 			case ICON_EXIT: return EXIT;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -174,6 +181,12 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Irreg] = "images\\MenuIcons\\Menu_IRREG.JPG";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	MenuIconImages[ICON_Fillcolor] = "images\\MenuIcons\\Menu_Fillcolor.jpg";
+	MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
+	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
+	MenuIconImages[Icon_Save] = "images\\MenuIcons\\Save.jpg";
+	MenuIconImages[Icon_Resize] = "images\\MenuIcons\\Resize.jpg";
+	MenuIconImages[ICON_Rotate] = "images\\MenuIcons\\Rotate.jpg";
+	MenuIconImages[ICON_Load] = "images\\MenuIcons\\Load.jpg";
 	
 
 	//TODO: Prepare images for each menu icon and add it to the list

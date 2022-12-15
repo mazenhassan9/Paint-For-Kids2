@@ -47,7 +47,12 @@ class GUI
 		ICON_Reg ,
 		ICON_Irreg ,
 		ICON_Fillcolor,
-
+		ICON_Select ,
+		ICON_Delete ,
+		Icon_Save ,
+		Icon_Resize ,
+		ICON_Rotate ,
+		ICON_Load ,
 
 
 
