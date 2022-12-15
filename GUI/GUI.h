@@ -12,6 +12,9 @@ struct Point	//To be used for shapes points
 {
 	int x, y;
 };
+struct line {
+	Point p1, p2;
+};
 
 struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 {

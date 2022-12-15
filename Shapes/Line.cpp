@@ -17,3 +17,8 @@ void Line::Draw(GUI* pUI) const
 	//Call Output::DrawLine to draw a Line on the screen	
 	pUI->DrawLine(P1, P2, ShpGfxInfo);
 }
+
+bool Line::Get(int x, int y) const
+{
+	return false;
+}

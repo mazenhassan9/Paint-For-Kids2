@@ -9,7 +9,7 @@
 #include "operations\opAddExit.h"
 #include "operations\opGeneralfillcolor.h"
 #include"operations/OpAddIrPoly.h"
-
+#include"operations/opSelect.h"
 
 //Constructor
 controller::controller()
@@ -59,6 +59,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
+			break;
+		case Select:
+			pOp = new opSelect(this);
 			break;
 		case DRAWING_AREA:
 			//pOp = new Select(this);

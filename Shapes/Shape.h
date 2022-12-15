@@ -28,7 +28,7 @@ public:
 	///It should be overridden by each inherited shape
 
 	///Decide the parameters that you should pass to each function	
-
+	virtual bool Get(int x, int y) const = 0; // Function to check if the point inside the shape.
 
 	//virtual void Rotate() = 0;	//Rotate the shape
 	//virtual void Resize() = 0;	//Resize the shape
@@ -37,6 +37,6 @@ public:
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file
 	//virtual void Load(ifstream &Infile) = 0;	//Load the shape parameters to the file
 
-	//virtual void PrintInfo(Output* pOut) = 0;	//print all shape info on the status bar
+	//virtual void PrintInfo(Output* pOut) = 0;	//print all shape info on the; status bar
 };
 

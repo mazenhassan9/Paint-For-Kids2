@@ -40,6 +40,14 @@ shape* Graph::Getshape(int x, int y) const
 
 
 	///Add your code here to search for a shape given a point x,y	
+	for (auto& itr : shapesList)
+	{
+		if (itr->Get(x, y))
+
+		{
+			return itr;
+		}
+	}
 
 	return nullptr;
 }

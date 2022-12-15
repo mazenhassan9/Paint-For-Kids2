@@ -11,6 +11,8 @@ public:
 	Oval(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Oval();
 	virtual void Draw(GUI* pUI) const;
+	virtual bool Get(int x, int y) const;
+
 };
 
 

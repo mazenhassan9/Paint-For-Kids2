@@ -14,7 +14,7 @@ GUI::GUI()
 
 	StatusBarHeight = 50;
 	ToolBarHeight = 50;
-	MenuIconWidth = 80;
+	MenuIconWidth = 40;
 	
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = GREEN;	//default Filling color
@@ -97,7 +97,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Irreg: return DRAW_IRPOLY;
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
-			case ICON_Select: return CHNG_FILL_CLR;
+			case ICON_Select: return Select;
 			case ICON_Delete: return DEL;
 			case Icon_Save: return SAVE;
 			case Icon_Resize: return RESIZE ;

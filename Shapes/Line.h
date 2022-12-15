@@ -10,5 +10,7 @@ public:
 	Line(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;
+	virtual bool Get(int x, int y) const;
+
 };
 

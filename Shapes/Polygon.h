@@ -12,4 +12,12 @@ public:
 	polygon(vector <Point>, int,GfxInfo shapeGfxInfo);
 	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
+	virtual bool Get(int x, int y) const;
+
+	bool onLine(line l1, Point p)const;
+
+	int direction(Point a, Point b, Point c)const;
+
+	bool isIntersect(line l1, line l2)const;
+
 };

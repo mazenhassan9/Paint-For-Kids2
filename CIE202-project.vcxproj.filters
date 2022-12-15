@@ -153,13 +153,14 @@
     <ClCompile Include="operations\opGeneralfillcolor.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
-    <ClCompile Include="Line.cpp" />
-    <ClCompile Include="oppAddLine.cpp" />
-    <ClCompile Include="Oval.cpp" />
-    <ClCompile Include="oppAddOval.cpp" />
     <ClCompile Include="operations\OpAddIrPoly.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\oppAddLine.cpp" />
+    <ClCompile Include="operations\oppAddOval.cpp" />
+    <ClCompile Include="Shapes\Line.cpp" />
+    <ClCompile Include="Shapes\Oval.cpp" />
+    <ClCompile Include="operations\opSelect.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -273,11 +274,14 @@
     <ClInclude Include="operations\opGeneralfillcolor.h">
       <Filter>Operations</Filter>
     </ClInclude>
-    <ClInclude Include="Line.h" />
-    <ClInclude Include="oppAddLine.h" />
-    <ClInclude Include="Oval.h" />
-    <ClInclude Include="oppAddOval.h" />
     <ClInclude Include="operations\OpAddIrPoly.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\oppAddLine.h" />
+    <ClInclude Include="operations\oppAddOval.h" />
+    <ClInclude Include="Shapes\Line.h" />
+    <ClInclude Include="Shapes\Oval.h" />
+    <ClInclude Include="operations\opSelect.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>
