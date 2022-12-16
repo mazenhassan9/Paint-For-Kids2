@@ -3,7 +3,7 @@
 
 
 #include "..\CMUgraphicsLib\CMUgraphics.h"
-#include "..\Defs.h"
+#include "..\DEFS.h"
 #include <vector>
 #include <string>
 using namespace std;
