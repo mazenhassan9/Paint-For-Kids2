@@ -20,5 +20,8 @@ void Line::Draw(GUI* pUI) const
 
 bool Line::Get(int x, int y) const
 {
+	if (((x >= P1.x && x <= P2.x) || (x <= P1.x && x >= P2.x)) &&
+		((y >= P1.y && y <= P2.y) || (y <= P1.y && y >= P2.y)))
+		return true;
 	return false;
 }
