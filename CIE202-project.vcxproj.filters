@@ -161,6 +161,9 @@
     <ClCompile Include="Shapes\Line.cpp" />
     <ClCompile Include="Shapes\Oval.cpp" />
     <ClCompile Include="operations\opSelect.cpp" />
+    <ClCompile Include="operations\opChangePenColor.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -282,6 +285,9 @@
     <ClInclude Include="Shapes\Line.h" />
     <ClInclude Include="Shapes\Oval.h" />
     <ClInclude Include="operations\opSelect.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opChangePenColor.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

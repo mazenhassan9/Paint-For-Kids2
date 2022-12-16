@@ -287,6 +287,10 @@ color GUI::getCrntFillColor() const	//get current filling color
 } 
 
 
+void GUI::setPenColor(color p) {
+	DrawColor = p;
+}
+
 //////////////////////////////////////////////////////////////////////////////////////////
 
 int GUI::getCrntPenWidth() const		//get current pen width

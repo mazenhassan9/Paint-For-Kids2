@@ -143,6 +143,7 @@ public:
 
 	int getCrntPenWidth() const;		//get current pen width
 	void setFillColor(color c);
+	void setPenColor(color p);
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();
