@@ -97,6 +97,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
 			case ICON_PENWIDTH: return 	PENWIDTH;
+			case ICON_PEN: return PEN;
 			case ICON_Select: return Select;
 			case ICON_Delete: return DEL;	
 			case Icon_Resize: return RESIZE ;
@@ -183,6 +184,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Irreg] = "images\\MenuIcons\\Menu_IRREG.JPG";
 	MenuIconImages[ICON_Fillcolor] = "images\\MenuIcons\\Menu_Fillcolor.jpg";
 	MenuIconImages[ICON_PENWIDTH] = "images\\MenuIcons\\PENWIDTH.JPG";
+	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\pen.JPG";
 	MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
 	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
 	MenuIconImages[Icon_Resize] = "images\\MenuIcons\\Resize.jpg";

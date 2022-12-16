@@ -51,6 +51,7 @@ class GUI
 		ICON_Irreg ,
 		ICON_Fillcolor,
 		ICON_PENWIDTH,
+		ICON_PEN ,
 		ICON_Select,
 		ICON_Delete,
 		Icon_Resize ,
