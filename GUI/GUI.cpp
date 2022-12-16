@@ -97,7 +97,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
 			case ICON_PENWIDTH: return 	PENWIDTH;
-			case ICON_PEN: return PEN;
+			case ICON_PEN: return CHNG_DRAW_CLR;
 			case ICON_Select: return Select;
 			case ICON_Delete: return DEL;	
 			case Icon_Resize: return RESIZE ;
