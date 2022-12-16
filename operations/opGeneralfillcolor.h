@@ -2,7 +2,7 @@
 
 #include "operation.h"
 
-//Add Square operation class
+
 class opGeneralfillcolor : public operation
 {
 public:
@@ -10,7 +10,7 @@ public:
 	virtual ~opGeneralfillcolor();
 	
 
-	//Add Square to the controller
+	
 	virtual void Execute();
 
 };

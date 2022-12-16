@@ -25,7 +25,7 @@ void opGeneralfillcolor::Execute()
 	pUI->PrintMessage("pick a color from the window");
 	color picked = pUI->colorpalette();
 	pUI->setFillColor(picked);
-	//pUI->changedefaultfilled(true);
+	pUI->changedefaultfilled(true);
 	
 	
 }
