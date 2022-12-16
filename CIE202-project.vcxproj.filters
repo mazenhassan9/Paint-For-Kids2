@@ -163,6 +163,8 @@
     <ClCompile Include="Shapes\Oval.cpp">
       <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
+    <ClCompile Include="operations\opDelete.cpp" />
+    <ClCompile Include="operations\opChangeFill.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -287,6 +289,12 @@
     </ClInclude>
     <ClInclude Include="Shapes\Oval.h">
       <Filter>Shapes&amp;Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opDelete.h">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opChangeFill.h">
+      <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
