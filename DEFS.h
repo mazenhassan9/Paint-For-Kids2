@@ -15,6 +15,8 @@ enum operationType //The operations supported (you can add more if needed)
 	DRAW_IRPOLY,
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
+	PENWIDTH ,
+	PEN ,
 	CHNG_BK_CLR,	//Change background color
 	DEL,			//Delete a shape(s)
 	MOVE,	//Move a shape(s)
@@ -22,9 +24,13 @@ enum operationType //The operations supported (you can add more if needed)
 	ROTATE,			//Rotate a shape(s)
 	SEND_BACK,		//Send a shape to the back of all shapes
 	BRNG_FRNT,		//Bring a shape to the front of all shapes
+	COPY,
+	CUT,
+	PASTE,
 	SAVE,			//Save the whole graph to a file
-	LOAD,			//Load a graph from a file
+					
 	Select ,           //select a shape 
+	LOAD,	            //Load a graph from a file 
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,	//A click on the drawing area
