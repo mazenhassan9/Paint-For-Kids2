@@ -10,7 +10,6 @@
 #include "operations\opGeneralfillcolor.h"
 #include"operations/OpAddIrPoly.h"
 #include"operations/opSelect.h"
-#include "operations\opChangePenColor.h"
 
 //Constructor
 controller::controller()
@@ -73,9 +72,6 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_FILL_CLR:
 			pOp = new opGeneralfillcolor(this);
-			break;
-		case CHNG_DRAW_CLR:
-			pOp = new opChangePenColor(this);
 			break;
 
 		case STATUS:	//a click on the status bar ==> no operation
