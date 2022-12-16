@@ -56,6 +56,10 @@ class GUI
 		Icon_Resize ,
 		ICON_Rotate ,
 		ICON_Load ,
+		ICON_PENWIDTH ,
+		ICON_COPY ,
+		ICON_CUT,
+		ICON_PASTE,
 
 
 
