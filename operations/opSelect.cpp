@@ -27,11 +27,10 @@ void opSelect::Execute()
 		if (S1->IsSelected())
 		{
 			S1->SetSelected(false);
-			S1->ChngDrawClr(pUI->getCrntDrawColor());
+			
 		}
 		else
 		{
-			S1->ChngDrawClr(pUI->getCrntFillColor());
 			S1->SetSelected(true);
 		}
 	}

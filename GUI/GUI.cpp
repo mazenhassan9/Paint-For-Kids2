@@ -469,7 +469,6 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 		style = FRAME;
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 
-	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);*/
 
 }
 

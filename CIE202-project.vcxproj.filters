@@ -159,8 +159,10 @@
     <ClCompile Include="operations\oppAddLine.cpp" />
     <ClCompile Include="operations\oppAddOval.cpp" />
     <ClCompile Include="Shapes\Line.cpp" />
-    <ClCompile Include="Shapes\Oval.cpp" />
     <ClCompile Include="operations\opSelect.cpp" />
+    <ClCompile Include="Shapes\Oval.cpp">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -280,9 +282,11 @@
     <ClInclude Include="operations\oppAddLine.h" />
     <ClInclude Include="operations\oppAddOval.h" />
     <ClInclude Include="Shapes\Line.h" />
-    <ClInclude Include="Shapes\Oval.h" />
     <ClInclude Include="operations\opSelect.h">
       <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes\Oval.h">
+      <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
