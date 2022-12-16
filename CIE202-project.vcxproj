@@ -173,6 +173,7 @@
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="operations\opAddSquare.cpp" />
     <ClCompile Include="operations\opAddTri.cpp" />
+    <ClCompile Include="operations\opChangePenColor.cpp" />
     <ClCompile Include="operations\opGeneralfillcolor.cpp" />
     <ClCompile Include="operations\oppAddLine.cpp" />
     <ClCompile Include="operations\oppAddOval.cpp" />
@@ -218,6 +219,7 @@
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\opAddSquare.h" />
     <ClInclude Include="operations\opAddTri.h" />
+    <ClInclude Include="operations\opChangePenColor.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="operations\opGeneralfillcolor.h" />
     <ClInclude Include="operations\oppAddLine.h" />

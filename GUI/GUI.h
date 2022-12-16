@@ -50,19 +50,25 @@ class GUI
 		ICON_Reg ,
 		ICON_Irreg ,
 		ICON_Fillcolor,
-		ICON_Select ,
-		ICON_Delete ,
-		Icon_Save ,
+		ICON_PENWIDTH,
+		ICON_PEN ,
+		ICON_Select,
+		ICON_Delete,
 		Icon_Resize ,
 		ICON_Rotate ,
+		ICON_COPY,
+		ICON_CUT,
+		ICON_PASTE,
+		Icon_Save,
 		ICON_Load ,
-
+		ICON_EXIT,		//Exit icon
+		
 
 
 
 		//TODO: Add more icons names here
 
-		ICON_EXIT,		//Exit icon
+		
 
 		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
@@ -143,6 +149,7 @@ public:
 
 	int getCrntPenWidth() const;		//get current pen width
 	void setFillColor(color c);
+	void setPenColor(color p);
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();
