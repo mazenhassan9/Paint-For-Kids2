@@ -10,6 +10,8 @@
 #include "operations\opGeneralfillcolor.h"
 #include"operations/OpAddIrPoly.h"
 #include"operations/opSelect.h"
+#include"operations/opDelete.h"
+#include"operations/opChangeFill.h"
 
 //Constructor
 controller::controller()
@@ -60,11 +62,14 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
 			break;
+		case CHNG_S_FILL_CLR:
+			pOp = new opChangeFill(this);
+			break;
 		case Select:
 			pOp = new opSelect(this);
 			break;
-		case DRAWING_AREA:
-			//pOp = new Select(this);
+		case DEL:
+			pOp = new opDelete(this);
 			break;
 		case EXIT:
 			///create Exitoperation here

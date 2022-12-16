@@ -20,6 +20,37 @@ void Graph::Addshape(shape* pShp)
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);	
 }
+void Graph::DeleteShape(shape* pFig)
+{
+	int i = 0;
+	for (auto& itr : shapesList)
+	{
+		
+		if (pFig == itr)
+		{
+			shapesList[i] = shapesList.back(); 
+			shapesList.pop_back();
+		}
+		i++;
+	}
+
+}
+void Graph::SetSelected(shape* pFig, bool flag)
+{
+	if (flag)
+	{
+		selectedShape = pFig;
+	}
+	else
+	{
+		selectedShape = nullptr;
+	}
+
+}
+shape* Graph::GetSelected() const
+{
+	return selectedShape;
+}
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const

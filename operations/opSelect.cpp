@@ -14,7 +14,6 @@ opSelect::~opSelect()
 void opSelect::Execute()
 {
 	Point P1;
-	int x_C, y_C;
 	vector <Point> Points;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
@@ -27,11 +26,12 @@ void opSelect::Execute()
 		if (S1->IsSelected())
 		{
 			S1->SetSelected(false);
-			
+			pGr->SetSelected(S1, false);
 		}
 		else
 		{
 			S1->SetSelected(true);
+			pGr->SetSelected(S1, true);
 		}
 	}
 	else

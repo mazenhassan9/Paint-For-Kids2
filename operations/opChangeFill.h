@@ -3,11 +3,11 @@
 #include "operation.h"
 
 //Add Rectangle operation class
-class opSelect : public operation
+class opChangeFill : public operation
 {
 public:
-	opSelect(controller* pCont);
-	virtual ~opSelect();
+	opChangeFill(controller* pCont);
+	virtual ~opChangeFill();
 
 	//Add rectangle to the controller
 	virtual void Execute();

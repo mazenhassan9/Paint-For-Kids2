@@ -16,6 +16,7 @@ enum operationType //The operations supported (you can add more if needed)
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color
+	CHNG_S_FILL_CLR, //change single fill color
 	DEL,			//Delete a shape(s)
 	MOVE,	//Move a shape(s)
 	RESIZE,			//Resize a shape(s)
@@ -24,7 +25,7 @@ enum operationType //The operations supported (you can add more if needed)
 	BRNG_FRNT,		//Bring a shape to the front of all shapes
 	SAVE,			//Save the whole graph to a file
 	LOAD,			//Load a graph from a file
-	Select ,           //select a shape 
+	Select ,           //select a shape  
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,	//A click on the drawing area

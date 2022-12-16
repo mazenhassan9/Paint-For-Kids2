@@ -103,6 +103,7 @@ operationType GUI::GetUseroperation() const
 			case Icon_Resize: return RESIZE ;
 			case ICON_Rotate: return ROTATE;
 			case ICON_Load: return LOAD;
+			case ICON_Single_Fill: return CHNG_S_FILL_CLR;
 
 			case ICON_EXIT: return EXIT;
 
@@ -187,6 +188,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[Icon_Resize] = "images\\MenuIcons\\Resize.jpg";
 	MenuIconImages[ICON_Rotate] = "images\\MenuIcons\\Rotate.jpg";
 	MenuIconImages[ICON_Load] = "images\\MenuIcons\\Load.jpg";
+	MenuIconImages[ICON_Single_Fill] = "images\\MenuIcons\\Menu_Single_Fill_color.jpg";
 	
 
 	//TODO: Prepare images for each menu icon and add it to the list

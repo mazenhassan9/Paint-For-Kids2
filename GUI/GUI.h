@@ -56,6 +56,7 @@ class GUI
 		Icon_Resize ,
 		ICON_Rotate ,
 		ICON_Load ,
+		ICON_Single_Fill,
 
 
 
