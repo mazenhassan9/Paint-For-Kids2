@@ -1,6 +1,5 @@
 #include "GUI.h"
 
-
 GUI::GUI()
 {
 	//Initialize user interface parameters
