@@ -1,5 +1,10 @@
 #include "Polygon.h"
 
+polygon::polygon()
+{
+	ShpGfxInfo.isFilled = false;
+}
+
 polygon::polygon(vector <Point> C,int N, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)
 {
 	for(int i =0; i < N;i++)
@@ -53,7 +58,7 @@ string polygon::Getinfo() const
 		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
 	else
 		FillColor = "Non_Filled";
-	ShpGfxInfo.DrawClr.ucRed;
+	
 
 	string message = "Polygon   " + to_string(ID);
 	for (int i = 0; i < vertices; i++)
@@ -65,6 +70,52 @@ string polygon::Getinfo() const
 		+ "   " + FillColor;
 
 	return message;
+}
+
+void polygon::Save(ofstream& OutFile)
+{
+	OutFile << "POLYGON  " << ID << "  " << vertices << "  ";
+	for (int i = 0; i < vertices; i++)
+	{
+		OutFile << Corners[i].x << "  " << Corners[i].y << "  ";
+	}
+	OutFile << (int)(ShpGfxInfo.DrawClr.ucRed) << "  " << (int)ShpGfxInfo.DrawClr.ucGreen << "  " << (int)ShpGfxInfo.DrawClr.ucBlue << "  ";
+	if (ShpGfxInfo.isFilled != false)
+		OutFile << "True" << "  " << (int)ShpGfxInfo.FillClr.ucRed << "  " << (int)ShpGfxInfo.FillClr.ucGreen << "  " << (int)ShpGfxInfo.FillClr.ucBlue << endl;
+	else
+		OutFile << "False" << endl;
+}
+
+void polygon::Load(ifstream& Infile)
+{
+	int D1, D2, D3;
+	int F1, F2, F3;
+	Point P;
+	Infile >> ID >> vertices;
+	for (int i = 0; i < vertices; i++)
+	{
+		Infile >> P.x >> P.y;
+		Corners.push_back(P);
+	}
+
+	Infile >> D1 >> D2 >> D3;
+	color C1(D1, D2, D3);
+	this->ShpGfxInfo.DrawClr = C1;
+	string conditon;
+	Infile >> conditon;
+	if (conditon == "True")
+	{
+		this->ShpGfxInfo.isFilled = true;
+		Infile >> F1 >> F2 >> F3;
+		color C2(F1, F2, F3);
+		this->ShpGfxInfo.FillClr = C2;
+	}
+	else
+	{
+		this->ShpGfxInfo.isFilled = false;
+		
+	}
+
 }
 
 bool polygon::onLine(line l1, Point p) const

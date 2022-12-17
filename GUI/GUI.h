@@ -80,8 +80,9 @@ class GUI
 
 	enum PlayMenuIcon //The icons of the Play menu (you should add more icons)
 	{
-		EXiT,//Note: Icons are ordered here as they appear in menu
-	COLOR ,	//If you want to change the menu icons order, change the order here
+		PLAY_ICON_SWITCH,
+		PLAY_ICON_EXIT,//Note: Icons are ordered here as they appear in menu
+		//If you want to change the menu icons order, change the order here
 
 		//TODO: Add more icons names here
 
@@ -160,7 +161,7 @@ public:
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();
-
+	int getInterfaceMode()const;
 	bool IsinDrawingArea(int x, int y) const;
 	~GUI();
 };

@@ -1,5 +1,10 @@
 #include "Square.h"
 
+Square::Square()
+{
+	ShpGfxInfo.isFilled = false;
+}
+
 Square::Square(Point P1, double sidelen, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	origin = P1;
@@ -34,7 +39,6 @@ string Square::Getinfo() const
 		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
 	else
 		FillColor = "Non_Filled";
-	ShpGfxInfo.DrawClr.ucRed;
 
 	string message = "Square   " + to_string(ID) + "    Center (" + to_string(origin.x) + " , " + to_string(origin.y) + ")"
 		+ "    Sidelen (" + to_string(sidelent) + " , " + to_string(sidelent) + ")"
@@ -42,4 +46,45 @@ string Square::Getinfo() const
 		+ "   " + FillColor;
 	return message;
 }
+
+void Square::Save(ofstream& OutFile)
+{
+	Point Corner2 = { origin.x + sidelent,origin.y + sidelent };
+	Point Corner1 = origin;
+	OutFile << "SQUARE  " << ID << "  " << Corner1.x << "  " << Corner1.y << "  " << Corner2.x << "  " << Corner2.y << "  ";
+	OutFile << (int)(ShpGfxInfo.DrawClr.ucRed) << "  " << (int)ShpGfxInfo.DrawClr.ucGreen << "  " << (int)ShpGfxInfo.DrawClr.ucBlue << "  ";
+	if (ShpGfxInfo.isFilled != false)
+		OutFile << "True" << "  " << (int)ShpGfxInfo.FillClr.ucRed << "  " << (int)ShpGfxInfo.FillClr.ucGreen << "  " << (int)ShpGfxInfo.FillClr.ucBlue << endl;
+	else
+		OutFile << "False" << endl;
+}
+
+void Square::Load(ifstream& Infile)
+{
+	Point Corner1, Corner2;
+	Infile >> ID >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y ;
+	origin = Corner1;
+	sidelent = sqrt(pow(Corner2.x - origin.x, 2));
+
+	int D1, D2, D3;
+	int F1, F2, F3;
+
+	Infile >> D1 >> D2 >> D3;
+	color C1(D1, D2, D3);
+	ShpGfxInfo.DrawClr = C1;
+	string conditon;
+	Infile >> conditon;
+	if (conditon == "True")
+	{
+		ShpGfxInfo.isFilled = true;
+		Infile >> F1 >> F2 >> F3;
+		color C2(F1, F2, F3);
+		ShpGfxInfo.FillClr = C2;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = false;
+	}
+}
+
 

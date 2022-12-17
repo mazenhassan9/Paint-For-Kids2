@@ -7,7 +7,6 @@
 
 opLoad::opLoad(controller* pCont):operation(pCont)
 {
-	LFig = NULL;
 }
 
 opLoad::~opLoad()
@@ -18,30 +17,17 @@ void opLoad::Execute()
 {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
-	shape* bw = pGr->GetSelected();
 	pUI->PrintMessage("Load Operation, Please Enter File name");
 	string FileName = pUI->GetSrting();
 	File.open(FileName, ios::in);
-	int Figcount;
+
+	pUI->changedefaultfilled(false);
 
 	if (File.is_open())     //Check if There is a File with this Name or Not
 	{
-		pUI->ClearDrawArea();
-		string Fig;
-		int FCount;
-
-		//Load Figures Count	
-		File >> FCount;
-
+		//pUI->ClearDrawArea();
+		pGr->load(File);
 		
-
-			LFig->load(File);
-
-			//pGr->Save(File);
-			LFig = NULL;
-
-		
-
 		File.close();
 		pUI->ClearStatusBar();
 		pUI->PrintMessage("File is Loaded Successfully");

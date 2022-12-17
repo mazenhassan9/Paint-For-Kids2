@@ -7,10 +7,13 @@ private:
 	Point P1;
 	Point P2;
 public:
+	Line();
 	Line(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
 	virtual string Getinfo() const;
+	virtual void Save(ofstream& OutFile);
+	virtual void Load(ifstream& Infile);
 };
 

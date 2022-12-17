@@ -3,6 +3,11 @@
 
 
 
+Line::Line()
+{
+	ShpGfxInfo.isFilled = false;
+}
+
 Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	P1 = p1;
@@ -28,18 +33,35 @@ bool Line::Get(int x, int y) const
 
 string Line::Getinfo() const
 {
-	string FillColor;
-	if (ShpGfxInfo.isFilled)
-		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
-	else
-		FillColor = "Non_Filled";
-	ShpGfxInfo.DrawClr.ucRed;
+	
 
 	string message = "Line   " + to_string(ID) + "    Point1 (" + to_string(P1.x) + " , " + to_string(P1.y) + ")"
 		+ "    Point2 (" + to_string(P2.x) + " , " + to_string(P2.y) + ")"
 		+ "    Drawing Color R: " + to_string(ShpGfxInfo.DrawClr.ucRed) + " G: " + to_string(ShpGfxInfo.DrawClr.ucGreen) + " B: " + to_string(ShpGfxInfo.DrawClr.ucBlue)
-		+ "   " + FillColor;
+		+ "   ";
 	return message;
+}
+
+void Line::Save(ofstream& OutFile)
+{
+	OutFile << "LINE  " << ID << "  " << P1.x << "  " << P1.y << "  " << P2.x << "  " << P2.y << "  ";
+	OutFile << (int)(ShpGfxInfo.DrawClr.ucRed) << "  " << (int)ShpGfxInfo.DrawClr.ucGreen << "  " << (int)ShpGfxInfo.DrawClr.ucBlue << "  " << endl;
+	
+	
+}
+
+void Line::Load(ifstream& Infile)
+{
+
+	int D1, D2, D3;
+	int F1, F2, F3;
+
+	Infile >> ID >> P1.x >> P1.y >> P2.x >> P2.y;
+	Infile >> D1 >> D2 >> D3;
+	color C1(D1, D2, D3);
+	ShpGfxInfo.DrawClr = C1;
+	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = true;
 }
 
 

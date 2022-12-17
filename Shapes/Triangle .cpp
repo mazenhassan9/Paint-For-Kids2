@@ -1,5 +1,11 @@
 #include "Triangle .h"
 
+
+Triangle::Triangle()
+{
+	ShpGfxInfo.isFilled = false;
+}
+
 Triangle::Triangle(Point p1, Point p2,Point p3 , GfxInfo shapeGfxInfo) : shape (shapeGfxInfo)
 {
 	Corner1 = p1;
@@ -33,7 +39,6 @@ string Triangle::Getinfo() const
 		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
 	else
 		FillColor = "Non_Filled";
-	ShpGfxInfo.DrawClr.ucRed;
 
 	string message = "Triangle   " + to_string(ID) + "    Point1 (" + to_string(Corner1.x) + " , " + to_string(Corner1.y) + ")"
 		+ "    Point2 (" + to_string(Corner2.x) + " , " + to_string(Corner2.y) + ")"
@@ -42,3 +47,40 @@ string Triangle::Getinfo() const
 		+ "   " + FillColor;
 	return message;
 }
+
+void Triangle::Save(ofstream& OutFile)
+{
+	OutFile << "TRIANGLE  " << ID << "  " << Corner1.x << "  " << Corner1.y << "  " << Corner2.x << "  " << Corner2.y << "  " << Corner3.x << "  " << Corner3.y << "  ";
+	OutFile << (int)(ShpGfxInfo.DrawClr.ucRed) << "  " << (int)ShpGfxInfo.DrawClr.ucGreen << "  " << (int)ShpGfxInfo.DrawClr.ucBlue << "  ";
+	if (ShpGfxInfo.isFilled != false)
+		OutFile <<"True" <<"  " << (int)ShpGfxInfo.FillClr.ucRed << "  " << (int)ShpGfxInfo.FillClr.ucGreen << "  " << (int)ShpGfxInfo.FillClr.ucBlue << endl;
+	else
+		OutFile << "False" << endl;
+}
+
+void Triangle::Load(ifstream& Infile)
+{
+	Infile >> ID >> Corner1.x >> Corner1.y >> Corner2.x >> Corner2.y >> Corner3.x >> Corner3.y;
+	int D1, D2, D3;
+	int F1, F2, F3;
+	Infile >> D1 >> D2 >> D3;
+	color C1(D1, D2, D3);
+	ShpGfxInfo.DrawClr = C1;
+	string conditon;
+	Infile >> conditon;
+	
+	if (conditon == "True")
+	{
+		ShpGfxInfo.isFilled = true;
+		Infile >> F1 >> F2 >> F3;
+		color C2(F1, F2, F3);
+		ShpGfxInfo.FillClr = C2;
+	}
+	else
+	{
+		ShpGfxInfo.isFilled = false;
+	}
+	ShpGfxInfo.isSelected = true;
+}
+
+

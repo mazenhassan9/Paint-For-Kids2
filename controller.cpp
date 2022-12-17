@@ -18,6 +18,8 @@
 #include"operations/opDrawingArea.h"
 #include"operations/opSave.h"
 #include"operations/opLoad.h"
+
+#include"operations/opSwitch.h"
 //Constructor
 controller::controller()
 {
@@ -102,6 +104,9 @@ operation* controller::createOperation(operationType OpType)
 		case BORDER_WIDTH:
 			pOp = new opBorderwidth(this);
 			break;
+		case SWITCH:
+			pOp = new opSwitch(this);
+			break;
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
 	}
@@ -185,6 +190,6 @@ void controller::Run()
 		UpdateInterface();
 
 	} while (OpType != EXIT);
-	delete this;
+//	delete this;
 
 }

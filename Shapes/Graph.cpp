@@ -1,6 +1,14 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
 #include<fstream>
+#include <iostream>
+#include"Circle.h"
+#include"Line.h"
+#include"Oval.h"
+#include"Polygon.h"
+#include"Rect.h"
+#include"Square.h"
+#include"Triangle .h"
 
 Graph::Graph()
 {
@@ -67,7 +75,7 @@ shape* Graph::GetSelected() const
 void Graph::Draw(GUI* pUI) const
 {
 	pUI->ClearDrawArea();
-	for (auto shapePointer : shapesList)
+	for (auto &shapePointer : shapesList)
 		shapePointer->Draw(pUI);
 }
 vector <shape*>Graph::getlistofshspes()
@@ -80,12 +88,47 @@ void Graph::Save(ofstream& outfile)
 	outfile << shapesList.size() << endl;
 	for (auto& itr : shapesList)
 	{
-		outfile << itr->Getinfo() << endl;
+		 itr->Save(outfile);
 	}
 }
 
 void Graph::load(ifstream& inputfile)
 {
+	string name;
+	int Scount;
+	shape* R;
+	shapesList.clear();
+	//Load Figures Count	
+	inputfile >> Scount;
+
+	while(inputfile >> name)
+	{
+		
+		cout << name << endl;
+		if (name == "CIRCLE")
+			R = new Circle;
+		else if (name == "LINE")
+			R = new Line;
+		else if (name == "OVAL")
+			R = new Oval;
+		else if (name == "POLYGON")
+			R = new polygon;
+		else if (name == "RECT")
+			R = new Rect;
+		else if (name == "SQUARE")
+			R = new Square;
+		else if (name == "TRIANGLE")
+			R = new Triangle;
+		
+		if (R)
+		{
+			R->Load(inputfile);
+			cout << R->Getinfo() << endl;
+			Addshape(R);
+			R = NULL;
+		}
+		
+	}
 }
 
 shape* Graph::Getshape(int x, int y) const

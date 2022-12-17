@@ -10,7 +10,6 @@ class opLoad : public operation
 {
 	ifstream File;
 	string FileName;
-	Graph* LFig;
 public:
 	opLoad(controller* pCont);
 	virtual ~opLoad();

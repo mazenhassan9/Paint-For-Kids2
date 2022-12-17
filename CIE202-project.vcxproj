@@ -185,6 +185,7 @@
     <ClCompile Include="operations\opPenwidth.cpp" />
     <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelect.cpp" />
+    <ClCompile Include="operations\opSwitch.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Line.cpp" />
@@ -239,6 +240,7 @@
     <ClInclude Include="operations\opPenwidth.h" />
     <ClInclude Include="operations\opSave.h" />
     <ClInclude Include="operations\opSelect.h" />
+    <ClInclude Include="operations\opSwitch.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />

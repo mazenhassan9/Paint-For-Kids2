@@ -1,5 +1,12 @@
 #include "shape.h"
 int shape::Shapes_Count = 0;
+shape::shape()
+{
+	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+	ID = Shapes_Count;
+	Shapes_Count++;
+}
 shape::shape(GfxInfo shapeGfxInfo)
 { 
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.

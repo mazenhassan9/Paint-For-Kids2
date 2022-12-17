@@ -182,11 +182,16 @@
       <Filter>Operations</Filter>
     </ClCompile>
     <ClCompile Include="operations\opBorderwidth.cpp" />
-    <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="opChangePenColor.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
     <ClCompile Include="operations\opLoad.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opSave.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opSwitch.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
   </ItemGroup>
@@ -342,6 +347,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opLoad.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opSwitch.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

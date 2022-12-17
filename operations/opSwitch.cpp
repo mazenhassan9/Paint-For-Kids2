@@ -17,6 +17,17 @@ opSwitch::~opSwitch()
 void opSwitch::Execute()
 {
 	GUI* pUI = pControl->GetUI();
-	pUI->PrintMessage("Switch to draw mode");
-	pUI->CreateDrawToolBar();
+	
+	
+	int Mode = pUI->getInterfaceMode();
+	if (Mode)
+	{
+		pUI->CreateDrawToolBar();
+		pUI->PrintMessage("Switched to draw mode");
+	}
+	else
+	{
+		pUI->CreatePlayToolBar();
+		pUI->PrintMessage("Switched to Play mode");
+	}
 }

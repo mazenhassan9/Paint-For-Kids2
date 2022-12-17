@@ -9,11 +9,14 @@ private:
 	int vertices;
 
 public:
+	polygon();
 	polygon(vector <Point>, int,GfxInfo shapeGfxInfo);
 	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
 	virtual string Getinfo() const;
+	virtual void Save(ofstream& OutFile);
+	virtual void Load(ifstream& Infile);
 
 	bool onLine(line l1, Point p)const;
 

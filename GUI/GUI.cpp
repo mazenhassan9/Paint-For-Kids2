@@ -127,10 +127,22 @@ operationType GUI::GetUseroperation() const
 	}
 	else	//GUI is in PLAY mode
 	{
-		///TODO:
-		//perform checks similar to Draw mode checks above
-		//and return the correspoding operation
-		return TO_PLAY;	//just for now. This should be updated
+		if (y >= 0 && y < ToolBarHeight)
+		{
+			//Check whick Menu icon was clicked
+			//==> This assumes that menu icons are lined up horizontally <==
+			int ClickedIconOrder = (x / MenuIconWidth);
+			//Divide x coord of the point clicked by the menu icon width (int division)
+			//if division result is 0 ==> first icon is clicked, if 1 ==> 2nd icon and so on
+		
+			switch (ClickedIconOrder)
+			{
+			
+			case PLAY_ICON_SWITCH: return SWITCH;
+			case PLAY_ICON_EXIT: return EXIT;
+			default: return EMPTY;	//A click on empty place in desgin toolbar
+			}
+		}
 	}
 
 }
@@ -168,6 +180,11 @@ void GUI::ClearStatusBar() const
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::CreateDrawToolBar() 
 {
+	pWind->SetBrush(BkGrndColor);
+	pWind->SetPen(BkGrndColor, 1);
+	pWind->DrawRectangle(0, 0, width, ToolBarHeight);
+
+
 	InterfaceMode = MODE_DRAW;
 
 	//You can draw the tool bar icons in any way you want.
@@ -221,11 +238,15 @@ void GUI::CreateDrawToolBar()
 
 void GUI::CreatePlayToolBar() 
 {
+	pWind->SetBrush(BkGrndColor);
+	pWind->SetPen(BkGrndColor, 1);
+	pWind->DrawRectangle(0, 0, width, ToolBarHeight);
+
 	InterfaceMode = MODE_PLAY;
 	///TODO: write code to create Play mode menu
 	string MenuItemImages[PLAY_ICON_COUNT];
-	//MenuItemImages[ITM_FIGURE] = "images\\MenuItems\\Pick_by_shape.jpg";
-	//MenuItemImages[ITM_COLOR] = "images\\MenuItems\\Pick_by_color.jpg";
+	MenuItemImages[PLAY_ICON_SWITCH] = "images\\MenuIcons\\SWITCH.JPG";
+	MenuItemImages[PLAY_ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	//MenuItemImages[ITM_FIGCOLOR] = "images\\MenuItems\\Pick_by_both.jpg";
 	//MenuItemImages[ITM_BACKDRAW] = "images\\MenuItems\\Draw.jpg";
 	//MenuItemImages[ITM_PEXIT] = "images\\MenuItems\\Menu_Exit.jpg";
@@ -233,7 +254,9 @@ void GUI::CreatePlayToolBar()
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
 
-
+	//Draw a line under the toolbar
+	pWind->SetPen(RED, 3);
+	pWind->DrawLine(0, ToolBarHeight, width, ToolBarHeight);
 
 
 }
@@ -244,6 +267,7 @@ void GUI::ClearDrawArea() const
 	pWind->SetPen(BkGrndColor, 1);
 	pWind->SetBrush(BkGrndColor);
 	pWind->DrawRectangle(0, ToolBarHeight, width, height - StatusBarHeight);
+
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -370,8 +394,7 @@ void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 	}
 	else
 		style = FRAME;
-	//mena was here:)
-	//just trial
+
 
 		
 	pWind->DrawRectangle(P1.x, P1.y,P1.x+sidelen,P1.y+sidelen, style);
@@ -394,7 +417,6 @@ void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 	}
 	else
 		style = FRAME;
-
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, p3.x, p3.y, style);
 
 }
@@ -468,13 +490,9 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
-	if (LineGfxInfo.isFilled)
-	{
-		style = FILLED;
-		pWind->SetBrush(LineGfxInfo.FillClr);
-	}
-	else
-		style = FRAME;
+	
+	
+	style = FRAME;
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 
 }
@@ -531,6 +549,11 @@ void GUI::changedefaultfilled(bool defill)
 bool GUI::getdefaultfilled()
 {
 	return defaultFill;
+}
+
+int GUI::getInterfaceMode() const
+{
+	return InterfaceMode;
 }
 
 
