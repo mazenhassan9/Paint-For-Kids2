@@ -154,6 +154,7 @@ public:
 
 	int getCrntPenWidth() const;		//get current pen width
 	void setFillColor(color c);
+	void setPenColor(color p);
 	void setPenwidth(double p);
 	void setBorderwidth(double bw);
 	color colorpalette();
