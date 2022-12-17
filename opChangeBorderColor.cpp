@@ -18,15 +18,15 @@ void opChangeBorderColor::Execute()
 	Point P1;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
-	shape* bw = pGr->GetSelected();
-	if (bw)
+	shape* bc = pGr->GetSelected();
+	if (bc)
 	{
 		pUI->PrintMessage("pick a color from the window");
 
 
-		color c = stod(pUI->GetSrting());
-		c = pUI->colorpalette();
-		bw->ChngDrawClr(c);
+		
+		color c = pUI->colorpalette();
+		bc->ChngDrawClr(c);
 
 		pUI->PrintMessage("The border color of Selected shape has been changed");
 	}
