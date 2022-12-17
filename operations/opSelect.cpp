@@ -14,7 +14,6 @@ opSelect::~opSelect()
 void opSelect::Execute()
 {
 	Point P1;
-	vector <Point> Points;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 	pUI->PrintMessage("Select Operation, Please select a shape");
@@ -40,5 +39,6 @@ void opSelect::Execute()
 	}
 	pUI->ClearStatusBar();
 
+	
 
 }

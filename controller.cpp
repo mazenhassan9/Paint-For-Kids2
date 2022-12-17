@@ -14,6 +14,7 @@
 #include"operations/opChangeFill.h"
 
 #include "operations/opPenwidth.h"
+#include"operations/opDrawingArea.h"
 //Constructor
 controller::controller()
 {
@@ -83,6 +84,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opPenwidth(this);
 			break;
 
+		case DRAWING_AREA:
+			pOp = new opDrawingArea(this);
+			break;
 
 		case STATUS:	//a click on the status bar ==> no operation
 			break;

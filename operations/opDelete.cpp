@@ -15,7 +15,6 @@ void opDelete::Execute()
 {
 	
 	Point P1;
-	vector <Point> Points;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 	shape* S1 = pGr->GetSelected();

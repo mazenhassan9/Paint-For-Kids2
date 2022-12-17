@@ -24,10 +24,14 @@ void opAddTri::Execute()
 	//Read 1st corner and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y );
 
+	pUI->ClearStatusBar();
+
 	string msg = "First corner is at (" + to_string(P1.x) + ", " + to_string(P1.y) + " )";
 	msg += " ... Click at second corner";
 	pUI->PrintMessage(msg);
 	//Read 2nd corner and store in point P2
+	pUI->ClearStatusBar();
+
 	pUI->GetPointClicked(P2.x, P2.y );
 	 msg += "Second corner is at (" + to_string(P2.x) + ", " + to_string(P2.y) + " )";
 	msg += " ... Click at third corner";

@@ -158,7 +158,9 @@ public:
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();
-;
+
+
+	bool IsinDrawingArea(int x, int y) const;
 	~GUI();
 };
 

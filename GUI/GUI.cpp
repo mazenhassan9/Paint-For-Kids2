@@ -526,6 +526,12 @@ bool GUI::getdefaultfilled()
 }
 
 
+bool GUI::IsinDrawingArea(int x, int y) const
+{
+	if (y > ToolBarHeight && y < height - StatusBarHeight)
+		return true;
+	return false;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()
