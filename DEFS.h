@@ -26,14 +26,15 @@ enum operationType //The operations supported (you can add more if needed)
 	SAVE,			//Save the whole graph to a file
 	LOAD,			//Load a graph from a file
 
-         //select a shape  
+	//select a shape  
 
-	Select ,           //select a shape 
+	Select,           //select a shape 
 	COPY,
-	CUT ,
+	CUT,
 	PASTE,
-	PENWIDTH ,
+	PENWIDTH,
 	PEN,
+	CHNG_BOR_CLR,    //Change border color
 	SWITCH ,
 	BORDER_WIDTH ,
 	EXIT,			//Exit the application
