@@ -185,5 +185,6 @@ void controller::Run()
 		UpdateInterface();
 
 	} while (OpType != EXIT);
+	delete this;
 
 }
