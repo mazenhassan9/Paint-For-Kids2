@@ -8,6 +8,7 @@
 #include "operations\oppAddLine.h"
 #include "operations\opAddExit.h"
 #include "operations\opGeneralfillcolor.h"
+#include "opChangePenColor.h"
 #include"operations/OpAddIrPoly.h"
 #include"operations/opSelect.h"
 #include"operations/opDelete.h"
@@ -67,6 +68,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case CHNG_S_FILL_CLR:
 			pOp = new opChangeFill(this);
+			break;
+		case CHNG_DRAW_CLR:
+			pOp = new opChangePenColor(this);
 			break;
 		case Select:
 			pOp = new opSelect(this);

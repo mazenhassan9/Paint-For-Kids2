@@ -1,0 +1,2 @@
+1
+Polygon   0    Point0 (280 , 208)    Point1 (252 , 246)    Point2 (207 , 231)    Point3 (207 , 184)    Point4 (252 , 169)    Drawing Color R: 135 G: 206 B: 235   Non_Filled

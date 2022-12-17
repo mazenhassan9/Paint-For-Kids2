@@ -98,7 +98,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_OVAL: return DRAW_OVAL;
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
 			case ICON_PENWIDTH: return PENWIDTH;
-			case ICON_PEN: return PEN;
+			case ICON_PEN: return CHNG_DRAW_CLR;
 			case ICON_Borderwidth: return BORDER_WIDTH;
 			case ICON_Select: return Select;
 			case ICON_Delete: return DEL;
@@ -313,6 +313,8 @@ color GUI::getCrntFillColor() const	//get current filling color
 	
 	return FillColor; 
 } 
+            ////////////////////////////////////////////////////////////
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -506,6 +508,10 @@ void GUI::setFillColor(color c)
 	FillColor=c;
 	
 }
+void GUI::setPenColor(color p)
+{
+	DrawColor=p;
+}
 void GUI::setPenwidth(double p)
 {
 
@@ -526,6 +532,7 @@ bool GUI::getdefaultfilled()
 {
 	return defaultFill;
 }
+
 
 
 bool GUI::IsinDrawingArea(int x, int y) const

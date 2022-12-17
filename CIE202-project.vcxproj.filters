@@ -183,6 +183,9 @@
     </ClCompile>
     <ClCompile Include="operations\opBorderwidth.cpp" />
     <ClCompile Include="operations\opSave.cpp" />
+    <ClCompile Include="opChangePenColor.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -330,6 +333,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opSave.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opChangePenColor.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>
