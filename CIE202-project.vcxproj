@@ -179,6 +179,7 @@
     <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opDrawingArea.cpp" />
     <ClCompile Include="operations\opGeneralfillcolor.cpp" />
+    <ClCompile Include="operations\opLoad.cpp" />
     <ClCompile Include="operations\oppAddLine.cpp" />
     <ClCompile Include="operations\oppAddOval.cpp" />
     <ClCompile Include="operations\opPenwidth.cpp" />
@@ -232,6 +233,7 @@
     <ClInclude Include="operations\opDrawingArea.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="operations\opGeneralfillcolor.h" />
+    <ClInclude Include="operations\opLoad.h" />
     <ClInclude Include="operations\oppAddLine.h" />
     <ClInclude Include="operations\oppAddOval.h" />
     <ClInclude Include="operations\opPenwidth.h" />
