@@ -182,6 +182,7 @@
       <Filter>Operations</Filter>
     </ClCompile>
     <ClCompile Include="operations\opBorderwidth.cpp" />
+    <ClCompile Include="operations\opSave.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -326,6 +327,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opBorderwidth.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opSave.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

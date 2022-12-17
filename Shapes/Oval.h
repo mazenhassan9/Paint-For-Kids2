@@ -12,7 +12,7 @@ public:
 	virtual ~Oval();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
-
+	virtual string Getinfo() const;
 };
 
 

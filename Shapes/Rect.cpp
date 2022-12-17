@@ -22,3 +22,20 @@ bool Rect::Get(int x, int y) const
 		return true;
 	return false;
 }
+
+string Rect::Getinfo() const
+{
+	string FillColor;
+	if (ShpGfxInfo.isFilled)
+		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
+	else
+		FillColor = "Non_Filled";
+	ShpGfxInfo.DrawClr.ucRed;
+
+	string message = "Rectangle   " + to_string(ID) + "    Point1 (" + to_string(Corner1.x) + " , " + to_string(Corner1.y) + ")"
+		+ "    Point2 (" + to_string(Corner2.x) + " , " + to_string(Corner2.y) + ")"
+		+ "    Drawing Color R: " + to_string(ShpGfxInfo.DrawClr.ucRed) + " G: " + to_string(ShpGfxInfo.DrawClr.ucGreen) + " B: " + to_string(ShpGfxInfo.DrawClr.ucBlue)
+		+ "   " + FillColor;
+	return message;
+}
+

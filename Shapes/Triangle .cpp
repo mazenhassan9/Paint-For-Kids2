@@ -25,3 +25,20 @@ bool Triangle::Get(int x, int y) const
 	double c = 1 - a - b;
 	return (0 <= a && a <= 1 && 0 <= b && b <= 1 && 0 <= c && c <= 1);
 }
+
+string Triangle::Getinfo() const
+{
+	string FillColor;
+	if (ShpGfxInfo.isFilled)
+		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
+	else
+		FillColor = "Non_Filled";
+	ShpGfxInfo.DrawClr.ucRed;
+
+	string message = "Triangle   " + to_string(ID) + "    Point1 (" + to_string(Corner1.x) + " , " + to_string(Corner1.y) + ")"
+		+ "    Point2 (" + to_string(Corner2.x) + " , " + to_string(Corner2.y) + ")"
+		+ "    Point3 (" + to_string(Corner3.x) + " , " + to_string(Corner3.y) + ")"
+		+ "    Drawing Color R: " + to_string(ShpGfxInfo.DrawClr.ucRed) + " G: " + to_string(ShpGfxInfo.DrawClr.ucGreen) + " B: " + to_string(ShpGfxInfo.DrawClr.ucBlue)
+		+ "   " + FillColor;
+	return message;
+}

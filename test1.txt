@@ -1,0 +1,3 @@
+Polygon   0    Point0 (232 , 216)    Point1 (197 , 263)    Point2 (141 , 245)    Point3 (141 , 186)    Point4 (197 , 168)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
+Square   1    Center (385 , 236)    Sidelen (4.000000 , 4.000000)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
+Oval   2    Point1 (484 , 304)    Point2 (586 , 363)    Drawing Color R: 0 G: 0 B: 255   Non_Filled

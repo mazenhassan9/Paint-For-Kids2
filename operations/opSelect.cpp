@@ -30,6 +30,7 @@ void opSelect::Execute()
 		else
 		{
 			S1->SetSelected(true);
+			pUI->PrintMessage(S1->Getinfo());
 			pGr->SetSelected(S1, true);
 		}
 	}
@@ -37,7 +38,7 @@ void opSelect::Execute()
 	{
 		pUI->PrintMessage("Select Operation, No Shape Selected");
 	}
-	pUI->ClearStatusBar();
+	
 
 	
 

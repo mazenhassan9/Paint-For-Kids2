@@ -13,6 +13,7 @@ public:
 	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
+	virtual string Getinfo() const;
 
 	bool onLine(line l1, Point p)const;
 

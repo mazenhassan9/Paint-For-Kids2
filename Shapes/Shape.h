@@ -9,6 +9,7 @@ class shape
 protected:
 	int ID;		//Each shape has an ID
 	GfxInfo ShpGfxInfo;	//shape graphis info
+	static int Shapes_Count;
 	/*bool Issaved;*/
 	/// Add more parameters if needed.
 
@@ -19,10 +20,14 @@ public:
 	bool IsSelected() const;	//check whether fig is selected
 
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
+	virtual string Getinfo() const = 0;  	//print all figure info on the status bar
 	
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setBorderwidth(double bw);
+	static int Get_Count();
+	
+
 
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape

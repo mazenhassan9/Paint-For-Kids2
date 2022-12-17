@@ -1,5 +1,6 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
+#include<fstream>
 
 Graph::Graph()
 {
@@ -67,6 +68,19 @@ void Graph::Draw(GUI* pUI) const
 vector <shape*>Graph::getlistofshspes()
 {
 	return shapesList;
+}
+
+void Graph::Save(ofstream& outfile)
+{
+	outfile << shapesList[0]->Get_Count() << endl;
+	for (auto& itr : shapesList)
+	{
+		outfile << itr->Getinfo() << endl;
+	}
+}
+
+void Graph::load(ifstream& inputfile)
+{
 }
 
 shape* Graph::Getshape(int x, int y) const

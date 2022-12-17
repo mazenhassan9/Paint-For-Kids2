@@ -25,3 +25,21 @@ bool Square::Get(int x, int y) const
 		return true;
 	return false;
 }
+
+string Square::Getinfo() const
+{
+
+	string FillColor;
+	if (ShpGfxInfo.isFilled)
+		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
+	else
+		FillColor = "Non_Filled";
+	ShpGfxInfo.DrawClr.ucRed;
+
+	string message = "Square   " + to_string(ID) + "    Center (" + to_string(origin.x) + " , " + to_string(origin.y) + ")"
+		+ "    Sidelen (" + to_string(sidelent) + " , " + to_string(sidelent) + ")"
+		+ "    Drawing Color R: " + to_string(ShpGfxInfo.DrawClr.ucRed) + " G: " + to_string(ShpGfxInfo.DrawClr.ucGreen) + " B: " + to_string(ShpGfxInfo.DrawClr.ucBlue)
+		+ "   " + FillColor;
+	return message;
+}
+

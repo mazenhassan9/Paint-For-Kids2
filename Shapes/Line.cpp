@@ -25,3 +25,21 @@ bool Line::Get(int x, int y) const
 		return true;
 	return false;
 }
+
+string Line::Getinfo() const
+{
+	string FillColor;
+	if (ShpGfxInfo.isFilled)
+		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
+	else
+		FillColor = "Non_Filled";
+	ShpGfxInfo.DrawClr.ucRed;
+
+	string message = "Line   " + to_string(ID) + "    Point1 (" + to_string(P1.x) + " , " + to_string(P1.y) + ")"
+		+ "    Point2 (" + to_string(P2.x) + " , " + to_string(P2.y) + ")"
+		+ "    Drawing Color R: " + to_string(ShpGfxInfo.DrawClr.ucRed) + " G: " + to_string(ShpGfxInfo.DrawClr.ucGreen) + " B: " + to_string(ShpGfxInfo.DrawClr.ucBlue)
+		+ "   " + FillColor;
+	return message;
+}
+
+

@@ -1,0 +1,4 @@
+3
+Square   0    Center (256 , 239)    Sidelen (100.000000 , 100.000000)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
+Polygon   1    Point0 (469 , 224)    Point1 (544 , 334)    Point2 (699 , 346)    Point3 (761 , 430)    Point4 (864 , 305)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
+Triangle   2    Point1 (71 , 209)    Point2 (34 , 373)    Point3 (137 , 378)    Drawing Color R: 0 G: 0 B: 255   Non_Filled

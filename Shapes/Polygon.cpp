@@ -46,6 +46,27 @@ bool polygon::Get(int x, int y) const
 	// When count is odd
 	return count & 1;
 }
+string polygon::Getinfo() const
+{
+	string FillColor;
+	if (ShpGfxInfo.isFilled)
+		FillColor = "Filled  Color R: " + to_string(ShpGfxInfo.FillClr.ucRed) + " G: " + to_string(ShpGfxInfo.FillClr.ucGreen) + " B: " + to_string(ShpGfxInfo.FillClr.ucBlue);
+	else
+		FillColor = "Non_Filled";
+	ShpGfxInfo.DrawClr.ucRed;
+
+	string message = "Polygon   " + to_string(ID);
+	for (int i = 0; i < vertices; i++)
+	{
+		message += "    Point" +to_string(i)+ " (" + to_string(Corners[i].x) + " , " + to_string(Corners[i].y) + ")";
+	}
+		
+		message += "    Drawing Color R: " + to_string(ShpGfxInfo.DrawClr.ucRed) + " G: " + to_string(ShpGfxInfo.DrawClr.ucGreen) + " B: " + to_string(ShpGfxInfo.DrawClr.ucBlue)
+		+ "   " + FillColor;
+
+	return message;
+}
+
 bool polygon::onLine(line l1, Point p) const
 {
 	// Check whether p is on the line or not

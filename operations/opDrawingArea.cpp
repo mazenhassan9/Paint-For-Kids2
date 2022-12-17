@@ -17,6 +17,7 @@ void opDrawingArea::Execute()
 	GUI* pUI = pControl->GetUI();
 	
 	shape* S2 = pGr->GetSelected();
+	pUI->ClearStatusBar();
 	if (S2)
 	{
 		S2->SetSelected(false);
