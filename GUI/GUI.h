@@ -52,6 +52,7 @@ class GUI
 		ICON_Fillcolor,
 		ICON_PENWIDTH,
 		ICON_PEN,
+		ICON_Borderwidth,
 		ICON_Select ,
 		ICON_Delete ,
 		ICON_COPY,
@@ -61,9 +62,7 @@ class GUI
 		ICON_Rotate ,
 		Icon_Save,
 		ICON_Load ,
-
 		ICON_Single_Fill,
-
 		ICON_SWITCH ,
 		ICON_EXIT,		//Exit icon
 
@@ -106,7 +105,8 @@ class GUI
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
-	int PenWidth;			//width of the pen that draws shapes
+	int PenWidth;	
+	double Borderwidth;    //width of the pen that draws shapes
 	bool defaultFill=0;
 
 	/// Add more members if needed
@@ -155,10 +155,10 @@ public:
 	int getCrntPenWidth() const;		//get current pen width
 	void setFillColor(color c);
 	void setPenwidth(double p);
+	void setBorderwidth(double bw);
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();
-
 
 	bool IsinDrawingArea(int x, int y) const;
 	~GUI();

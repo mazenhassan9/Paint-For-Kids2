@@ -21,5 +21,11 @@ void shape::ChngFillClr(color Fclr)
 	ShpGfxInfo.FillClr = Fclr; 
 }
 
+void shape::setBorderwidth(double bw)
+{
+
+	ShpGfxInfo.BorderWdth = bw;
+}
+
 
 

@@ -99,6 +99,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
 			case ICON_PENWIDTH: return PENWIDTH;
 			case ICON_PEN: return PEN;
+			case ICON_Borderwidth: return BORDER_WIDTH;
 			case ICON_Select: return Select;
 			case ICON_Delete: return DEL;
 			case ICON_COPY: return COPY;
@@ -108,12 +109,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_Rotate: return ROTATE;
 			case Icon_Save: return SAVE;
 			case ICON_Load: return LOAD;
-
 			case ICON_Single_Fill: return CHNG_S_FILL_CLR;
-
-
 			case ICON_SWITCH: return SWITCH;
-
 			case ICON_EXIT: return EXIT;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -191,6 +188,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Fillcolor] = "images\\MenuIcons\\Menu_Fillcolor.jpg";
 	MenuIconImages[ICON_PENWIDTH] = "images\\MenuIcons\\PENWIDTH.jpg";
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\pen.jpg";
+	MenuIconImages[ICON_Borderwidth] = "images\\MenuIcons\\BORDERWIDTH.jpg";
 	MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
 	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\copy.jpg";
@@ -200,9 +198,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Rotate] = "images\\MenuIcons\\Rotate.jpg";
 	MenuIconImages[Icon_Save] = "images\\MenuIcons\\Save.jpg";
 	MenuIconImages[ICON_Load] = "images\\MenuIcons\\Load.jpg";
-
 	MenuIconImages[ICON_Single_Fill] = "images\\MenuIcons\\Menu_Single_Fill_color.jpg";
-
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\SWITCH.JPG";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 
@@ -514,6 +510,12 @@ void GUI::setPenwidth(double p)
 {
 
 	PenWidth = p;
+
+}
+void GUI::setBorderwidth(double bw)
+{
+
+	Borderwidth = bw;
 
 }
 void GUI::changedefaultfilled(bool defill)

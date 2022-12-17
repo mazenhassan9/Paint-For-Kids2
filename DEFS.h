@@ -35,7 +35,7 @@ enum operationType //The operations supported (you can add more if needed)
 	PENWIDTH ,
 	PEN,
 	SWITCH ,
-
+	BORDER_WIDTH ,
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,	//A click on the drawing area

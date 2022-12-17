@@ -12,7 +12,7 @@
 #include"operations/opSelect.h"
 #include"operations/opDelete.h"
 #include"operations/opChangeFill.h"
-
+#include "operations/opBorderwidth.h"
 #include "operations/opPenwidth.h"
 #include"operations/opDrawingArea.h"
 //Constructor
@@ -87,7 +87,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAWING_AREA:
 			pOp = new opDrawingArea(this);
 			break;
-
+		case BORDER_WIDTH:
+			pOp = new opBorderwidth(this);
+			break;
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
 	}
