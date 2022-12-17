@@ -194,6 +194,9 @@
     <ClCompile Include="operations\opSwitch.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="opChangeBorderColor.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -350,6 +353,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opSwitch.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opChangeBorderColor.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

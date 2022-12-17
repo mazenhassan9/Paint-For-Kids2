@@ -100,6 +100,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PENWIDTH: return PENWIDTH;
 			case ICON_PEN: return CHNG_DRAW_CLR;
 			case ICON_Borderwidth: return BORDER_WIDTH;
+			case ICON_Bordercolor: return CHNG_BOR_CLR;
 			case ICON_Select: return Select;
 			case ICON_Delete: return DEL;
 			case ICON_COPY: return COPY;
@@ -206,6 +207,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_PENWIDTH] = "images\\MenuIcons\\PENWIDTH.jpg";
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\pen.jpg";
 	MenuIconImages[ICON_Borderwidth] = "images\\MenuIcons\\BORDERWIDTH.jpg";
+	MenuIconImages[ICON_Bordercolor] = "images\\MenuIcons\\bordercolor.jpg";
 	MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
 	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\copy.jpg";
