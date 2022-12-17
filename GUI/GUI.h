@@ -50,29 +50,39 @@ class GUI
 		ICON_Reg ,
 		ICON_Irreg ,
 		ICON_Fillcolor,
+		ICON_PENWIDTH,
+		ICON_PEN,
 		ICON_Select ,
 		ICON_Delete ,
-		Icon_Save ,
-		Icon_Resize ,
+		ICON_COPY,
+		ICON_CUT,
+		ICON_PASTE,
+		ICON_Resize ,
 		ICON_Rotate ,
+		Icon_Save,
 		ICON_Load ,
+
 		ICON_Single_Fill,
+
+		ICON_SWITCH ,
+		ICON_EXIT,		//Exit icon
+
+
 
 
 
 
 		//TODO: Add more icons names here
 
-		ICON_EXIT,		//Exit icon
-
+		
 		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
 	};
 
 	enum PlayMenuIcon //The icons of the Play menu (you should add more icons)
 	{
-		//Note: Icons are ordered here as they appear in menu
-		//If you want to change the menu icons order, change the order here
+		EXiT,//Note: Icons are ordered here as they appear in menu
+	COLOR ,	//If you want to change the menu icons order, change the order here
 
 		//TODO: Add more icons names here
 
@@ -144,9 +154,11 @@ public:
 
 	int getCrntPenWidth() const;		//get current pen width
 	void setFillColor(color c);
+	void setPenwidth(double p);
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();
+;
 	~GUI();
 };
 

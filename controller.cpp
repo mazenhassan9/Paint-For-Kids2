@@ -13,6 +13,7 @@
 #include"operations/opDelete.h"
 #include"operations/opChangeFill.h"
 
+#include "operations/opPenwidth.h"
 //Constructor
 controller::controller()
 {
@@ -78,6 +79,10 @@ operation* controller::createOperation(operationType OpType)
 		case CHNG_FILL_CLR:
 			pOp = new opGeneralfillcolor(this);
 			break;
+		case PENWIDTH :
+			pOp = new opPenwidth(this);
+			break;
+
 
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
