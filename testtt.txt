@@ -1,0 +1,2 @@
+1
+Line   0    Point1 (181 , 163)    Point2 (489 , 278)    Drawing Color R: 0 G: 0 B: 255   Non_Filled

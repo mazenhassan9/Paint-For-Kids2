@@ -46,6 +46,7 @@ void opLoad::Execute()
 	}
 
 	else
-		pUI->PrintMessage("Error: Could not open the file!");{
+		pUI->PrintMessage("Error: Could not open the file!");
+
 }
 
