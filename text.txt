@@ -1,0 +1,3 @@
+3
+Triangle   0    Point1 (454 , 196)    Point2 (397 , 260)    Point3 (538 , 275)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
+Polygon   2    Point0 (223 , 282)    Point1 (162 , 316)    Point2 (163 , 247)    Drawing Color R: 0 G: 0 B: 255   Non_Filled

@@ -17,6 +17,7 @@
 #include "operations/opPenwidth.h"
 #include"operations/opDrawingArea.h"
 #include"operations/opSave.h"
+#include"operations/opLoad.h"
 //Constructor
 controller::controller()
 {
@@ -81,7 +82,9 @@ operation* controller::createOperation(operationType OpType)
 		case SAVE:
 			pOp = new opSave(this);
 			break;
-
+		case LOAD:
+			pOp = new opLoad(this);
+			break;
 		case EXIT:
 			///create Exitoperation here
 			pOp = new opAddExit(this);
@@ -183,6 +186,4 @@ void controller::Run()
 
 	} while (OpType != EXIT);
 
-	//when operation is exit delete controller
-	delete this;
 }

@@ -19,12 +19,13 @@ void opLoad::Execute()
 	GUI* pUI = pControl->GetUI();
 	Graph* pGr = pControl->getGraph();
 	shape* bw = pGr->GetSelected();
+	pUI->PrintMessage("Load Operation, Please Enter File name");
+	string FileName = pUI->GetSrting();
 	File.open(FileName, ios::in);
 	int Figcount;
 
 	if (File.is_open())     //Check if There is a File with this Name or Not
 	{
-		pUI->PrintMessage("enter file name");
 		pUI->ClearDrawArea();
 		string Fig;
 		int FCount;
@@ -35,7 +36,8 @@ void opLoad::Execute()
 		
 
 			LFig->load(File);
-			
+
+			//pGr->Save(File);
 			LFig = NULL;
 
 		
