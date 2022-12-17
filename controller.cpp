@@ -183,4 +183,6 @@ void controller::Run()
 
 	} while (OpType != EXIT);
 
+	//when operation is exit delete controller
+	delete this;
 }

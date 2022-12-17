@@ -9,6 +9,11 @@ Graph::Graph()
 
 Graph::~Graph()
 {
+	while (shapesList.size() != 0)
+	{
+		delete* shapesList.begin();
+		shapesList.erase(shapesList.begin());
+	}
 }
 
 //==================================================================================//
@@ -72,7 +77,7 @@ vector <shape*>Graph::getlistofshspes()
 
 void Graph::Save(ofstream& outfile)
 {
-	outfile << shapesList[0]->Get_Count() << endl;
+	outfile << shapesList.size() << endl;
 	for (auto& itr : shapesList)
 	{
 		outfile << itr->Getinfo() << endl;
