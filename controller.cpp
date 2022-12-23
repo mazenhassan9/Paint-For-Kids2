@@ -172,6 +172,7 @@ controller::~controller()
 //==================================================================================//
 void controller::Run()
 {
+	pGUI->colorpalette();
 	operationType OpType;
 	do
 	{
@@ -195,6 +196,6 @@ void controller::Run()
 		UpdateInterface();
 
 	} while (OpType != EXIT);
-//	delete this;
+//delete this;
 
 }
