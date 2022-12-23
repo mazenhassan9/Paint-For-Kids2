@@ -3,6 +3,8 @@
 Square::Square()
 {
 	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+
 }
 
 Square::Square(Point P1, double sidelen, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)

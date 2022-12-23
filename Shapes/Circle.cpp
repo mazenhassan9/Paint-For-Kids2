@@ -2,6 +2,8 @@
 Circle::Circle()
 {
 	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+
 }
 Circle::Circle(Point circenter, Point radius, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {

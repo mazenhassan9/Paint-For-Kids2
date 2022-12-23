@@ -4,6 +4,8 @@
 Triangle::Triangle()
 {
 	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+
 }
 
 Triangle::Triangle(Point p1, Point p2,Point p3 , GfxInfo shapeGfxInfo) : shape (shapeGfxInfo)

@@ -36,7 +36,7 @@ void opAddCircle::Execute()
 	//get drawing, filling colors and pen width from the interface
 	CircleGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	CircleGfxInfo.FillClr = pUI->getCrntFillColor();
-	CircleGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	CircleGfxInfo.BorderWdth = pUI->getBorderwidth();
 
 
 	CircleGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled

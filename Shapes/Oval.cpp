@@ -4,6 +4,8 @@
 Oval::Oval()
 {
 	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+
 }
 
 Oval::Oval(Point point1, Point point2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)

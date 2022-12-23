@@ -3,6 +3,8 @@
 Rect::Rect()
 {
 	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+
 }
 
 Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)

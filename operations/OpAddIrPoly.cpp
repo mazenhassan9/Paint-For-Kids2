@@ -52,7 +52,7 @@ void opAddIrPoly::Execute()
 	//get drawing, filling colors and pen width from the interface
 	PolyGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	PolyGfxInfo.FillClr = pUI->getCrntFillColor();
-	PolyGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	PolyGfxInfo.BorderWdth = pUI->getBorderwidth();
 
 
 	PolyGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled

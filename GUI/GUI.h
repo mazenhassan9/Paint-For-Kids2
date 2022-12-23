@@ -159,6 +159,7 @@ public:
 	void setPenColor(color p);
 	void setPenwidth(double p);
 	void setBorderwidth(double bw);
+	double getBorderwidth() const;
 	color colorpalette();
 	void changedefaultfilled(bool defill);
 	bool getdefaultfilled();

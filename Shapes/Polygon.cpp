@@ -3,6 +3,8 @@
 polygon::polygon()
 {
 	ShpGfxInfo.isFilled = false;
+	ShpGfxInfo.isSelected = false;
+
 }
 
 polygon::polygon(vector <Point> C,int N, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)

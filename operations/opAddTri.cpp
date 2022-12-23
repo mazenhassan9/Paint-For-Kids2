@@ -46,7 +46,7 @@ void opAddTri::Execute()
 	//get drawing, filling colors and pen width from the interface
 	TriGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	TriGfxInfo.FillClr = pUI->getCrntFillColor();
-	TriGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	TriGfxInfo.BorderWdth = pUI->getBorderwidth();
 
 
 	TriGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled

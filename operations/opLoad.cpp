@@ -20,14 +20,31 @@ void opLoad::Execute()
 	pUI->PrintMessage("Load Operation, Please Enter File name");
 	string FileName = pUI->GetSrting();
 	File.open(FileName, ios::in);
-
+	string condition;
 	pUI->changedefaultfilled(false);
-
+	int DR, DG, DB;
+	int FR, FG, FB;
+	double Borderwidth;
 	if (File.is_open())     //Check if There is a File with this Name or Not
 	{
-		//pUI->ClearDrawArea();
+		File >> condition;
+		if (condition == "False")
+		{
+			File >> DR >> DG >>  DB >>  Borderwidth;
+			pUI->setBorderwidth(Borderwidth);
+			pUI->setPenColor(color(DR, DG, DB));
+
+		}
+		else
+		{
+			File >> DR >>  DG >>  DB >>  FR >>  FG >>  FB >> Borderwidth;
+			pUI->setBorderwidth(Borderwidth);
+			pUI->setPenColor(color(DR, DG, DB));
+			pUI->setFillColor(color(FR, FG, FB));
+			pUI->changedefaultfilled(true);
+
+		}
 		pGr->load(File);
-		
 		File.close();
 		pUI->ClearStatusBar();
 		pUI->PrintMessage("File is Loaded Successfully");

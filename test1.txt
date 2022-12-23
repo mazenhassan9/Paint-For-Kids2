@@ -1,3 +1,11 @@
-Polygon   0    Point0 (232 , 216)    Point1 (197 , 263)    Point2 (141 , 245)    Point3 (141 , 186)    Point4 (197 , 168)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
-Square   1    Center (385 , 236)    Sidelen (4.000000 , 4.000000)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
-Oval   2    Point1 (484 , 304)    Point2 (586 , 363)    Drawing Color R: 0 G: 0 B: 255   Non_Filled
+True  135  206  235  211  211  211  5
+9
+RECT  0  96  146  150  177  0  0  255  False
+OVAL  1  43  233  97  279  0  0  255  False
+CIRCLE  2  146  333  253  385  0  0  255  False
+LINE  3  87  379  164  382  0  0  255  
+TRIANGLE  4  132  312  111  351  161  344  0  0  255  False
+SQUARE  5  344  256  400  312  0  0  255  False
+POLYGON  6  6  580  241  549  292  489  292  460  240  490  189  550  189  0  0  255  True  210  180  140
+POLYGON  7  5  468  390  490  435  564  434  669  419  738  375  0  0  255  False
+POLYGON  8  5  840  234  805  281  749  263  749  204  805  186  135  206  235  True  211  211  211

@@ -104,7 +104,6 @@ void Graph::load(ifstream& inputfile)
 	while(inputfile >> name)
 	{
 		
-		cout << name << endl;
 		if (name == "CIRCLE")
 			R = new Circle;
 		else if (name == "LINE")
@@ -123,7 +122,6 @@ void Graph::load(ifstream& inputfile)
 		if (R)
 		{
 			R->Load(inputfile);
-			cout << R->Getinfo() << endl;
 			Addshape(R);
 			R = NULL;
 		}

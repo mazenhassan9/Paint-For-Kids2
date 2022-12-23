@@ -36,7 +36,7 @@ void opAddSquare::Execute()
 	//get drawing, filling colors and pen width from the interface
 	SquareGfxInfo.DrawClr = pUI->getCrntDrawColor();
 	SquareGfxInfo.FillClr = pUI->getCrntFillColor();
-	SquareGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	SquareGfxInfo.BorderWdth = pUI->getBorderwidth();
 
 
 	SquareGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled

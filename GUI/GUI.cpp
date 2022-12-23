@@ -23,7 +23,7 @@ GUI::GUI()
 	HighlightColor = MAGENTA;	//This color should NOT be used to draw shapes. use if for highlight only
 	StatusBarColor = LIGHTSEAGREEN;
 	PenWidth = 3;	//default width of the shapes frames
-
+	Borderwidth = 4;
 
 	//Create the output window
 	pWind = CreateWind(width, height, wx, wy);
@@ -362,16 +362,20 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	else
 		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	if (RectGfxInfo.BorderWdth>0)
 
-	drawstyle style;
+		pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	else
+		pWind->SetPen(DrawingClr, Borderwidth);
+
+	drawstyle style = FRAME;
 	if (RectGfxInfo.isFilled)
 	{
 		style = FILLED;
 		pWind->SetBrush(RectGfxInfo.FillClr);
 	}
-	else
-		style = FRAME;
+	
+		
 	pWind->DrawRectangle(P1.x, P1.y, P2.x,P2.y, style);
 	
 	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);*/
@@ -386,7 +390,11 @@ void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 	else
 		DrawingClr = SquareGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, SquareGfxInfo.BorderWdth);	//Set Drawing color & width
+	if (SquareGfxInfo.BorderWdth>0)
+
+		pWind->SetPen(DrawingClr, SquareGfxInfo.BorderWdth);	//Set Drawing color & width
+	else
+		pWind->SetPen(DrawingClr, Borderwidth);
 
 	drawstyle style;
 	if (SquareGfxInfo.isFilled)
@@ -409,7 +417,11 @@ void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 	else
 		DrawingClr = RectGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	if (RectGfxInfo.BorderWdth>0)
+
+		pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+	else
+		pWind->SetPen(DrawingClr, Borderwidth);
 
 	drawstyle style;
 	if (RectGfxInfo.isFilled)
@@ -433,8 +445,11 @@ void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 		else
 			DrawingClr = CircleGfxInfo.DrawClr;
 
-		pWind->SetPen(DrawingClr, CircleGfxInfo.BorderWdth);	//Set Drawing color & width
-
+		if(CircleGfxInfo.BorderWdth>0)
+		
+			pWind->SetPen(DrawingClr, CircleGfxInfo.BorderWdth);	//Set Drawing color & width
+		else
+			pWind->SetPen(DrawingClr, Borderwidth);
 		drawstyle style;
 		if (CircleGfxInfo.isFilled)
 		{
@@ -465,7 +480,11 @@ void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const
 	else
 		DrawingClr = PolyGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, PolyGfxInfo.BorderWdth);	//Set Drawing color & width
+	if (PolyGfxInfo.BorderWdth>0)
+
+		pWind->SetPen(DrawingClr, PolyGfxInfo.BorderWdth);	//Set Drawing color & width
+	else
+		pWind->SetPen(DrawingClr, Borderwidth);
 
 	drawstyle style;
 	if (PolyGfxInfo.isFilled)
@@ -489,8 +508,11 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	else
 		DrawingClr = LineGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
+	if (LineGfxInfo.BorderWdth>0)
 
+		pWind->SetPen(DrawingClr, LineGfxInfo.BorderWdth);	//Set Drawing color & width
+	else
+		pWind->SetPen(DrawingClr, Borderwidth);
 	drawstyle style;
 	
 	
@@ -507,7 +529,11 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	else
 		DrawingClr = OvalGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, OvalGfxInfo.BorderWdth);	//Set Drawing color & width
+	if (OvalGfxInfo.BorderWdth>0)
+
+		pWind->SetPen(DrawingClr, OvalGfxInfo.BorderWdth);	//Set Drawing color & width
+	else
+		pWind->SetPen(DrawingClr, Borderwidth);
 
 	drawstyle style;
 	if (OvalGfxInfo.isFilled)
@@ -543,6 +569,10 @@ void GUI::setBorderwidth(double bw)
 
 	Borderwidth = bw;
 
+}
+double GUI::getBorderwidth() const
+{
+	return Borderwidth;
 }
 void GUI::changedefaultfilled(bool defill)
 {
