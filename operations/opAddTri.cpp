@@ -41,20 +41,20 @@ void opAddTri::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all triangle parameters
-	GfxInfo RectGfxInfo;
+	GfxInfo TriGfxInfo;
 
 	//get drawing, filling colors and pen width from the interface
-	RectGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RectGfxInfo.FillClr = pUI->getCrntFillColor();
-	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	TriGfxInfo.DrawClr = pUI->getCrntDrawColor();
+	TriGfxInfo.FillClr = pUI->getCrntFillColor();
+	TriGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RectGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled
-	RectGfxInfo.isSelected = false;	//defualt is not selected
+	TriGfxInfo.isFilled = pUI->getdefaultfilled();	//default is not filled
+	TriGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a triangle with the above parameters
-	Triangle* R = new Triangle(P1, P2,P3 , RectGfxInfo);
+	Triangle* R = new Triangle(P1, P2,P3 , TriGfxInfo);
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
