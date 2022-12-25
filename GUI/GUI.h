@@ -86,10 +86,16 @@ class GUI
 		//If you want to change the menu icons order, change the order here
 
 		//TODO: Add more icons names here
+		PLAY_ICON_FIGCOLOR,
+		PLAY_ICON_BACKDRAW,
+		PLAY_ICON_PEXIT,
+
 
 		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
 	};
+
+
 
 
 	GUI_MODE InterfaceMode;

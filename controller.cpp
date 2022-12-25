@@ -21,6 +21,7 @@
 #include"operations/opLoad.h"
 
 #include"operations/opSwitch.h"
+#include "opPlayingArea.h"
 //Constructor
 controller::controller()
 {
@@ -106,6 +107,9 @@ operation* controller::createOperation(operationType OpType)
 		case DRAWING_AREA:
 			pOp = new opDrawingArea(this);
 			break;
+		case TO_PLAY:                         //playing area
+			pOp = new opPlayingArea(this);
+			break;
 		case BORDER_WIDTH:
 			pOp = new opBorderwidth(this);
 			break;
@@ -114,6 +118,7 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
+
 	}
 
 	return pOp;

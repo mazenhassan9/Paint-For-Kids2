@@ -249,9 +249,9 @@ void GUI::CreatePlayToolBar()
 	string MenuItemImages[PLAY_ICON_COUNT];
 	MenuItemImages[PLAY_ICON_SWITCH] = "images\\MenuIcons\\SWITCH.JPG";
 	MenuItemImages[PLAY_ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
-	//MenuItemImages[ITM_FIGCOLOR] = "images\\MenuItems\\Pick_by_both.jpg";
-	//MenuItemImages[ITM_BACKDRAW] = "images\\MenuItems\\Draw.jpg";
-	//MenuItemImages[ITM_PEXIT] = "images\\MenuItems\\Menu_Exit.jpg";
+	MenuItemImages[PLAY_ICON_FIGCOLOR] = "images\\MenuItems\\Pick_by_both.jpg";
+	MenuItemImages[PLAY_ICON_BACKDRAW] = "images\\MenuItems\\Draw.jpg";
+	MenuItemImages[PLAY_ICON_PEXIT] = "images\\MenuItems\\Menu_Exit.jpg";
 
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
 		pWind->DrawImage(MenuItemImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
