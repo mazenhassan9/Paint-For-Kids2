@@ -197,6 +197,7 @@
     <ClCompile Include="Shapes\Rect.cpp" />
     <ClCompile Include="Shapes\Square.cpp" />
     <ClCompile Include="Shapes\Triangle .cpp" />
+    <ClCompile Include="StartGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
@@ -255,6 +256,7 @@
     <ClInclude Include="Shapes\Rect.h" />
     <ClInclude Include="Shapes\Square.h" />
     <ClInclude Include="Shapes\Triangle .h" />
+    <ClInclude Include="StartGame.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CIE202-project.rc" />

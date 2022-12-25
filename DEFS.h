@@ -40,6 +40,7 @@ enum operationType //The operations supported (you can add more if needed)
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,	//A click on the drawing area
+	PLAYING_AREA,
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
 

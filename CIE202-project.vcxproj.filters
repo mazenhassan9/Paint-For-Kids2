@@ -197,7 +197,12 @@
     <ClCompile Include="opChangeBorderColor.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
-    <ClCompile Include="opPlayingArea.cpp" />
+    <ClCompile Include="opPlayingArea.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="StartGame.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -360,6 +365,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="opPlayingArea.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="StartGame.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

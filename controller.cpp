@@ -17,11 +17,12 @@
 #include "operations/opBorderwidth.h"
 #include "operations/opPenwidth.h"
 #include"operations/opDrawingArea.h"
+#include "opPlayingArea.h"
 #include"operations/opSave.h"
 #include"operations/opLoad.h"
-
 #include"operations/opSwitch.h"
-#include "opPlayingArea.h"
+#include"StartGame.h"
+
 //Constructor
 controller::controller()
 {
@@ -107,7 +108,7 @@ operation* controller::createOperation(operationType OpType)
 		case DRAWING_AREA:
 			pOp = new opDrawingArea(this);
 			break;
-		case TO_PLAY:                         //playing area
+		case PLAYING_AREA:                         //playing area
 			pOp = new opPlayingArea(this);
 			break;
 		case BORDER_WIDTH:
@@ -117,6 +118,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opSwitch(this);
 			break;
 		case STATUS:	//a click on the status bar ==> no operation
+			break;
+		case TO_PLAY:
+			pOp = new StartGame(this);
 			break;
 
 	}

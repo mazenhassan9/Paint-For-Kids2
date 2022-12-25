@@ -81,16 +81,14 @@ class GUI
 
 	enum PlayMenuIcon //The icons of the Play menu (you should add more icons)
 	{
-		PLAY_ICON_SWITCH,
-		PLAY_ICON_EXIT,//Note: Icons are ordered here as they appear in menu
-		//If you want to change the menu icons order, change the order here
 
 		//TODO: Add more icons names here
 		PLAY_ICON_FIGCOLOR,
 		PLAY_ICON_BACKDRAW,
 		PLAY_ICON_PEXIT,
-
-
+		PLAY_ICON_SWITCH,
+		PLAY_ICON_EXIT,//Note: Icons are ordered here as they appear in menu
+		//If you want to change the menu icons order, change the order here
 		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -171,6 +169,7 @@ public:
 	bool getdefaultfilled();
 	int getInterfaceMode()const;
 	bool IsinDrawingArea(int x, int y) const;
+	bool IsinPlayingArea(int x, int y) const;
 	~GUI();
 };
 
