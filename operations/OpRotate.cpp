@@ -15,7 +15,7 @@ void OpRotate::Execute()
 {
 	
 	Graph* pGr = pControl->getGraph();
-	shape* sh = pGr->GetSelected();
+	shape* sh = pGr->GetLastSelected();
 
 	GUI* pUI = pControl->GetUI();
 	

@@ -58,29 +58,23 @@ void polygon::Rotate()
 
 	}
 	//cout << " X " << Corners[i].x << " Y " << Corners[i].y << endl;
-	double cx=centerx /= vertices;
-	double cy = centery /= vertices;
+	centerx  /= vertices;
+	centery  /= vertices;
 
 	
 		
-	
+	int x, y;
 
 	double PI = 3.14;
 
 	for (int i = 0 ;i < vertices; i++)
 	{
-		this->Corners[i].x = ((Corners[i].x - cx) * cos(PI / 2) - (Corners[i].x - cx) * sin(PI / 2)) + cx;
-		this->Corners[i].y = ((Corners[i].y - cy) * cos(PI / 2) - (Corners[i].y - cy) * sin(PI / 2)) + cy;
-		cout << " X " << Corners[i].x << " Y " << Corners[i].y  << endl;
+		x = Corners[i].x - centerx;
+		y = Corners[i].y - centery;
+
+		this->Corners[i].x = (x * cos(PI / 2) - y * sin(PI / 2)) + centerx;
+		this->Corners[i].y = (x * sin(PI / 2) + y * cos(PI / 2)) + centery;
 	}
-
-
-
-
-
-
-
-	
 
 
 }

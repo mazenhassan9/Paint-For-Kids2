@@ -18,7 +18,7 @@ void opChangeBorderColor::Execute()
 	Point P1;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
-	shape* bc = pGr->GetSelected();
+	shape* bc = pGr->GetLastSelected();
 	if (bc)
 	{
 		pUI->PrintMessage("pick a color from the window");

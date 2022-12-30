@@ -163,6 +163,10 @@ void GUI::MouseFlush()
 {
 	pWind->FlushMouseQueue();
 }
+void GUI::KeyboardFlush()
+{
+	pWind->FlushKeyQueue();
+}
 bool GUI::Getmouseclik(int& x, int& y)
 {
 	clicktype out = pWind->GetMouseClick(x, y);

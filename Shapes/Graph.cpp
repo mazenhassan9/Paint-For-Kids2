@@ -12,7 +12,7 @@
 
 Graph::Graph()
 {
-	selectedShape = nullptr;
+
 }
 
 Graph::~Graph()
@@ -21,6 +21,11 @@ Graph::~Graph()
 	{
 		delete* shapesList.begin();
 		shapesList.erase(shapesList.begin());
+	}
+	while (selectedShapes.size() != 0)
+	{
+		delete* selectedShapes.begin();
+		selectedShapes.erase(selectedShapes.begin());
 	}
 }
 
@@ -54,18 +59,36 @@ void Graph::SetSelected(shape* pFig, bool flag)
 	if (flag)
 	{
 		
-		selectedShape = pFig;
+		selectedShapes.push_back(pFig);
 	}
 	else
 	{
+		int i = 0;
+		for (auto& itr : selectedShapes)
+		{
+
+			if (pFig == itr)
+			{
+				selectedShapes[i] = selectedShapes.back();
+				selectedShapes.pop_back();
+			}
+			i++;
+		}
 		
-		selectedShape = nullptr;
 	}
 
 }
-shape* Graph::GetSelected() const
+shape* Graph::GetLastSelected() const
 {
-	return selectedShape;
+	if (selectedShapes.size() != 0)
+
+		return selectedShapes[selectedShapes.size()-1];
+	else
+		return nullptr;
+}
+vector<shape*> Graph::GetSelected() 
+{
+	return selectedShapes;
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface

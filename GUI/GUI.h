@@ -136,6 +136,7 @@ public:
 	operationType GetUseroperation() const; //Read the user click and map to an operation
 	bool GetMouseStatus(button B1, int& x, int& y) const;
 	void MouseFlush();
+	void KeyboardFlush();
 	bool Getmouseclik(int& x, int& y);
 
 	// Output Functions  ---------------------------

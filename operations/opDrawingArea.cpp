@@ -14,89 +14,63 @@ opDrawingArea::~opDrawingArea()
 void opDrawingArea::Execute()
 {
 	Point P1,P2;
+	char key = -1;
 	shape* S3;
 	button B1 = LEFT_BUTTON;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 	pUI->ClearStatusBar();
-
-	//Select Operation
+	
+	//Select Operation & multi select.
 
 	pUI->GetLastClick(P1.x, P1.y);
 	shape* S1 = pGr->Getshape(P1.x, P1.y);
-	shape* S2 = pGr->GetSelected();
-	pUI->ClearStatusBar();
-	if (S1)
+	shape* S2 = pGr->GetLastSelected();
+	vector<shape*> Shapes = pGr->GetSelected();
+
+	if (S1) //if shape found
 	{
-		if (S1->IsSelected())
+		if (S1->IsSelected())  //if shape is selected (unselect it)
 		{
 			S1->SetSelected(false);
+			
 			pGr->SetSelected(S1, false);
 		}
-		else
+		else  //if shape is unselected
 		{
-			S1->SetSelected(true);
-			pUI->PrintMessage(S1->Getinfo());
-			pGr->SetSelected(S1, true);
-		}
-	}
-	
-	else if (S2)
-	{
-		S2->SetSelected(false);
-		pGr->SetSelected(S2, false);
-	}
-	
-	
-
-	//Multi Select Operation
-	/*
-	char key;
-	shape* S4;
-	Point P4;
-	pUI->GetLastKey(key);
-	int refresh2 = 0;
-	
-	while (key == 115) //S to select multiple
-	{
-		refresh2++;
-		if(refresh2 == 10)
-		{
-			refresh2 = 0;
-			pUI->GetLastClick(P4.x,P4.y);
-		
-		
-		S4 = pGr->Getshape(P4.x, P4.y);
-		if (S4)
-		{
-			if (S4->IsSelected())
+			S1->SetSelected(true);     //select it
+			pUI->PrintMessage(S1->Getinfo()); //print info
+			pUI->GetLastKey(key); //check if it is a multi select.
+			if (S2 && key !=115)  //if the (s) button is not selected (unselect all) (otherwise the rest will stay be selected)
 			{
-				S4->SetSelected(false);
-				pUI->PrintMessage(S4->Getinfo());
-				pGr->SetSelected(S4, false);
-				cout << "un  Selected " << endl;
+				for (auto& itr : Shapes)
+				{
+					itr->SetSelected(false);
+					pGr->SetSelected(itr, false);
+				}
 
 			}
-			else {
-				S4->SetSelected(true);
-				pUI->PrintMessage(S4->Getinfo());
-				pGr->SetSelected(S4, true);
-				cout << " Selected " << endl;
-			}
+			pGr->SetSelected(S1, true);
 			
 		}
+	}
+	
+	else if (S2) //if the point clicked is not on a shape (therefore background) (and there's a shape selected) (unselect all shapes)
+	{
+		
+		for (auto& itr : Shapes)
+		{
+			itr->SetSelected(false);
+			pGr->SetSelected(itr, false);
 		}
-		//delete S4;
-		S4 = nullptr;
-		pGr->Draw(pUI);
-		pUI->MouseFlush();
-		pUI->GetLastKey(key);
+		
 		
 	}
-	*/
+	pUI->KeyboardFlush();
+	
 
 	//Drag  Operation
-	/*
+	
 	int refresh = 0; //to slow down the drawing. 
 	bool flag = pUI->GetMouseStatus(B1, P2.x, P2.y);
 	while (flag)
@@ -124,7 +98,7 @@ void opDrawingArea::Execute()
 	}
 	
 	
-	*/
+	
 	//pUI->ClearStatusBar();
 
 	

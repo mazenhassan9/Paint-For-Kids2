@@ -17,7 +17,7 @@ void opDelete::Execute()
 	Point P1;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
-	shape* S1 = pGr->GetSelected();
+	shape* S1 = pGr->GetLastSelected();
 	if (S1)
 	{
 		pGr->DeleteShape(S1);

@@ -17,7 +17,7 @@ void opPlayingArea::Execute()
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 
-	shape* S2 = pGr->GetSelected();
+	shape* S2 = pGr->GetLastSelected();
 	pUI->ClearStatusBar();
 	if (S2)
 	{
