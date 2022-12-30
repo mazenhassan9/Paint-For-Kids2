@@ -1,4 +1,5 @@
 #include "Polygon.h"
+#include <iostream>
 
 polygon::polygon()
 {
@@ -47,6 +48,41 @@ void polygon::Move(int x, int y)
 }
 void polygon::Rotate()
 {
+
+	int centerx = 0, centery = 0;
+	for (int i = 0; i < vertices; i++)
+	{
+		centerx += Corners[i].x;
+		centery += Corners[i].y;
+		
+
+	}
+	//cout << " X " << Corners[i].x << " Y " << Corners[i].y << endl;
+	double cx=centerx /= vertices;
+	double cy = centery /= vertices;
+
+	
+		
+	
+
+	double PI = 3.14;
+
+	for (int i = 0 ;i < vertices; i++)
+	{
+		this->Corners[i].x = ((Corners[i].x - cx) * cos(PI / 2) - (Corners[i].x - cx) * sin(PI / 2)) + cx;
+		this->Corners[i].y = ((Corners[i].y - cy) * cos(PI / 2) - (Corners[i].y - cy) * sin(PI / 2)) + cy;
+		cout << " X " << Corners[i].x << " Y " << Corners[i].y  << endl;
+	}
+
+
+
+
+
+
+
+	
+
+
 }
 bool polygon::Get(int x, int y) const
 {

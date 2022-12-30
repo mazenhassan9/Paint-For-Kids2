@@ -106,9 +106,7 @@ void Rect::Rotate()
 	
 	double PI = 3.14;
 	
-	/*int w = Corner1.x - Corner2.x;
-	int h = Corner1.y - Corner2.y;*/
-	
+
 	
 	x1 = Corner1.x- centerx;
 	x2 = Corner2.x- centerx;

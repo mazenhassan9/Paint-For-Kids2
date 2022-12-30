@@ -32,9 +32,7 @@ bool Oval::Get(int x, int y) const
 	return false;
 }
 
-void Oval::Rotate()
-{
-}
+
 
 string Oval::Getinfo() const
 {
@@ -99,4 +97,39 @@ void Oval::Load(ifstream& Infile)
 
 }
 
+void Oval::Rotate()
+{
 
+	// get the center point location 
+	double x1, x2, y1, y2;
+	int centerx, centery;
+	centerx = (P1.x + P2.x) / 2;
+	centery = (P1.y + P2.y) / 2;
+
+
+	double PI = 3.14;
+
+
+
+	x1 = P1.x - centerx;
+	x2 = P2.x - centerx;
+	y1 = P1.y - centery;
+	y2 = P2.y - centery;
+
+	cout << " X1 " << P1.x << " Y1 " << P1.y << " X2 " << P2.x << " Y2 " << P2.y << endl;
+
+	this->P1.x = (x1 * cos(PI / 2) - y1 * sin(PI / 2)) + centerx;	//5
+	this->P1.y = (x1 * sin(PI / 2) + y1 * cos(PI / 2)) + centery;		//3
+
+	this->P2.x = (x2 * cos(PI / 2) - y2 * sin(PI / 2)) + centerx;	//3
+	this->P2.y = (x2 * sin(PI / 2) + y2 * cos(PI / 2)) + centery;	//4
+
+	cout << " X1 " << P1.x << " Y1 " << P1.y << " X2 " << P2.x << " Y2 " << P2.y << endl;
+
+	// x = x * cos(degrees in radians) - y * sin(degrees in radians)
+	// y = y * cos(degrees in radians) + x * sin(degrees in radians)
+
+
+
+
+}

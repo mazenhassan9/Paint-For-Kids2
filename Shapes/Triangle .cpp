@@ -1,5 +1,5 @@
 #include "Triangle .h"
-
+#include"iostream"
 
 Triangle::Triangle()
 {
@@ -66,9 +66,7 @@ void Triangle::Move(int x, int y)
 
 }
 
-void Triangle::Rotate()
-{
-}
+
 
 void Triangle::Save(ofstream& OutFile)
 {
@@ -103,5 +101,45 @@ void Triangle::Load(ifstream& Infile)
 		ShpGfxInfo.isFilled = false;
 	}
 }
+void Triangle::Rotate()
+{
 
+	// get the center point location 
+	double x1, x2,x3, y1, y2,y3;
+	int centerx, centery;
+	centerx = (Corner1.x + Corner2.x + Corner3.x) / 3;
+	centery = (Corner1.y + Corner2.y + Corner3.y) / 3;
+
+
+	double PI = 3.14;
+
+
+
+	x1 = Corner1.x - centerx;
+	x2 = Corner2.x - centerx;
+	x3 = Corner3.x - centerx;
+	y1 = Corner1.y - centery;
+	y2 = Corner2.y - centery;
+	y3 = Corner3.y - centery;
+
+	cout << " X1 " << Corner1.x << " Y1 " << Corner1.y << " X2 " << Corner2.x << " Y2 " << Corner2.y << endl;
+
+	Corner1.x = (x1 * cos(PI / 2) - y1 * sin(PI / 2)) + centerx;	//5
+	Corner1.y = (x1 * sin(PI / 2) + y1 * cos(PI / 2)) + centery;		//3
+
+	Corner2.x = (x2 * cos(PI / 2) - y2 * sin(PI / 2)) + centerx;	//3
+	Corner2.y = (x2 * sin(PI / 2) + y2 * cos(PI / 2)) + centery;	//4
+
+	Corner3.x = (x3 * cos(PI / 2) - y3 * sin(PI / 2)) + centerx;	//3
+	Corner3.y = (x3 * sin(PI / 2) + y3 * cos(PI / 2)) + centery;
+
+	cout << " X1 " << Corner1.x << " Y1 " << Corner1.y << " X2 " << Corner2.x << " Y2 " << Corner2.y << endl;
+
+	// x = x * cos(degrees in radians) - y * sin(degrees in radians)
+	// y = y * cos(degrees in radians) + x * sin(degrees in radians)
+
+
+
+
+}
 

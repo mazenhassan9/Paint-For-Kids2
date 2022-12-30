@@ -1,4 +1,5 @@
 #include "Circle.h"
+#include <iostream>
 Circle::Circle()
 {
 	ShpGfxInfo.isFilled = false;
@@ -43,6 +44,39 @@ void Circle::Move(int x, int y)
 
 void Circle::Rotate()
 {
+
+	// get the center point location 
+	double x1, x2, y1, y2;
+	int centerx, centery;
+	centerx = (center.x + Corner.x) / 2;
+	centery = (center.y + Corner.y) / 2;
+
+
+	double PI = 3.14;
+
+
+
+	x1 = center.x - centerx;
+	x2 = Corner.x - centerx;
+	y1 = center.y - centery;
+	y2 = Corner.y - centery;
+
+	cout << " X1 " << center.x << " Y1 " << center.y << " X2 " << Corner.x << " Y2 " << Corner.y << endl;
+
+	this->center.x = (x1 * cos(PI / 2) - y1 * sin(PI / 2)) + centerx;	//5
+	this->center.y = (x1 * sin(PI / 2) + y1 * cos(PI / 2)) + centery;		//3
+
+	this->Corner.x = (x2 * cos(PI / 2) - y2 * sin(PI / 2)) + centerx;	//3
+	this->Corner.y = (x2 * sin(PI / 2) + y2 * cos(PI / 2)) + centery;	//4
+
+	cout << " X1 " << center.x << " Y1 " << center.y << " X2 " << Corner.x << " Y2 " << Corner.y << endl;
+
+	// x = x * cos(degrees in radians) - y * sin(degrees in radians)
+	// y = y * cos(degrees in radians) + x * sin(degrees in radians)
+
+
+
+
 }
 
 string Circle::Getinfo() const
@@ -96,3 +130,4 @@ void Circle::Load(ifstream& Infile)
 		ShpGfxInfo.isFilled = false;
 	}
 }
+
