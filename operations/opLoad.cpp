@@ -21,13 +21,13 @@ void opLoad::Execute()
 	string FileName = pUI->GetSrting();
 	File.open(FileName, ios::in);
 	string condition;
-	pUI->changedefaultfilled(false);
 	int DR, DG, DB;
 	int FR, FG, FB;
 	double Borderwidth;
 	if (File.is_open())     //Check if There is a File with this Name or Not
 	{
 		File >> condition;
+		//loading the headers of the file (Draw color, Fill color(if exist), Border width)
 		if (condition == "False")
 		{
 			File >> DR >> DG >>  DB >>  Borderwidth;
@@ -44,7 +44,7 @@ void opLoad::Execute()
 			pUI->changedefaultfilled(true);
 
 		}
-		pGr->load(File);
+		pGr->load(File); //calling the load function of the graph.
 		File.close();
 		pUI->ClearStatusBar();
 		pUI->PrintMessage("File is Loaded Successfully");

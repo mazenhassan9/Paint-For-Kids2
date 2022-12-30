@@ -82,7 +82,6 @@ void Triangle::Load(ifstream& Infile)
 	{
 		ShpGfxInfo.isFilled = false;
 	}
-	ShpGfxInfo.isSelected = true;
 }
 
 

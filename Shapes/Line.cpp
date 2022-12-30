@@ -63,7 +63,5 @@ void Line::Load(ifstream& Infile)
 	color C1(D1, D2, D3);
 	ShpGfxInfo.DrawClr = C1;
 	ShpGfxInfo.isFilled = false;
-	ShpGfxInfo.isSelected = true;
 }
-
 

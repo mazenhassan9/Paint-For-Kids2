@@ -50,6 +50,7 @@ class GUI
 		ICON_Reg ,
 		ICON_Irreg ,
 		ICON_Fillcolor,
+		ICON_Single_Fill,
 		ICON_PENWIDTH,
 		ICON_PEN,
 		ICON_Borderwidth,
@@ -63,7 +64,7 @@ class GUI
 		ICON_Rotate ,
 		Icon_Save,
 		ICON_Load ,
-		ICON_Single_Fill,
+		
 		ICON_SWITCH ,
 		ICON_EXIT,		//Exit icon
 
