@@ -44,28 +44,28 @@ class GUI
 		ICON_RECT,		//Recangle icon in menu
 		ICON_CIRC, 		//Circle icon in menu 
 		ICON_OVAL,
-		ICON_TRI ,    
+		ICON_TRI,
 		ICON_LINE,
 		ICON_SQUARE,
-		ICON_Reg ,
-		ICON_Irreg ,
+		ICON_Reg,
+		ICON_Irreg,
 		ICON_Fillcolor,
 		ICON_Single_Fill,
 		ICON_PENWIDTH,
 		ICON_PEN,
 		ICON_Borderwidth,
 		ICON_Bordercolor,
-		ICON_Select ,
-		ICON_Delete ,
+		//ICON_Select,
+		ICON_Delete,
 		ICON_COPY,
 		ICON_CUT,
 		ICON_PASTE,
-		ICON_Resize ,
-		ICON_Rotate ,
+		ICON_Resize,
+		ICON_Rotate,
 		Icon_Save,
-		ICON_Load ,
-		
-		ICON_SWITCH ,
+		ICON_Load,
+
+		ICON_SWITCH,
 		ICON_EXIT,		//Exit icon
 
 
@@ -75,7 +75,7 @@ class GUI
 
 		//TODO: Add more icons names here
 
-		
+
 		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -112,9 +112,9 @@ class GUI
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
-	int PenWidth;	
+	int PenWidth;
 	double Borderwidth;    //width of the pen that draws shapes
-	bool defaultFill=0;
+	bool defaultFill = 0;
 
 	/// Add more members if needed
 
@@ -126,10 +126,15 @@ public:
 
 	GUI();
 
+	void GetLastClick(int& x, int& y) const;
+
 	// Input Functions  ---------------------------
 	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
+	bool GetMouseStatus(button B1, int& x, int& y) const;
+	void MouseFlush() const;
+	bool Getmouseclik(int& x, int& y);
 
 	// Output Functions  ---------------------------
 	window* CreateWind(int, int, int, int) const; //creates the application window
@@ -143,12 +148,12 @@ public:
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
 
-	void DrawTri(Point P1, Point P2,Point p4 , GfxInfo RectGfxInfo) const;
+	void DrawTri(Point P1, Point P2, Point p4, GfxInfo RectGfxInfo) const;
 
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
-	void DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const; // Draw a square
+	void DrawSquare(Point P1, double sidelen, GfxInfo SquareGfxInfo) const; // Draw a square
 	void DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const;
-	void DrawPoly(vector<Point> Points,const int N, GfxInfo RectGfxInfo) const;
+	void DrawPoly(vector<Point> Points, const int N, GfxInfo RectGfxInfo) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;
 
 

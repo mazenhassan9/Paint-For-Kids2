@@ -32,6 +32,15 @@ bool Circle::Get(int x, int y) const
 	return false;
 }
 
+void Circle::Move(int x, int y)
+{
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	this->center.x = x;
+	this->center.y = y;
+	this->Corner.x = this->center.x + radius;
+	this->Corner.y = this->center.y;
+}
+
 string Circle::Getinfo() const
 {
 	string FillColor;

@@ -14,6 +14,7 @@ public:
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
+	virtual void Move(int x, int y);
 	virtual string Getinfo() const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);

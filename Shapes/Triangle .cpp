@@ -50,6 +50,22 @@ string Triangle::Getinfo() const
 	return message;
 }
 
+void Triangle::Move(int x, int y)
+{
+	int centerx, centery;
+	centerx = (Corner1.x + Corner2.x + Corner3.x) / 3;
+	centery = (Corner1.y + Corner2.y + Corner3.y) / 3;
+	this->Corner1.x += x - centerx;
+	this->Corner1.y += y - centery;
+
+	this->Corner2.x += x - centerx;
+	this->Corner2.y += y - centery;
+
+	this->Corner3.x += x - centerx;
+	this->Corner3.y += y - centery;
+
+}
+
 void Triangle::Save(ofstream& OutFile)
 {
 	OutFile << "TRIANGLE  " << ID << "  " << Corner1.x << "  " << Corner1.y << "  " << Corner2.x << "  " << Corner2.y << "  " << Corner3.x << "  " << Corner3.y << "  ";

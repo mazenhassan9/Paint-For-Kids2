@@ -40,6 +40,10 @@ GUI::GUI()
 //======================================================================================//
 //								Input Functions										//
 //======================================================================================//
+void GUI::GetLastClick(int& x, int& y) const
+{
+	pWind->GetMouseCoord(x, y);
+}
 void GUI::GetPointClicked(int& x, int& y) const
 {
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
@@ -101,7 +105,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PEN: return CHNG_DRAW_CLR;
 			case ICON_Borderwidth: return BORDER_WIDTH;
 			case ICON_Bordercolor: return CHNG_BOR_CLR;
-			case ICON_Select: return Select;
+			//case ICON_Select: return Select;
 			case ICON_Delete: return DEL;
 			case ICON_COPY: return COPY;
 			case ICON_CUT: return CUT;
@@ -146,6 +150,19 @@ operationType GUI::GetUseroperation() const
 		}
 	}
 
+}
+bool GUI::GetMouseStatus(button B1, int& x, int& y) const
+{
+	return pWind->GetButtonState(B1,x,y);
+}
+void GUI::MouseFlush() const
+{
+	pWind->FlushMouseQueue();
+}
+bool GUI::Getmouseclik(int& x, int& y)
+{
+	clicktype out = pWind->GetMouseClick(x, y);
+	return (out != NO_CLICK);
 }
 ////////////////////////////////////////////////////
 
@@ -208,7 +225,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\pen.jpg";
 	MenuIconImages[ICON_Borderwidth] = "images\\MenuIcons\\BORDERWIDTH.jpg";
 	MenuIconImages[ICON_Bordercolor] = "images\\MenuIcons\\bordercolor.jpg";
-	MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
+	//MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
 	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\copy.jpg";
 	MenuIconImages[ICON_CUT] = "images\\MenuIcons\\cut.jpg";

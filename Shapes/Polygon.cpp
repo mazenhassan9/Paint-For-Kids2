@@ -28,6 +28,22 @@ void polygon::Draw(GUI* pUI) const
 	pUI->DrawPoly(Corners,vertices, ShpGfxInfo);
 }
 
+void polygon::Move(int x, int y)
+{
+	int centerx = 0, centery = 0;
+	for (int i = 0; i < vertices; i++)
+	{
+		centerx += Corners[i].x;
+		centery += Corners[i].y;
+	}
+	centerx /= vertices;
+	centery /= vertices;
+	for (int i = 0; i < vertices; i++)
+	{
+		this->Corners[i].x += (x - centerx);
+		this->Corners[i].y += (y - centery);
+	}
+}
 bool polygon::Get(int x, int y) const
 {
 	// Create a point at infinity, y is same as point p
@@ -53,6 +69,7 @@ bool polygon::Get(int x, int y) const
 	// When count is odd
 	return count & 1;
 }
+
 string polygon::Getinfo() const
 {
 	string FillColor;

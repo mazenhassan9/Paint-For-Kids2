@@ -33,6 +33,25 @@ bool Square::Get(int x, int y) const
 	return false;
 }
 
+void Square::Move(int x, int y)
+{
+	Point Corner2 = { origin.x + sidelent,origin.y + sidelent };
+	Point Corner1 = origin;
+
+	//need to solve the sidelen problem.
+	int centerx, centery;
+	centerx = (Corner1.x + Corner2.x) / 2;
+	centery = (Corner1.y + Corner2.y) / 2;
+	Corner1.x += x - centerx;
+	Corner1.y += y - centery;
+
+	Corner2.x += x - centerx;
+	Corner2.y += y - centery;
+
+	this->origin = Corner1;
+	this->sidelent = sqrt(pow(Corner2.x - this->origin.x, 2));
+}
+
 string Square::Getinfo() const
 {
 

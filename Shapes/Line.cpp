@@ -33,6 +33,18 @@ bool Line::Get(int x, int y) const
 	return false;
 }
 
+void Line::Move(int x, int y)
+{
+	int centerx, centery;
+	centerx = (P1.x + P2.x) / 2;
+	centery = (P1.y + P2.y) / 2;
+	this->P1.x += x - centerx;
+	this->P1.y += y - centery;
+
+	this->P2.x += x - centerx;
+	this->P2.y += y - centery;
+}
+
 string Line::Getinfo() const
 {
 	

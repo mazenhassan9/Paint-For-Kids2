@@ -47,6 +47,18 @@ string Oval::Getinfo() const
 	return message;
 }
 
+void Oval::Move(int x, int y)
+{
+	int centerx, centery;
+	centerx = (P1.x + P2.x) / 2;
+	centery = (P1.y + P2.y) / 2;
+	this->P1.x += x - centerx;
+	this->P1.y += y - centery;
+
+	this->P2.x += x - centerx;
+	this->P2.y += y - centery;
+}
+
 void Oval::Save(ofstream& OutFile)
 {
 	OutFile << "OVAL  " << ID << "  " << P1.x << "  " << P1.y << "  " << P2.x << "  " << P2.y << "  ";

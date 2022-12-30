@@ -30,6 +30,19 @@ bool Rect::Get(int x, int y) const
 	return false;
 }
 
+void Rect::Move(int x, int y)
+{
+	int centerx, centery;
+	centerx = (Corner1.x + Corner2.x ) / 2;
+	centery = (Corner1.y + Corner2.y) / 2;
+	this->Corner1.x += x - centerx;
+	this->Corner1.y += y - centery;
+
+	this->Corner2.x += x - centerx;
+	this->Corner2.y += y - centery;
+
+}
+
 string Rect::Getinfo() const
 {
 	string FillColor;

@@ -16,6 +16,7 @@ void opSelect::Execute()
 	Point P1;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
+	
 	pUI->PrintMessage("Select Operation, Please select a shape");
 	//Read 1st corner and store in point P1
 	pUI->GetPointClicked(P1.x, P1.y);

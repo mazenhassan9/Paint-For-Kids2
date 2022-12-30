@@ -11,7 +11,7 @@
 #include "opChangePenColor.h"
 #include"opChangeBorderColor.h"
 #include"operations/OpAddIrPoly.h"
-#include"operations/opSelect.h"
+//#include"operations/opSelect.h"
 #include"operations/opDelete.h"
 #include"operations/opChangeFill.h"
 #include "operations/opBorderwidth.h"
@@ -82,9 +82,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opChangeBorderColor(this);
 			break;
 
-		case Select:
-			pOp = new opSelect(this);
-			break;
+		//case Select: Replaced withoud using an icon
+			//pOp = new opSelect(this);
+			//break;
 		case DEL:
 			pOp = new opDelete(this);
 			break;
@@ -122,6 +122,9 @@ operation* controller::createOperation(operationType OpType)
 		case TO_PLAY:
 			pOp = new StartGame(this);
 			break;
+		default:
+			pOp = new opDrawingArea(this);
+
 
 	}
 
@@ -200,9 +203,10 @@ void controller::Run()
 			delete pOpr;	//operation is not needed any more ==> delete it
 			pOpr = nullptr;
 		}
-
-		//Update the interface
 		UpdateInterface();
+		
+		//Update the interface
+		
 
 	} while (OpType != EXIT);
 //delete this;
