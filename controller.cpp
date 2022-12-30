@@ -181,7 +181,7 @@ controller::~controller()
 //==================================================================================//
 void controller::Run()
 {
-	pGUI->colorpalette();
+	//pGUI->colorpalette();
 	operationType OpType;
 	do
 	{
