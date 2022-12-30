@@ -36,7 +36,7 @@ public:
 	///Decide the parameters that you should pass to each function	
 	virtual bool Get(int x, int y) const = 0; // Function to check if the point inside the shape.
 
-	//virtual void Rotate() = 0;	//Rotate the shape
+	virtual void Rotate() = 0;	//Rotate the shape
 	//virtual void Resize() = 0;	//Resize the shape
 	virtual void Move(int x,int y) = 0;		//Move the shape
 

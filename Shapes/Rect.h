@@ -1,6 +1,7 @@
 #pragma once
 
 #include "shape.h"
+#include <math.h>
 
 class Rect : public shape
 {
@@ -17,5 +18,6 @@ public:
 	virtual string Getinfo() const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
+	virtual void Rotate();
 };
 

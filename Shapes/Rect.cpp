@@ -1,5 +1,6 @@
 #include "Rect.h"
 
+
 Rect::Rect()
 {
 	ShpGfxInfo.isFilled = false;
@@ -90,5 +91,37 @@ void Rect::Load(ifstream& Infile)
 	{
 		ShpGfxInfo.isFilled = false;
 	}
-}
 
+}
+void Rect::Rotate()
+{
+	
+	// get the center point location 
+	double x1, x2,y1 , y2;
+	
+	int theta = 90 * ((22 / 7) / 180);
+	
+	/*int w = Corner1.x - Corner2.x;
+	int h = Corner1.y - Corner2.y;*/
+	
+	
+	x1 = Corner1.x;
+	x2 = Corner2.x;
+	y1 = Corner1.y;
+	y2 = Corner2.y;
+
+
+
+	Corner1.x = (x1 * cos(theta) - y1 * sin(theta)); //5
+	Corner1.y = (x1* sin(theta) + y1 * cos(theta));//3
+
+	Corner2.x = (x2 * cos(theta) - y2 * sin(theta));//3
+	Corner2.y = (x2 * sin(theta) + y2 * cos(theta));//4
+
+	// x = x * cos(degrees in radians) - y * sin(degrees in radians)
+	// y = y * cos(degrees in radians) + x * sin(degrees in radians)
+
+
+	
+
+}

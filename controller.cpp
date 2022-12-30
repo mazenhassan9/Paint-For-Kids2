@@ -1,5 +1,6 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
+#include "operations\OpRotate.h"
 #include "operations\opAddCircle.h"
 #include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
@@ -114,6 +115,9 @@ operation* controller::createOperation(operationType OpType)
 		case BORDER_WIDTH:
 			pOp = new opBorderwidth(this);
 			break;
+		case ROTATE:
+			pOp = new OpRotate(this);
+			break;
 		case SWITCH:
 			pOp = new opSwitch(this);
 			break;
@@ -122,6 +126,7 @@ operation* controller::createOperation(operationType OpType)
 		case TO_PLAY:
 			pOp = new StartGame(this);
 			break;
+
 		default:
 			pOp = new opDrawingArea(this);
 

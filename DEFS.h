@@ -34,6 +34,7 @@ enum operationType //The operations supported (you can add more if needed)
 	PASTE,
 	PENWIDTH,
 	PEN,
+	
 	CHNG_BOR_CLR,  //Change border color
 	SWITCH ,
 	BORDER_WIDTH ,
