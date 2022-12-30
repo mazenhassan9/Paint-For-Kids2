@@ -41,6 +41,10 @@ void Circle::Move(int x, int y)
 	this->Corner.y = this->center.y;
 }
 
+void Circle::Rotate()
+{
+}
+
 string Circle::Getinfo() const
 {
 	string FillColor;

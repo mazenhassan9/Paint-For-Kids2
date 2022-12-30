@@ -40,16 +40,63 @@ void opDrawingArea::Execute()
 			pGr->SetSelected(S1, true);
 		}
 	}
+	
 	else if (S2)
 	{
 		S2->SetSelected(false);
 		pGr->SetSelected(S2, false);
 	}
 	
+	
 
+	//Multi Select Operation
+	/*
+	char key;
+	shape* S4;
+	Point P4;
+	pUI->GetLastKey(key);
+	int refresh2 = 0;
+	
+	while (key == 115) //S to select multiple
+	{
+		refresh2++;
+		if(refresh2 == 10)
+		{
+			refresh2 = 0;
+			pUI->GetLastClick(P4.x,P4.y);
+		
+		
+		S4 = pGr->Getshape(P4.x, P4.y);
+		if (S4)
+		{
+			if (S4->IsSelected())
+			{
+				S4->SetSelected(false);
+				pUI->PrintMessage(S4->Getinfo());
+				pGr->SetSelected(S4, false);
+				cout << "un  Selected " << endl;
 
+			}
+			else {
+				S4->SetSelected(true);
+				pUI->PrintMessage(S4->Getinfo());
+				pGr->SetSelected(S4, true);
+				cout << " Selected " << endl;
+			}
+			
+		}
+		}
+		//delete S4;
+		S4 = nullptr;
+		pGr->Draw(pUI);
+		pUI->MouseFlush();
+		pUI->GetLastKey(key);
+		
+	}
+	*/
 
 	//Drag  Operation
+	/*
 	int refresh = 0; //to slow down the drawing. 
 	bool flag = pUI->GetMouseStatus(B1, P2.x, P2.y);
 	while (flag)
@@ -77,7 +124,7 @@ void opDrawingArea::Execute()
 	}
 	
 	
-
+	*/
 	//pUI->ClearStatusBar();
 
 	

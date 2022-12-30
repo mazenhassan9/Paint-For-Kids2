@@ -28,6 +28,7 @@ void polygon::Draw(GUI* pUI) const
 	pUI->DrawPoly(Corners,vertices, ShpGfxInfo);
 }
 
+
 void polygon::Move(int x, int y)
 {
 	int centerx = 0, centery = 0;
@@ -43,6 +44,9 @@ void polygon::Move(int x, int y)
 		this->Corners[i].x += (x - centerx);
 		this->Corners[i].y += (y - centery);
 	}
+}
+void polygon::Rotate()
+{
 }
 bool polygon::Get(int x, int y) const
 {

@@ -48,6 +48,10 @@ void GUI::GetPointClicked(int& x, int& y) const
 {
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
+void GUI::GetLastKey(char& K) const
+{
+	pWind->GetKeyPress(K);
+}
 
 string GUI::GetSrting() const
 {
@@ -155,7 +159,7 @@ bool GUI::GetMouseStatus(button B1, int& x, int& y) const
 {
 	return pWind->GetButtonState(B1,x,y);
 }
-void GUI::MouseFlush() const
+void GUI::MouseFlush() 
 {
 	pWind->FlushMouseQueue();
 }

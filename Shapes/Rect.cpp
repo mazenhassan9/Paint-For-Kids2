@@ -1,4 +1,5 @@
 #include "Rect.h"
+#include <iostream>
 
 
 Rect::Rect()
@@ -98,25 +99,31 @@ void Rect::Rotate()
 	
 	// get the center point location 
 	double x1, x2,y1 , y2;
+	int centerx, centery;
+	centerx = (Corner1.x + Corner2.x) / 2;
+	centery = (Corner1.y + Corner2.y) / 2;
+
 	
-	int theta = 90 * ((22 / 7) / 180);
+	double PI = 3.14;
 	
 	/*int w = Corner1.x - Corner2.x;
 	int h = Corner1.y - Corner2.y;*/
 	
 	
-	x1 = Corner1.x;
-	x2 = Corner2.x;
-	y1 = Corner1.y;
-	y2 = Corner2.y;
+	x1 = Corner1.x- centerx;
+	x2 = Corner2.x- centerx;
+	y1 = Corner1.y- centery;
+	y2 = Corner2.y- centery;
 
+	cout << " X1 " << Corner1.x << " Y1 " << Corner1.y << " X2 " << Corner2.x << " Y2 " << Corner2.y << endl;
 
+	this->Corner1.x = (x1 * cos(PI/2) - y1 * sin(PI/2)) + centerx;	//5
+	this->Corner1.y = (x1* sin(PI/2) + y1 * cos(PI/2)) + centery;		//3
 
-	Corner1.x = (x1 * cos(theta) - y1 * sin(theta)); //5
-	Corner1.y = (x1* sin(theta) + y1 * cos(theta));//3
+	this->Corner2.x = (x2 * cos(PI/2) - y2 * sin(PI/2)) + centerx;	//3
+	this->Corner2.y = (x2 * sin(PI/2) + y2 * cos(PI/2)) + centery;	//4
 
-	Corner2.x = (x2 * cos(theta) - y2 * sin(theta));//3
-	Corner2.y = (x2 * sin(theta) + y2 * cos(theta));//4
+	cout << " X1 " << Corner1.x << " Y1 " << Corner1.y << " X2 " << Corner2.x << " Y2 " << Corner2.y << endl;
 
 	// x = x * cos(degrees in radians) - y * sin(degrees in radians)
 	// y = y * cos(degrees in radians) + x * sin(degrees in radians)

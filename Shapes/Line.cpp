@@ -45,6 +45,10 @@ void Line::Move(int x, int y)
 	this->P2.y += y - centery;
 }
 
+void Line::Rotate()
+{
+}
+
 string Line::Getinfo() const
 {
 	

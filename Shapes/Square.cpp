@@ -52,6 +52,10 @@ void Square::Move(int x, int y)
 	this->sidelent = sqrt(pow(Corner2.x - this->origin.x, 2));
 }
 
+void Square::Rotate()
+{
+}
+
 string Square::Getinfo() const
 {
 

@@ -32,6 +32,10 @@ bool Oval::Get(int x, int y) const
 	return false;
 }
 
+void Oval::Rotate()
+{
+}
+
 string Oval::Getinfo() const
 {
 	string FillColor;

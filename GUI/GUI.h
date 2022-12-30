@@ -129,11 +129,13 @@ public:
 	void GetLastClick(int& x, int& y) const;
 
 	// Input Functions  ---------------------------
-	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
+	void GetPointClicked(int& x, int& y) const;
+	void GetLastKey(char& K) const;
+	//Get coordinate where user clicks
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
 	bool GetMouseStatus(button B1, int& x, int& y) const;
-	void MouseFlush() const;
+	void MouseFlush();
 	bool Getmouseclik(int& x, int& y);
 
 	// Output Functions  ---------------------------

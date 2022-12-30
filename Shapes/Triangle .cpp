@@ -66,6 +66,10 @@ void Triangle::Move(int x, int y)
 
 }
 
+void Triangle::Rotate()
+{
+}
+
 void Triangle::Save(ofstream& OutFile)
 {
 	OutFile << "TRIANGLE  " << ID << "  " << Corner1.x << "  " << Corner1.y << "  " << Corner2.x << "  " << Corner2.y << "  " << Corner3.x << "  " << Corner3.y << "  ";

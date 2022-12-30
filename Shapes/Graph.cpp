@@ -53,10 +53,7 @@ void Graph::SetSelected(shape* pFig, bool flag)
 {
 	if (flag)
 	{
-		if (selectedShape)
-		{
-			selectedShape->SetSelected(false);
-		}
+		
 		selectedShape = pFig;
 	}
 	else
