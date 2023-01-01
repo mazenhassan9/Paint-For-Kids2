@@ -19,7 +19,7 @@ public:
 	virtual string Getinfo() const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
-
+	virtual void RESIZE(double size);
 	bool onLine(line l1, Point p)const;
 
 	int direction(Point a, Point b, Point c)const;

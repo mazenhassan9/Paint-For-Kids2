@@ -126,7 +126,18 @@ void Rect::Rotate()
 	// x = x * cos(degrees in radians) - y * sin(degrees in radians)
 	// y = y * cos(degrees in radians) + x * sin(degrees in radians)
 
-
-	
-
+}
+void Rect::RESIZE(double size) {
+	if (0 < size < 1) {
+		this->Corner1.x = Corner1.x + 0.5 * size * Corner2.x;
+		this->Corner2.x = Corner2.x - 0.5 * size * Corner2.x;
+		this->Corner1.y = Corner1.y + 0.5 * size * Corner2.y;
+		this->Corner2.y = Corner2.y - 0.5 * size * Corner2.y;
+	}
+	else if (size >= 1) {
+		this->Corner1.x = Corner1.x - 0.5 * size * Corner2.x;
+		this->Corner2.x = Corner2.x + 0.5 * size * Corner2.x;
+		this->Corner1.y = Corner1.y - 0.5 * size * Corner2.y;
+		this->Corner2.y = Corner2.y + 0.5 * size * Corner2.y;
+	}
 }

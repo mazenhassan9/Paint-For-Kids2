@@ -143,3 +143,4 @@ void Triangle::Rotate()
 
 }
 
+void Triangle::RESIZE(double size) {}

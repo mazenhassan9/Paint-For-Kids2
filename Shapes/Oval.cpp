@@ -133,3 +133,4 @@ void Oval::Rotate()
 
 
 }
+void Oval::RESIZE(double size) {}

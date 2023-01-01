@@ -231,3 +231,4 @@ bool polygon::isIntersect(line l1, line l2)const
 
 	return false;
 }
+void polygon::RESIZE(double size) {}

@@ -130,4 +130,4 @@ void Circle::Load(ifstream& Infile)
 		ShpGfxInfo.isFilled = false;
 	}
 }
-
+void Circle::RESIZE(double size) {}

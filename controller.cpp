@@ -23,7 +23,7 @@
 #include"operations/opLoad.h"
 #include"operations/opSwitch.h"
 #include"StartGame.h"
-
+#include"opResize.h"
 //Constructor
 controller::controller()
 {
@@ -125,6 +125,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case TO_PLAY:
 			pOp = new StartGame(this);
+			break;
+		case RESIZE:
+			pOp = new opResize(this);
 			break;
 
 		default:

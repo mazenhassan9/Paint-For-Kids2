@@ -189,6 +189,7 @@
     <ClCompile Include="operations\opSelect.cpp" />
     <ClCompile Include="operations\opSwitch.cpp" />
     <ClCompile Include="opPlayingArea.cpp" />
+    <ClCompile Include="opResize.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Line.cpp" />
@@ -248,6 +249,7 @@
     <ClInclude Include="operations\opSelect.h" />
     <ClInclude Include="operations\opSwitch.h" />
     <ClInclude Include="opPlayingArea.h" />
+    <ClInclude Include="opResize.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />

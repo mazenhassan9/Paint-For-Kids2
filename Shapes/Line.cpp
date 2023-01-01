@@ -116,4 +116,4 @@ void Line::Load(ifstream& Infile)
 	ShpGfxInfo.DrawClr = C1;
 	ShpGfxInfo.isFilled = false;
 }
-
+void Line::RESIZE(double size) {}

@@ -151,3 +151,4 @@ void Square::Rotate()
 
 
 }
+void Square::RESIZE(double size) {}

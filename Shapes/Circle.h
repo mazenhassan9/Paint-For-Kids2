@@ -19,5 +19,6 @@ public:
 	virtual string Getinfo() const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
+	virtual void RESIZE(double size);
 };
 
