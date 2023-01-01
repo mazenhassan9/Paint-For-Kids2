@@ -1,6 +1,6 @@
 #include "Rect.h"
 #include <iostream>
-
+#include <math.h>
 
 Rect::Rect()
 {
@@ -128,16 +128,23 @@ void Rect::Rotate()
 
 }
 void Rect::RESIZE(double size) {
-	if (0 < size < 1) {
-		this->Corner1.x = Corner1.x + 0.5 * size * Corner2.x;
-		this->Corner2.x = Corner2.x - 0.5 * size * Corner2.x;
-		this->Corner1.y = Corner1.y + 0.5 * size * Corner2.y;
-		this->Corner2.y = Corner2.y - 0.5 * size * Corner2.y;
-	}
-	else if (size > 1) {
-		this->Corner1.x = Corner1.x - 0.5 * size * Corner2.x;
-		this->Corner2.x = Corner2.x + 0.5 * size * Corner2.x;
-		this->Corner1.y = Corner1.y - 0.5 * size * Corner2.y;
-		this->Corner2.y = Corner2.y + 0.5 * size * Corner2.y;
-	}
+	double x1, x2, y1, y2;
+	const double centerX= (Corner1.x + Corner2.x) / 2;
+	const double centerY = (Corner1.y + Corner2.y) / 2;
+		x1 = size * Corner1.x;
+		x2 = size * Corner2.x;
+		y1 = size * Corner1.y;
+		y2 = size * Corner2.y;
+		if (size > 1) {
+			Corner1.x = x1 - centerX;
+			Corner2.x = x2 - centerX;
+			Corner1.y = y1 - centerY;
+			Corner2.y = y2 - centerY;
+		}
+		else if(0<size<1) {
+			Corner1.x = x1 + ((Corner1.x + Corner2.x) / 2);
+			Corner2.x = x2 + ((Corner1.x + Corner2.x) / 2);
+			Corner1.y = y1 + ((Corner1.y + Corner2.y) / 2);
+			Corner2.y = y2 + ((Corner1.y + Corner2.y) / 2);
+		}
 }
