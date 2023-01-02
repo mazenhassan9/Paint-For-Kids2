@@ -16,6 +16,7 @@ protected:
 public:
 	shape();
 	shape(GfxInfo shapeGfxInfo);
+	shape (const shape & n);
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
@@ -27,6 +28,7 @@ public:
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setBorderwidth(double bw);
 	static int Get_Count();
+
 	
 
 

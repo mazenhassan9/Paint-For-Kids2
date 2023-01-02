@@ -24,6 +24,8 @@
 #include"operations/opSwitch.h"
 #include"StartGame.h"
 #include"opResize.h"
+#include "operations/opCopy.h"
+#include "operations/opPaste.h"
 //Constructor
 controller::controller()
 {
@@ -95,6 +97,9 @@ operation* controller::createOperation(operationType OpType)
 		case LOAD:
 			pOp = new opLoad(this);
 			break;
+		case COPY:
+			pOp = new opCopy(this);
+			break;
 		case EXIT:
 			///create Exitoperation here
 			pOp = new opAddExit(this);
@@ -128,6 +133,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case RESIZE:
 			pOp = new opResize(this);
+			break;
+		case PASTE:
+			pOp = new opPaste(this);
 			break;
 
 		default:

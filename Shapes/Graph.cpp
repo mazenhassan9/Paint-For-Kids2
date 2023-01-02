@@ -149,6 +149,16 @@ void Graph::load(ifstream& inputfile)
 	}
 }
 
+shape* Graph::getcopied() const
+{
+	return copiedshape;
+}
+
+void Graph::setcopied(shape* cs)
+{
+	copiedshape = cs;
+}
+
 shape* Graph::Getshape(int x, int y) const
 {
 	//If a shape is found return a pointer to it.
