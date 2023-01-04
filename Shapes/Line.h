@@ -9,6 +9,7 @@ private:
 public:
 	Line();
 	Line(Point, Point, GfxInfo shapeGfxInfo);
+	Line(const Line* lhs);
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
@@ -18,5 +19,6 @@ public:
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
 	virtual void RESIZE(double size);
+	virtual shape* Copy();
 };
 

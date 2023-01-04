@@ -11,6 +11,7 @@ private:
 public:
 	polygon();
 	polygon(vector <Point>, int,GfxInfo shapeGfxInfo);
+	polygon(const polygon* lhs);
 	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
@@ -20,6 +21,7 @@ public:
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
 	virtual void RESIZE(double size);
+	virtual shape* Copy();
 	bool onLine(line l1, Point p)const;
 
 	int direction(Point a, Point b, Point c)const;

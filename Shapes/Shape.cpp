@@ -14,9 +14,7 @@ shape::shape(GfxInfo shapeGfxInfo)
 	Shapes_Count++;
 }
 
-shape::shape(const shape& n)
-{
-}
+
  
 void shape::SetSelected(bool s)
 {	ShpGfxInfo.isSelected = s; }

@@ -16,6 +16,21 @@ Triangle::Triangle(Point p1, Point p2,Point p3 , GfxInfo shapeGfxInfo) : shape (
 	
 }
 
+Triangle::Triangle(const Triangle* lhs)
+{
+	this->Corner1.x = lhs->Corner1.x;
+	this->Corner2.x = lhs->Corner2.x;
+	this->Corner1.y = lhs->Corner1.y;
+	this->Corner2.y = lhs->Corner2.y;
+	this->Corner3.x = lhs->Corner3.x;
+	this->Corner3.y = lhs->Corner3.y;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+}
+
 Triangle::~Triangle()
 {
 }
@@ -100,6 +115,11 @@ void Triangle::Load(ifstream& Infile)
 	{
 		ShpGfxInfo.isFilled = false;
 	}
+}
+shape* Triangle::Copy()
+{
+	shape* S = new Triangle(this);
+	return S;
 }
 void Triangle::Rotate()
 {

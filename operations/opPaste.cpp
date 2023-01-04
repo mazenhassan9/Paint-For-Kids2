@@ -19,8 +19,9 @@ void opPaste::Execute()
 
 	pUI->PrintMessage("Paste operation : Click a point ");
 	pUI->GetPointClicked(P1.x , P1.y);
-	S1->Move(P1.x, P1.y);
-	pGr->Addshape(S1);
+	shape* S2 = S1->Copy();
+	S2->Move(P1.x, P1.y);
+	pGr->Addshape(S2);
 
 	
 

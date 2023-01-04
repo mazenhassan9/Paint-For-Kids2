@@ -17,6 +17,19 @@ Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 	P2 = p2;
 }
 
+Line::Line(const Line* lhs)
+{
+	this->P1.x = lhs->P1.x;
+	this->P2.x = lhs->P2.x;
+	this->P1.y = lhs->P1.y;
+	this->P2.y = lhs->P2.y;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+}
+
 Line::~Line()
 {}
 
@@ -117,3 +130,9 @@ void Line::Load(ifstream& Infile)
 	ShpGfxInfo.isFilled = false;
 }
 void Line::RESIZE(double size) {}
+
+shape* Line::Copy()
+{
+	shape* S = new Line(this);
+	return S;
+}

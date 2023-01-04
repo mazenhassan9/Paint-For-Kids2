@@ -16,10 +16,11 @@ void opCopy::Execute()
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 	shape* S1 = pGr->GetLastSelected();
-	shape* S2 = S1;
+	
 	if (S1 )
 	{
-		pGr->setcopied(S1);
+		shape* S2 = S1->Copy();
+		pGr->setcopied(S2);
 		
 		pUI->PrintMessage("Copy Operation, The Selected shape has been copied");
 		

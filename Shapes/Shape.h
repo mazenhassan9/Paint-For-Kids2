@@ -16,7 +16,7 @@ protected:
 public:
 	shape();
 	shape(GfxInfo shapeGfxInfo);
-	shape (const shape & n);
+	//shape (const shape & n);
 	virtual ~shape() {}
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
@@ -43,6 +43,7 @@ public:
 	virtual void Move(int x,int y) = 0;		//Move the shape
 
 	virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file
+	virtual shape* Copy() = 0;					//Copy the shape parameters to the file
 	virtual void Load(ifstream& Infile) = 0;	//Load the shape parameters to the file
 	virtual void RESIZE(double size) = 0;
 

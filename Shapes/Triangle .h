@@ -9,6 +9,7 @@ private :
 public :
 	Triangle();
 	Triangle(Point, Point, Point , GfxInfo shapeGfxInfo);
+	Triangle(const Triangle* lhs);
 	virtual ~Triangle();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
@@ -17,5 +18,6 @@ public :
 	virtual void Rotate();
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
+	virtual shape* Copy();
 	virtual void RESIZE(double size);
 };

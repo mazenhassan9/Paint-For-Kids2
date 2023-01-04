@@ -14,6 +14,19 @@ Oval::Oval(Point point1, Point point2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo
 	P2 = point2;
 }
 
+Oval::Oval(const Oval* lhs)
+{
+	this->P1.x = lhs->P1.x;
+	this->P2.x = lhs->P2.x;
+	this->P1.y = lhs->P1.y;
+	this->P2.y = lhs->P2.y;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+}
+
 Oval::~Oval()
 {}
 
@@ -134,3 +147,9 @@ void Oval::Rotate()
 
 }
 void Oval::RESIZE(double size) {}
+
+shape* Oval::Copy()
+{
+	shape* S = new Oval(this);
+	return S;
+}

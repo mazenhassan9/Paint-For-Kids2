@@ -14,6 +14,18 @@ Square::Square(Point P1, double sidelen, GfxInfo shapeGfxInfo) :shape(shapeGfxIn
 	sidelent = sidelen;
 }
 
+Square::Square(const Square* lhs)
+{
+	this->origin.x = lhs->origin.x;
+	this->origin.y = lhs->origin.y;
+	this->sidelent = lhs->sidelent;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+}
+
 Square::~Square()
 {}
 
@@ -109,6 +121,12 @@ void Square::Load(ifstream& Infile)
 	{
 		ShpGfxInfo.isFilled = false;
 	}
+}
+
+shape* Square::Copy()
+{
+	shape* S = new Square(this);
+	return S;
 }
 
 void Square::Rotate()

@@ -15,6 +15,19 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 	Corner2 = P2;
 }
 
+Rect::Rect(const Rect* lhs)
+{
+	this->Corner1.x = lhs->Corner1.x;
+	this->Corner2.x = lhs->Corner2.x;
+	this->Corner1.y = lhs->Corner1.y;
+	this->Corner2.y = lhs->Corner2.y;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+}
+
 Rect::~Rect()
 {}
 
@@ -147,4 +160,10 @@ void Rect::RESIZE(double size) {
 			Corner1.y = y1 + ((Corner1.y + Corner2.y) / 2);
 			Corner2.y = y2 + ((Corner1.y + Corner2.y) / 2);
 		}
+}
+
+shape* Rect::Copy()
+{
+	shape* S = new Rect(this);
+	return S;
 }

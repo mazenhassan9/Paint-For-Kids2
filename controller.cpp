@@ -26,6 +26,8 @@
 #include"opResize.h"
 #include "operations/opCopy.h"
 #include "operations/opPaste.h"
+#include"operations/OpCut.h"
+
 //Constructor
 controller::controller()
 {
@@ -99,6 +101,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case COPY:
 			pOp = new opCopy(this);
+			break;
+		case CUT:
+			pOp = new opCut(this);
 			break;
 		case EXIT:
 			///create Exitoperation here

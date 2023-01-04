@@ -9,6 +9,7 @@ private:
 public:
 	Square();
 	Square(Point, double sidelen, GfxInfo shapeGfxInfo);
+	Square(const Square* lhs);
 	virtual ~Square();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
@@ -17,5 +18,6 @@ public:
 	virtual string Getinfo() const;
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
+	virtual shape* Copy();
 	virtual void RESIZE(double size);
 };

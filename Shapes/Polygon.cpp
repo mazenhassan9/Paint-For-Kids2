@@ -19,6 +19,18 @@ polygon::polygon(vector <Point> C,int N, GfxInfo shapeGfxInfo) : shape(shapeGfxI
 
 }
 
+polygon::polygon(const polygon* lhs)
+{
+	this->Corners = lhs->Corners;
+	this->vertices = lhs->vertices;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+
+}
+
 polygon::~polygon()
 {
 
@@ -171,6 +183,13 @@ void polygon::Load(ifstream& Infile)
 
 }
 
+
+shape* polygon::Copy()
+{
+	shape* S = new polygon(this);
+	return S;
+}
+
 bool polygon::onLine(line l1, Point p) const
 {
 	// Check whether p is on the line or not
@@ -232,3 +251,5 @@ bool polygon::isIntersect(line l1, line l2)const
 	return false;
 }
 void polygon::RESIZE(double size) {}
+
+

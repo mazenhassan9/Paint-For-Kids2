@@ -4,12 +4,30 @@ Circle::Circle()
 {
 	ShpGfxInfo.isFilled = false;
 	ShpGfxInfo.isSelected = false;
+	center.x = 0;
+	Corner.x = 0;
+	center.y = 0;
+	Corner.y = 0;
 
 }
 Circle::Circle(Point circenter, Point radius, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	center = circenter;
 	Corner = radius;
+}
+
+Circle::Circle(const Circle* lhs) 
+{
+	this->center.x = lhs->center.x;
+	this->Corner.x = lhs->Corner.x;
+	this->center.y = lhs->center.y;
+	this->Corner.y = lhs->Corner.y;
+	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
+	this->ShpGfxInfo.FillClr = lhs->ShpGfxInfo.FillClr;
+	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
+	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
+	this->ShpGfxInfo.isSelected = false;
+
 }
 
 Circle::~Circle()
@@ -131,3 +149,9 @@ void Circle::Load(ifstream& Infile)
 	}
 }
 void Circle::RESIZE(double size) {}
+
+shape* Circle::Copy()
+{
+	shape* S = new Circle(this);
+	return S;
+}

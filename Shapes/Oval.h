@@ -10,6 +10,7 @@ private:
 public:
 	Oval();
 	Oval(Point, Point, GfxInfo shapeGfxInfo);
+	Oval(const Oval* lhs);
 	virtual ~Oval();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
@@ -19,6 +20,7 @@ public:
 	virtual void Save(ofstream& OutFile);
 	virtual void Load(ifstream& Infile);
 	virtual void RESIZE(double size);
+	virtual shape* Copy();
 };
 
 

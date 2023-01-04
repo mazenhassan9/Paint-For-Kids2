@@ -11,6 +11,7 @@ private:
 public:
 	Rect();
 	Rect(Point , Point, GfxInfo shapeGfxInfo );
+	Rect(const Rect* lhs);
 	virtual ~Rect();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
@@ -20,5 +21,6 @@ public:
 	virtual void Load(ifstream& Infile);
 	virtual void Rotate();
 	virtual void RESIZE(double size);
+	virtual shape* Copy();
 };
 
