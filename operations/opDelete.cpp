@@ -18,10 +18,16 @@ void opDelete::Execute()
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 	shape* S1 = pGr->GetLastSelected();
+	vector<shape*> Shapes = pGr->GetSelected();
 	if (S1)
 	{
-		pGr->DeleteShape(S1);
-		pUI->PrintMessage("Delete Operation, The Selected shape has been deleted");
+		for (auto& itr : Shapes)
+		{
+			pGr->DeleteShape(itr);
+			
+		}
+		
+		pUI->PrintMessage("Delete Operation, All Selected shapes have been deleted");
 	}
 	else 
 	{

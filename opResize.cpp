@@ -17,14 +17,19 @@ void opResize::Execute()
 
 	Graph* pGr = pControl->getGraph();
 	shape* sh = pGr->GetLastSelected();
-
+	double size;
 	GUI* pUI = pControl->GetUI();
-	pUI->PrintMessage("Enter resize ratio: ");
-	double size = stod(pUI->GetSrting());
+
 	pUI->ClearStatusBar();
 
 	if (sh)
 	{
+		pUI->PrintMessage("Enter resize ratio: ");
+		size = stod(pUI->GetSrting());
+		while (size <= 0)
+		{
+			pUI->PrintMessage("Error Resize Ratio!, Please Enter resize ratio > 0: ");
+		}
 		sh->RESIZE(size);
 	}
 	else

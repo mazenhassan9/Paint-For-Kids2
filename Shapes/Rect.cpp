@@ -141,6 +141,7 @@ void Rect::Rotate()
 
 }
 void Rect::RESIZE(double size) {
+	/*
 	double x1, x2, y1, y2;
 	const double centerX= (Corner1.x + Corner2.x) / 2;
 	const double centerY = (Corner1.y + Corner2.y) / 2;
@@ -160,6 +161,17 @@ void Rect::RESIZE(double size) {
 			Corner1.y = y1 + ((Corner1.y + Corner2.y) / 2);
 			Corner2.y = y2 + ((Corner1.y + Corner2.y) / 2);
 		}
+		*/
+	int centerx, centery;
+	centerx = (Corner1.x + Corner2.x) / 2;
+	centery = (Corner1.y + Corner2.y) / 2;
+
+	this->Corner1.x *= size;
+	this->Corner1.y *= size;
+
+	this->Corner2.x *= size;
+	this->Corner2.y *= size;
+	this->Move(centerx, centery); //shift to the original center after scale.
 }
 
 shape* Rect::Copy()

@@ -51,22 +51,39 @@ void opDrawingArea::Execute()
 
 			}
 			pGr->SetSelected(S1, true);
-			
+			pUI->KeyboardFlush();
 		}
 	}
-	
 	else if (S2) //if the point clicked is not on a shape (therefore background) (and there's a shape selected) (unselect all shapes)
 	{
 		
-		for (auto& itr : Shapes)
-		{
-			itr->SetSelected(false);
-			pGr->SetSelected(itr, false);
-		}
 		
+			for (auto& itr : Shapes)
+			{
+				itr->SetSelected(false);
+				pGr->SetSelected(itr, false);
+			}
+
 		
 	}
-	pUI->KeyboardFlush();
+	//pUI->GetLastKey(key);
+	//cout << key << endl;
+	//if (key == 100) //"D" is press
+	//{
+	//	if (S2)
+	//	{
+	//		for (auto& itr : Shapes)
+	//		{
+	//			pGr->DeleteShape(itr);
+	//			pGr->Draw(pUI);
+	// Trial of Delete Operation (with D) key
+	//		}
+	//	}
+	//}
+	//pUI->KeyboardFlush();
+
+	
+		
 	
 
 	//Drag  Operation

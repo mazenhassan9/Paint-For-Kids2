@@ -250,6 +250,29 @@ bool polygon::isIntersect(line l1, line l2)const
 
 	return false;
 }
-void polygon::RESIZE(double size) {}
+void polygon::RESIZE(double size) {
+	int centerx = 0, centery = 0;
+	for (int i = 0; i < vertices; i++)
+	{
+		centerx += Corners[i].x;
+		centery += Corners[i].y;
+
+
+	}
+	centerx /= vertices;
+	centery /= vertices;
+	//scailing 
+	for (int i = 0; i < vertices; i++)
+	{
+		this->Corners[i].x *= size;
+		this->Corners[i].y *= size;
+
+	}
+	this->Move(centerx, centery); //shift back to its center
+	
+
+
+
+}
 
 
