@@ -46,6 +46,4 @@ public:
 	virtual shape* Copy() = 0;					//Copy the shape parameters to the file
 	virtual void Load(ifstream& Infile) = 0;	//Load the shape parameters to the file
 	virtual void RESIZE(double size) = 0;
-
 };
-

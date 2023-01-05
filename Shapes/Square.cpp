@@ -169,4 +169,18 @@ void Square::Rotate()
 
 
 }
-void Square::RESIZE(double size) {}
+void Square::RESIZE(double size) 
+{
+	Point Corner2 = { origin.x + sidelent,origin.y + sidelent };
+
+	int centerx, centery;
+	centerx = (origin.x + Corner2.x) / 2;
+	centery = (origin.y + Corner2.y) / 2;
+
+	this->origin.x *= size;
+	this->origin.y *= size;
+
+	this->sidelent *= size;
+	
+	Move(centerx, centery);
+}

@@ -146,7 +146,19 @@ void Oval::Rotate()
 
 
 }
-void Oval::RESIZE(double size) {}
+void Oval::RESIZE(double size) 
+{
+	int centerx, centery;
+	centerx = (P1.x + P2.x) / 2;
+	centery = (P1.y + P2.y) / 2;
+
+	this->P1.x *= size;
+	this->P1.y *= size;
+
+	this->P2.x *= size;
+	this->P2.y *= size;
+	this->Move(centerx, centery);
+}
 
 shape* Oval::Copy()
 {

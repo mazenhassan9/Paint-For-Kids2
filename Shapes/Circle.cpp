@@ -57,7 +57,7 @@ void Circle::Move(int x, int y)
 	this->center.x = x;
 	this->center.y = y;
 	this->Corner.x = this->center.x + radius;
-	this->Corner.y = this->center.y;
+	this->Corner.y = this->center.y+radius;
 }
 
 void Circle::Rotate()
@@ -148,7 +148,19 @@ void Circle::Load(ifstream& Infile)
 		ShpGfxInfo.isFilled = false;
 	}
 }
-void Circle::RESIZE(double size) {}
+void Circle::RESIZE(double size) 
+{
+	int cx = (Corner.x + center.x) / 2;
+	int cy = (Corner.x + center.y) / 2;
+
+	this->Corner.x *= size;
+	this->Corner.y *= size;
+
+	this->center.x *= size;
+	this->center.y *= size;
+
+	Move(cx, cy);
+}
 
 shape* Circle::Copy()
 {

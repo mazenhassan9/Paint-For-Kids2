@@ -25,4 +25,3 @@ public:
 	virtual void RESIZE(double size);
 	virtual shape* Copy();
 };
-
