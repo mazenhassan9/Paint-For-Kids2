@@ -150,16 +150,11 @@ void Circle::Load(ifstream& Infile)
 }
 void Circle::RESIZE(double size) 
 {
-	int cx = (Corner.x + center.x) / 2;
-	int cy = (Corner.x + center.y) / 2;
+	
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
 
-	this->Corner.x *= size;
-	this->Corner.y *= size;
-
-	this->center.x *= size;
-	this->center.y *= size;
-
-	Move(cx, cy);
+	this->Corner.x = this->center.x + (radius * size);
+	this->Corner.y = this->center.y + (radius * size);
 }
 
 shape* Circle::Copy()
