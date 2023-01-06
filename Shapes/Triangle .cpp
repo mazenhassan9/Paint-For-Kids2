@@ -166,7 +166,7 @@ void Triangle::Rotate()
 void Triangle::RESIZE(double size) {
 	int centerx, centery;
 	centerx = (Corner1.x + Corner2.x + Corner3.x) / 3;
-	centery = (Corner1.x + Corner2.x + Corner3.x) / 3;
+	centery = (Corner1.y + Corner2.y + Corner3.y) / 3;
 
 	this->Corner1.x *= size;
 	this->Corner1.y *= size;
