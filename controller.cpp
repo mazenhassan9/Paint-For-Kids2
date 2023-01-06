@@ -5,6 +5,8 @@
 #include "operations\opAddSquare.h"
 #include "operations/opAddTri.h"
 #include "operations\opAddPoly.h"
+#include "operations/OpGroup.h"
+#include "operations/Opungroup.h"
 #include "operations\oppAddOval.h"
 #include "operations\oppAddLine.h"
 #include "operations\opAddExit.h"
@@ -102,6 +104,9 @@ operation* controller::createOperation(operationType OpType)
 		case COPY:
 			pOp = new opCopy(this);
 			break;
+		case UNGROUP:
+			pOp = new Opungroup(this);
+			break;
 		case CUT:
 			pOp = new opCut(this);
 			break;
@@ -127,6 +132,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case ROTATE:
 			pOp = new OpRotate(this);
+			break;
+		case GROUP:
+			pOp = new OpGroup(this);
 			break;
 		case SWITCH:
 			pOp = new opSwitch(this);

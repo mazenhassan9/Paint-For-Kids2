@@ -111,11 +111,14 @@ operationType GUI::GetUseroperation() const
 			case ICON_Bordercolor: return CHNG_BOR_CLR;
 			//case ICON_Select: return Select;
 			case ICON_Delete: return DEL;
+			case ICON_GROUP:return GROUP;
+			case ICON_UNGROUOP:return UNGROUP;
 			case ICON_COPY: return COPY;
 			case ICON_CUT: return CUT;
 			case ICON_PASTE: return PASTE;
 			case ICON_Resize: return RESIZE ;
 			case ICON_Rotate: return ROTATE;
+			case ICON_ZOOM: return ZOOM;
 			case Icon_Save: return SAVE;
 			case ICON_Load: return LOAD;
 			case ICON_Single_Fill: return CHNG_S_FILL_CLR;
@@ -240,9 +243,12 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_PASTE] = "images\\MenuIcons\\paste.jpg";
 	MenuIconImages[ICON_Resize] = "images\\MenuIcons\\Resize.jpg";
 	MenuIconImages[ICON_Rotate] = "images\\MenuIcons\\Rotate.jpg";
+	MenuIconImages[ICON_ZOOM] = "images\\MenuIcons\\zoom.jpg";
 	MenuIconImages[Icon_Save] = "images\\MenuIcons\\Save.jpg";
 	MenuIconImages[ICON_Load] = "images\\MenuIcons\\Load.jpg";
 	MenuIconImages[ICON_Single_Fill] = "images\\MenuIcons\\Menu_Single_Fill_color.jpg";
+	MenuIconImages[ICON_GROUP] = "images\\MenuIcons\\group.jpg";
+	MenuIconImages[ICON_UNGROUOP] = "images\\MenuIcons\\ungroup.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\SWITCH.JPG";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 

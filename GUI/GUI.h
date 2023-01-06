@@ -64,7 +64,9 @@ class GUI
 		ICON_Rotate,
 		Icon_Save,
 		ICON_Load,
-
+		ICON_ZOOM,
+		ICON_GROUP,
+		ICON_UNGROUOP,
 		ICON_SWITCH,
 		ICON_EXIT,		//Exit icon
 

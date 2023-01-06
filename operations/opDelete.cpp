@@ -21,6 +21,13 @@ void opDelete::Execute()
 	vector<shape*> Shapes = pGr->GetSelected();
 	if (S1)
 	{
+		Group* group = dynamic_cast<Group*> (S1);
+		if (group)
+		{
+			pGr->DeleteGroup(group);
+			delete group;
+		}
+
 		for (auto& itr : Shapes)
 		{
 			pGr->DeleteShape(itr);

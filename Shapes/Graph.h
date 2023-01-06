@@ -1,5 +1,6 @@
 #pragma once
 #include "Shape.h"
+#include "Group.h"
 #include <fstream>
 #include <vector>
 using namespace std;
@@ -13,12 +14,15 @@ class Graph
 private:
 	vector <shape*> shapesList; //a container to hold all shapes							   
 	vector<shape*> selectedShapes;	//pointer to the currently selected shape
+	vector<Group*> grouplist;
 	shape* copiedshape;
 public:										
 	Graph();
 	~Graph();
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
+	void AddsGroup(Group* pShp);
 	void DeleteShape(shape* pFig);
+	void DeleteGroup(Group* pFig);
 	void SetSelected(shape* pFig,bool flag); //set Selected pointer to a select.
 	shape* GetLastSelected() const;
 	vector<shape*> GetSelected();

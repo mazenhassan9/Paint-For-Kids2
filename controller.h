@@ -2,6 +2,8 @@
 
 #include "DEFS.h"
 #include "Shapes\Graph.h"
+#include "Shapes\Group.h"
+
 #include "GUI\GUI.h"
 
 /*Testing Github*/
@@ -13,7 +15,6 @@ class controller
 
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
-	
 
 public:	
 	controller(); 

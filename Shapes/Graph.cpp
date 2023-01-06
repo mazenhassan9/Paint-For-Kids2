@@ -39,6 +39,13 @@ void Graph::Addshape(shape* pShp)
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);	
 }
+
+
+void Graph::AddsGroup(Group* pShp)
+{
+	//Add a new shape to the shapes vector
+	grouplist.push_back(pShp);
+}
 void Graph::DeleteShape(shape* pFig)
 {
 	int i = 0;
@@ -49,6 +56,28 @@ void Graph::DeleteShape(shape* pFig)
 		{
 			shapesList[i] = shapesList.back(); 
 			shapesList.pop_back();
+		}
+		i++;
+	}
+
+}
+
+void Graph::DeleteGroup(Group* pFig)
+{
+	int i = 0;
+	for (auto& itr : grouplist)
+	{
+
+		if (pFig == itr)
+		{
+			grouplist[i] = grouplist.back();
+			grouplist.pop_back();
+			vector<shape*>se = itr->getgroupshapes();
+			for (auto& itr : se)
+			{
+				this->DeleteShape(itr);
+			}
+
 		}
 		i++;
 	}
@@ -81,8 +110,17 @@ void Graph::SetSelected(shape* pFig, bool flag)
 shape* Graph::GetLastSelected() const
 {
 	if (selectedShapes.size() != 0)
-
+	{
+		if (grouplist.size() != 0)
+		{
+			for (auto& itr : grouplist)
+			{
+				if (itr->isshapein(selectedShapes[selectedShapes.size() - 1]))
+					return itr;
+			}
+		}
 		return selectedShapes[selectedShapes.size()-1];
+	}
 	else
 		return nullptr;
 }

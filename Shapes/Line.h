@@ -1,4 +1,4 @@
-#pragma once   //Line.h
+#pragma once   
 #include "Shape.h"
 
 class Line : public shape

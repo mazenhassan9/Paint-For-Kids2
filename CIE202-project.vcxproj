@@ -182,6 +182,7 @@
     <ClCompile Include="operations\opDelete.cpp" />
     <ClCompile Include="operations\opDrawingArea.cpp" />
     <ClCompile Include="operations\opGeneralfillcolor.cpp" />
+    <ClCompile Include="operations\OpGroup.cpp" />
     <ClCompile Include="operations\opLoad.cpp" />
     <ClCompile Include="operations\oppAddLine.cpp" />
     <ClCompile Include="operations\oppAddOval.cpp" />
@@ -191,10 +192,12 @@
     <ClCompile Include="operations\opSave.cpp" />
     <ClCompile Include="operations\opSelect.cpp" />
     <ClCompile Include="operations\opSwitch.cpp" />
+    <ClCompile Include="operations\Opungroup.cpp" />
     <ClCompile Include="opPlayingArea.cpp" />
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
+    <ClCompile Include="Shapes\Group.cpp" />
     <ClCompile Include="Shapes\Line.cpp" />
     <ClCompile Include="Shapes\Oval.cpp" />
     <ClCompile Include="Shapes\Polygon.cpp" />
@@ -230,6 +233,7 @@
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="opChangeBorderColor.h" />
     <ClInclude Include="opChangePenColor.h" />
+    <ClInclude Include="operations\OpGroup.h" />
     <ClInclude Include="operations\opAddCircle.h" />
     <ClInclude Include="operations\opAddExit.h" />
     <ClInclude Include="operations\OpAddIrPoly.h" />
@@ -254,11 +258,13 @@
     <ClInclude Include="operations\opSave.h" />
     <ClInclude Include="operations\opSelect.h" />
     <ClInclude Include="operations\opSwitch.h" />
+    <ClInclude Include="operations\Opungroup.h" />
     <ClInclude Include="opPlayingArea.h" />
     <ClInclude Include="opResize.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />
+    <ClInclude Include="Shapes\Group.h" />
     <ClInclude Include="Shapes\Line.h" />
     <ClInclude Include="Shapes\Oval.h" />
     <ClInclude Include="Shapes\Polygon.h" />
