@@ -1,5 +1,6 @@
 #include "Polygon.h"
 #include <iostream>
+#include <math.h>
 
 polygon::polygon()
 {
@@ -280,4 +281,57 @@ void polygon::RESIZE(double size) {
 
 }
 
+void polygon::mapshape(GUI* pUI)
+{
 
+	int centerx = 0, centery = 0;
+	for (int i = 0; i < vertices; i++)
+	{
+		//pUI->Mapx(Corners[i].x);
+		//pUI->Mapy(Corners[i].y);
+
+
+		centerx += Corners[i].x;
+		centery += Corners[i].y;
+	}
+	centerx /= vertices;
+	centery /= vertices;
+
+	pUI->Mapx(centerx);
+	pUI->Mapy(centery);
+	
+	int sideL = sqrt(pow(Corners[0].x-Corners[1].x,2)+ pow(Corners[0].y - Corners[1].y, 2));
+
+	for (int i = 0; i < vertices; i++)
+	{
+		Corners[i].x = centerx + (sideL * cos(2 * 3.14 * i / vertices));
+		Corners[i].y = centery + (sideL * sin(2 * 3.14 * i / vertices));
+		pUI->Mapx(Corners[i].x);
+		pUI->Mapy(Corners[i].y);
+	}
+
+
+	//for (int i = 0; i < vertices; i++)
+	//{
+	//	Point P1 ={ centerx ,centery };
+	//	//pUI->Mapx(Corners[i].x);
+	//	//pUI->Mapy(Corners[i].y);
+	//	
+	//}
+		/*pUI->Mapx(centerx.y);
+		pUI->Mapy(Corners[i].y);
+
+		this->Corners[i].x += (x - centerx);
+		this->Corners[i].y += (y - centery);
+	}*/
+	/*Point origin;
+	Point Corner2 = { origin.x + sidelent,origin.y + sidelent };
+
+	pUI->Mapx(origin.x);
+	pUI->Mapx(Corner2.x);
+
+	pUI->Mapy(origin.y);
+	pUI->Mapy(Corner2.y);
+
+	sidelent = Corner2.x - origin.x;*/
+}

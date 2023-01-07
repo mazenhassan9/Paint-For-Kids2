@@ -15,6 +15,10 @@ Group::Group(vector<shape*> groupshapesListt):groupshapesList(groupshapesListt)
 
 }
 
+Group::Group()
+{
+}
+
 Group::~Group()
 {
 	//while (groupshapesList.size() != 0)
@@ -22,6 +26,12 @@ Group::~Group()
 	//	delete* groupshapesList.begin();
 	//	groupshapesList.erase(groupshapesList.begin());
 	//}
+}
+
+void Group::Addshape(shape* pShp)
+{
+	//Add a new shape to the shapes vector
+	groupshapesList.push_back(pShp);
 }
 
 
@@ -106,6 +116,7 @@ vector<shape*> Group::getgroupshapes()
 }
 void  Group::Save(ofstream& OutFile)
 {
+	OutFile << "Group\n";
 	for (auto& itr : groupshapesList)
 	{
 		itr->Save(OutFile);
@@ -140,4 +151,8 @@ void  Group::RESIZE(double size)
 
 void Group::stick(GUI* pUI) const
 {
+}
+void Group::mapshape(GUI* pUI)
+{
+
 }

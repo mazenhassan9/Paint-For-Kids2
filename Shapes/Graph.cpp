@@ -156,6 +156,8 @@ void Graph::Draw(GUI* pUI) const
 			shapePointer->stick(pUI);
 	}
 }
+
+
 vector <shape*>Graph::getlistofshspes()
 {
 	return shapesList;
@@ -164,9 +166,24 @@ vector <shape*>Graph::getlistofshspes()
 void Graph::Save(ofstream& outfile)
 {
 	outfile << shapesList.size() << endl;
+	bool flag = 0;
 	for (auto& itr : shapesList)
 	{
-		 itr->Save(outfile);
+		flag = 0;
+		for (auto& group: grouplist)
+		{
+			if (group->isshapein(itr))
+			{
+				flag = 1;
+				break;
+			}
+		}
+		if(flag == 0)
+			itr->Save(outfile);
+	}
+	for (auto& itr : grouplist)
+	{
+		itr->Save(outfile);
 	}
 }
 
@@ -175,14 +192,20 @@ void Graph::load(ifstream& inputfile)
 	string name;
 	int Scount;
 	shape* R;
+	Group* g=nullptr;
+	grouplist.clear();
 	shapesList.clear();
 	//Load Figures Count	
 	inputfile >> Scount;
 
 	while(inputfile >> name)
 	{
-		
-		if (name == "CIRCLE")
+		if (name == "Group")
+		{
+			g = new Group;
+			AddsGroup(g);
+		}
+		else if (name == "CIRCLE")
 			R = new Circle;
 		else if (name == "LINE")
 			R = new Line;
@@ -201,6 +224,8 @@ void Graph::load(ifstream& inputfile)
 		{
 			R->Load(inputfile);
 			Addshape(R);
+			if (g)
+				g->Addshape(R);
 			R = NULL;
 		}
 		
@@ -272,4 +297,17 @@ shape* Graph::Getshape(int x, int y) const
 	}
 
 	return nullptr;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+}
+void Graph::mapshapes(GUI* pUI)
+{
+	for (auto& itr : shapesList)
+	{
+		itr->mapshape(pUI);
+	}
+=======
+>>>>>>> ec3dffe11c86db3ae37b9fcedf38190f298cbe1c
+>>>>>>> Stashed changes
 }

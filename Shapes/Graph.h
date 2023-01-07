@@ -3,7 +3,14 @@
 #include "Group.h"
 #include <fstream>
 #include <vector>
+<<<<<<< Updated upstream
 #include <stack>
+=======
+<<<<<<< HEAD
+=======
+#include <stack>
+>>>>>>> ec3dffe11c86db3ae37b9fcedf38190f298cbe1c
+>>>>>>> Stashed changes
 
 using namespace std;
 
@@ -40,6 +47,7 @@ public:
 	shape* getcopied()const;
 	void setcopied(shape* cs);
 
+	void mapshapes(GUI* pUI);
 	shape* GetLastSelected() const;
 	operationType GetlastOperation() const;
 	shape* GetLastDeleted();
@@ -47,5 +55,5 @@ public:
 	void Add(vector<shape*>, shape*);	//generic function to add shape in a ceration vector
 	void Delete(vector<shape*>, shape*); //generic function to delete shape in a ceration vector
 	void SendBack(shape* pFig);
-	
+
 };

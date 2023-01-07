@@ -187,3 +187,15 @@ void Triangle::RESIZE(double size) {
 
 	this->Move(centerx, centery);
 }
+
+void Triangle::mapshape(GUI* pUI)
+{
+	
+
+	pUI->Mapx(Corner1.x);
+	pUI->Mapx(Corner2.x);
+	pUI->Mapx(Corner3.x);
+	pUI->Mapy(Corner1.y);
+	pUI->Mapy(Corner2.y);
+	pUI->Mapy(Corner3.y);
+}

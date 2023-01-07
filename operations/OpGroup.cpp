@@ -16,7 +16,19 @@ void OpGroup::Execute()
 	
 	GUI* pUI = pControl->GetUI();
 	Graph* gr = pControl->getGraph();
-	Group* pGr = new Group(gr->GetSelected());
-	gr->AddsGroup(pGr);
-	pUI->PrintMessage("Done grouping");
+	vector<shape*> shapesList= gr->GetSelected();
+	
+	
+	if (!shapesList.empty())
+	{
+		Group* pGr = new Group(shapesList);
+		gr->AddsGroup(pGr);
+		pUI->PrintMessage("Done grouping");
+
+	}
+	else
+	{
+		pUI->PrintMessage("There is no group selected , Please select a group of shapes and try again");
+	}
+	
 }

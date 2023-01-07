@@ -9,9 +9,10 @@ private:
 	//vector<shape*> groupselectedShapes;
 public:
 	Group(vector <shape*> groupshapesListt);
+	Group();
 	~Group();
 		
-
+	void Addshape(shape* pShp);
 	virtual void Draw(GUI* pUI) const;		
 	virtual string Getinfo() const ; 
 	void ChngDrawClr(color Dclr);	
@@ -24,7 +25,7 @@ public:
 	virtual void Rotate();	
 	virtual void Move(int x, int y) ;		
 	vector<shape*> getgroupshapes();
-	
+	virtual void mapshape(GUI* pUI);
 	virtual void Save(ofstream& OutFile) ;	
 	virtual shape* Copy();					
 	virtual void Load(ifstream& Infile) ;	

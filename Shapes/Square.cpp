@@ -190,3 +190,17 @@ void Square::RESIZE(double size)
 	
 	Move(centerx, centery);
 }
+
+void Square::mapshape(GUI* pUI)
+{
+	
+	Point Corner2 = { origin.x + sidelent, origin.y + sidelent };
+
+	pUI->Mapx(origin.x);
+	pUI->Mapx(Corner2.x);
+	
+	pUI->Mapy(origin.y);
+	pUI->Mapy(Corner2.y);
+	
+	sidelent = abs(Corner2.x - origin.x);
+}

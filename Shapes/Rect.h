@@ -23,5 +23,6 @@ public:
 	virtual void Rotate();
 	virtual void RESIZE(double size);
 	virtual shape* Copy();
+	virtual void mapshape(GUI* pUI);
 };
 
