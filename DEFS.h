@@ -36,7 +36,7 @@ enum operationType //The operations supported (you can add more if needed)
 	PASTE,
 	PENWIDTH,
 	PEN,
-	
+	STICK,
 	CHNG_BOR_CLR,  //Change border color
 	SWITCH ,
 	BORDER_WIDTH ,
@@ -46,7 +46,7 @@ enum operationType //The operations supported (you can add more if needed)
 	PLAYING_AREA,
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
-
+	SENDTOBACK,
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY	,		//Switch interface to Play mode
 

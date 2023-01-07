@@ -35,6 +35,11 @@ void Square::Draw(GUI* pUI) const
 	pUI->DrawSquare(origin,sidelent , ShpGfxInfo);
 }
 
+void Square::stick(GUI* pUI) const
+{
+	pUI->stickSquare(origin, sidelent);
+}
+
 bool Square::Get(int x, int y) const
 {
 	Point Corner2 = { origin.x + sidelent,origin.y + sidelent };

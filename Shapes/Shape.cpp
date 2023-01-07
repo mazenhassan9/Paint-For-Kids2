@@ -43,7 +43,12 @@ int shape::Get_Count()
 	return Shapes_Count;
 }
 
+void shape::Hide()
+{
+	isHidden = true;
+}
 
-
-
-
+bool shape::HiddenItems()
+{
+	return isHidden;
+}

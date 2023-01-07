@@ -17,6 +17,7 @@ private:
 	vector<shape*> selectedShapes;	//pointer to the currently selected shape
 	vector<Group*> grouplist;
 	shape* copiedshape;
+	
 public:										
 	Graph();
 	~Graph();
@@ -34,4 +35,6 @@ public:
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	shape* getcopied()const;
 	void setcopied(shape* cs);
+	void SendBack(shape* pFig);
+	
 };

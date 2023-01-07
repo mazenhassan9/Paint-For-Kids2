@@ -36,6 +36,11 @@ void Oval::Draw(GUI* pUI) const
 	pUI->DrawOval(P1, P2, ShpGfxInfo);
 }
 
+void Oval::stick(GUI* pUI) const
+{
+	pUI->stickOval(P1, P2);
+}
+
 bool Oval::Get(int x, int y) const
 {
 

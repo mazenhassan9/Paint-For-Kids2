@@ -39,6 +39,11 @@ void Line::Draw(GUI* pUI) const
 	pUI->DrawLine(P1, P2, ShpGfxInfo);
 }
 
+void Line::stick(GUI* pUI) const
+{
+	pUI->stickLine(P1, P2);
+}
+
 bool Line::Get(int x, int y) const
 {
 	if (((x >= P1.x && x <= P2.x) || (x <= P1.x && x >= P2.x)) &&

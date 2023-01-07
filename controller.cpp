@@ -29,6 +29,8 @@
 #include "operations/opCopy.h"
 #include "operations/opPaste.h"
 #include"operations/OpCut.h"
+#include "operations/opStickimage.h"
+#include "operations/opSendBack.h"
 
 //Constructor
 controller::controller()
@@ -120,6 +122,9 @@ operation* controller::createOperation(operationType OpType)
 		case PENWIDTH :
 			pOp = new opPenwidth(this);
 			break;
+		case SENDTOBACK:
+			pOp = new opSendBack(this);
+			break;
 
 		case DRAWING_AREA:
 			pOp = new opDrawingArea(this);
@@ -149,6 +154,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case PASTE:
 			pOp = new opPaste(this);
+			break;
+		case STICK:
+			pOp = new opStickimage(this);
 			break;
 
 		default:

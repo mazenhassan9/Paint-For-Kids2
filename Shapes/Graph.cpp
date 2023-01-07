@@ -133,7 +133,9 @@ vector<shape*> Graph::GetSelected()
 void Graph::Draw(GUI* pUI) const
 {
 	pUI->ClearDrawArea();
+	int i = 0;
 	for (auto &shapePointer : shapesList)
+		if (shapesList[i]->HiddenItems() == false)
 		shapePointer->Draw(pUI);
 }
 vector <shape*>Graph::getlistofshspes()
@@ -196,6 +198,24 @@ void Graph::setcopied(shape* cs)
 {
 	copiedshape = cs;
 }
+
+void Graph::SendBack(shape* pFig)
+{
+	int i = 0;
+	for (auto& itr : grouplist)
+	{
+
+		if (pFig == itr)
+		{
+			grouplist[i] = grouplist[i - 1];
+
+		}
+		i--;
+	}
+}
+
+
+
 
 shape* Graph::Getshape(int x, int y) const
 {
