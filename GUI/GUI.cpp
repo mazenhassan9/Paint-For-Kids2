@@ -61,15 +61,10 @@ GUI::GUI()
 //======================================================================================//
 void GUI::GetLastClick(int& x, int& y) const
 {
-	pWind->GetMouseCoord(x,y);
-	
-	pWind->GetMouseCoord(x,y);
-	
+	pWind->GetMouseCoord(x, y);
 }
 void GUI::GetPointClicked(int& x, int& y) const
 {
-	pWind->WaitMouseClick(x,y);	//Wait for mouse click
-
 	pWind->WaitMouseClick(x,y);	//Wait for mouse click
 
 }
@@ -653,10 +648,16 @@ void GUI::DrawImg(string str, int startX, int startY, int endX, int endY)
 
 
 
-<<<<<<< Updated upstream
+
 void GUI::stickOval(Point P1, Point P2) const
 {
 	pWind->DrawImage(str, startX, startY, endX, endY);
+}
+
+<<<<<<< Updated upstream
+void GUI::stickOval(Point P1, Point P2) const
+{
+	pWind->DrawImage("images\\MenuIcons\\Menu_Oval.jpg", P1.x, P1.y, P2.x, P2.y);
 }
 
 
