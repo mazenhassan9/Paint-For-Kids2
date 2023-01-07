@@ -29,6 +29,21 @@ Graph::~Graph()
 	}
 }
 
+void Graph::AddOperation(operationType op)
+{
+	operations.push_back(op);
+}
+
+operationType Graph::GetlastOperation() const
+{
+	if (!operations.empty())
+	{
+		operationType r = operations.back();
+		return r;
+	}
+	
+}
+
 //==================================================================================//
 //						shapes Management Functions								//
 //==================================================================================//
@@ -195,6 +210,40 @@ shape* Graph::getcopied() const
 void Graph::setcopied(shape* cs)
 {
 	copiedshape = cs;
+}
+
+shape* Graph::GetLastDeleted() 
+{
+	shape* output = deletedShapes.back()->Copy();
+	Delete(deletedShapes, output);
+	return output;
+}
+
+shape* Graph::GetLastModified() 
+{
+	shape* output = modifiedShapes.back()->Copy();
+	Delete(modifiedShapes, output);
+	return output;
+}
+
+void Graph::Add(vector<shape*>list, shape* pShp)
+{
+	list.push_back(pShp);
+}
+
+void Graph::Delete(vector<shape*>list, shape* pFig)
+{
+	int i = 0;
+	for (auto& itr : list)
+	{
+
+		if (pFig == itr)
+		{
+			shapesList[i] = shapesList.back();
+			shapesList.pop_back();
+		}
+		i++;
+	}
 }
 
 shape* Graph::Getshape(int x, int y) const

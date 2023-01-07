@@ -170,17 +170,7 @@ void controller::UpdateInterface() const
 	pGraph->Draw(pGUI);
 }
 
-//void controller::colorall(color c)
-//{
-//	for(int i =0;i<pGraph->getlistofshspes().size(); i++)
-//	{
-//		pGraph->getlistofshspes()[i]->ChngFillClr(c);
-//		/*pGraph->getlistofshspes()[i]->ChngDrawClr(c);*/
-//		
-//	}
-//	
-//	
-//}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -213,7 +203,6 @@ controller::~controller()
 //==================================================================================//
 void controller::Run()
 {
-	//pGUI->colorpalette();
 	operationType OpType;
 	do
 	{
@@ -228,6 +217,7 @@ void controller::Run()
 		//3. Execute the created operation
 		if (pOpr)
 		{
+			pGraph->AddOperation(OpType);
 			pOpr->Execute();//Execute
 			delete pOpr;	//operation is not needed any more ==> delete it
 			pOpr = nullptr;
