@@ -42,7 +42,10 @@ void Triangle::Draw(GUI* pUI) const
 
 void Triangle::stick(GUI* pUI) const
 {
-	pUI->stickTri(Corner1, Corner2, Corner3);
+	int width = sqrt(pow((Corner3.x - Corner2.x), 2));
+	int height = sqrt(pow((Corner2.y - Corner1.y), 2));
+	string img = "images\\MenuIcons\\Menu_Tri.jpg";
+	pUI->DrawImg(img, Corner2.x, Corner1.y, width, height);
 }
 
 bool Triangle::Get(int x, int y) const

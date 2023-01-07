@@ -19,7 +19,7 @@ void opSendBack::Execute()
 	if (S1)
 	{
 		pGr->SendBack(S1);
-			pUI->PrintMessage("the selected shape send to back succesfullu");
+		pUI->PrintMessage("the selected shape send to back succesfullu");
 	}
 
 	else

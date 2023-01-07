@@ -41,7 +41,7 @@ void Line::Draw(GUI* pUI) const
 
 void Line::stick(GUI* pUI) const
 {
-	pUI->stickLine(P1, P2);
+	
 }
 
 bool Line::Get(int x, int y) const

@@ -6,12 +6,16 @@ shape::shape()
 	ShpGfxInfo.isSelected = false;
 	ID = Shapes_Count;
 	Shapes_Count++;
+	isHidden = false;
+	isStick = false;
 }
 shape::shape(GfxInfo shapeGfxInfo)
 { 
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
 	ID = Shapes_Count;
 	Shapes_Count++;
+	isHidden = false;
+	isStick = false;
 }
 
 
@@ -21,6 +25,16 @@ void shape::SetSelected(bool s)
 
 bool shape::IsSelected() const
 {	return ShpGfxInfo.isSelected; }
+
+void shape::SetSticked(bool s)
+{
+	isStick = s;
+}
+
+bool shape::IsSticked() const
+{
+	return isStick;
+}
 
 void shape::ChngDrawClr(color Dclr)
 {	ShpGfxInfo.DrawClr = Dclr; }
@@ -43,9 +57,9 @@ int shape::Get_Count()
 	return Shapes_Count;
 }
 
-void shape::Hide()
+void shape::Hide(bool s)
 {
-	isHidden = true;
+	isHidden = s;
 }
 
 bool shape::HiddenItems()

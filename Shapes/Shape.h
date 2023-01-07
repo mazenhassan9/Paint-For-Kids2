@@ -12,7 +12,7 @@ protected:
 	static int Shapes_Count;
 	/*bool Issaved;*/
 	/// Add more parameters if needed.
-	bool isHidden;
+	bool isHidden, isStick;
 
 public:
 	shape();
@@ -22,10 +22,14 @@ public:
 
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
+	void SetSticked(bool s);
+	bool IsSticked() const;
 	virtual void stick(GUI* pUI) const = 0;
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
 	virtual string Getinfo() const = 0;  	//print all figure info on the status bar
 	
+	
+
 	virtual void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	virtual void ChngFillClr(color Fclr);	//changes the shape's filling color
 	void setBorderwidth(double bw);
@@ -48,6 +52,6 @@ public:
 	virtual shape* Copy() = 0;					//Copy the shape parameters to the file
 	virtual void Load(ifstream& Infile) = 0;	//Load the shape parameters to the file
 	virtual void RESIZE(double size) = 0;
-	void Hide();					
+	void Hide(bool s);					
 	bool HiddenItems();
 };

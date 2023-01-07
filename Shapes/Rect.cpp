@@ -39,7 +39,10 @@ void Rect::Draw(GUI* pUI) const
 
 void Rect::stick(GUI* pUI) const
 {
-	pUI->StickRec(Corner1, Corner2);
+	int width = sqrt(pow((Corner2.x - Corner1.x), 2));
+	int height = sqrt(pow((Corner2.y - Corner1.y), 2));
+	string img = "images\\MenuIcons\\Menu_Rect.jpg";
+	pUI->DrawImg(img, Corner1.x, Corner1.y, width, height);
 }
 
 bool Rect::Get(int x, int y) const

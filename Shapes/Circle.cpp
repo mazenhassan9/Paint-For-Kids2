@@ -41,7 +41,7 @@ void Circle::Draw(GUI* pUI) const
 
 void Circle::stick(GUI* pUI) const
 {
-	pUI->stickCir(center, Corner);
+	
 }
 
 

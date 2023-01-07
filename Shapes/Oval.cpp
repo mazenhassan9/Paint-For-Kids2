@@ -38,7 +38,7 @@ void Oval::Draw(GUI* pUI) const
 
 void Oval::stick(GUI* pUI) const
 {
-	pUI->stickOval(P1, P2);
+	
 }
 
 bool Oval::Get(int x, int y) const

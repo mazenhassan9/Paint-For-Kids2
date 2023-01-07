@@ -137,3 +137,7 @@ void  Group::RESIZE(double size)
 	}
 
 }
+
+void Group::stick(GUI* pUI) const
+{
+}

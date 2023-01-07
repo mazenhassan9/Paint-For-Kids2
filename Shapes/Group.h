@@ -29,5 +29,6 @@ public:
 	virtual shape* Copy();					
 	virtual void Load(ifstream& Infile) ;	
 	virtual void RESIZE(double size) ;
+	virtual void stick(GUI* pUI)const;
 
 };

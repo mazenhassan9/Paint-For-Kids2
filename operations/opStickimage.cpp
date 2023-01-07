@@ -19,14 +19,20 @@ void opStickimage::Execute()
 
 	if (S1)
 	{
-		 S1->stick(pUI);
+		if (S1->IsSticked())
+		{
+			S1->SetSticked(false);
+		}
+		else {
+			S1->SetSticked(true);
+		}
 		
 
-		pUI->PrintMessage("stick image to the selected shape");
+		pUI->PrintMessage("Stick image to the selected shape");
 
 
 	}
 	else
-		pUI->PrintMessage("No Shape Selecteed, Please select a shape");
+		pUI->PrintMessage("No Shape Selected, Please select a shape");
 
 }

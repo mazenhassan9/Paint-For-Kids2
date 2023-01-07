@@ -155,19 +155,15 @@ public:
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
-	void StickRec(Point P1, Point P2) const;
 	void DrawTri(Point P1, Point P2, Point p4, GfxInfo RectGfxInfo) const;
-	void stickTri(Point P1, Point P2, Point p4) const;
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
-	void stickCir(Point center, Point edge) const;
 	void DrawSquare(Point P1, double sidelen, GfxInfo SquareGfxInfo) const; // Draw a square
-	void stickSquare(Point P1, double sidelen) const;
 	void DrawLine(Point P1, Point P2, GfxInfo OvalGfxInfo) const;
-	void stickLine(Point P1, Point P2) const;
 	void DrawPoly(vector<Point> Points, const int N , GfxInfo OvalGfxInfo) const;
-	void stickPoly(vector<Point> Points, const int N) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;
-	void stickOval(Point P1, Point P2) const;
+
+	void DrawImg(string str,int startX,int startY,int endX,int endY);
+
 	
 
 	///Make similar functions for drawing all other shapes.

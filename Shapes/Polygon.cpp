@@ -43,7 +43,7 @@ void polygon::Draw(GUI* pUI) const
 
 void polygon::stick(GUI* pUI) const
 {
-	pUI->stickPoly(Corners, vertices);
+
 }
 
 

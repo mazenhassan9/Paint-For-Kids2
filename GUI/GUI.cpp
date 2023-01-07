@@ -1,5 +1,4 @@
-#include "GUI.h"
-
+#include"GUI.h"
 
 GUI::GUI()
 {
@@ -14,7 +13,7 @@ GUI::GUI()
 
 	StatusBarHeight = 50;
 	ToolBarHeight = 50;
-	MenuIconWidth = 40;
+	MenuIconWidth = 30;
 	
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = GREEN;	//default Filling color
@@ -414,17 +413,9 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		
 	pWind->DrawRectangle(P1.x, P1.y, P2.x,P2.y, style);
 	
-	
-	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);*/
 
 }
 
-void GUI::StickRec(Point P1, Point P2) const
-{
-	
-
-	pWind->DrawImage("images\\MenuIcons\\Menu_Rect.jpg", P1.x, P1.y, P2.x, P2.y);
-}
 
 void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 {
@@ -455,10 +446,6 @@ void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 	
 	
 }
-void GUI::stickSquare(Point P1, double sidelen) const
-{
-	pWind->DrawImage("images\\MenuIcons\\Menu_SQUARE.jpg", P1.x, P1.y, P1.x + sidelen, P1.y + sidelen);
-}
 void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 	color DrawingClr;
 	if (RectGfxInfo.isSelected)	//shape is selected
@@ -482,11 +469,6 @@ void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 		style = FRAME;
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, p3.x, p3.y, style);
 	
-}
-
-void GUI::stickTri(Point P1, Point P2, Point p3) const
-{
-	//pWind->DrawImage("images\\MenuIcons\\Menu_Tri.jpg", P1.x, P1.y, P2.x, P2.y, p3.x, p3.y);
 }
 
 void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
@@ -519,10 +501,6 @@ void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 	
 }
 
-void GUI::stickCir(Point center, Point edge) const
-{
-	pWind->DrawImage("images\\MenuIcons\\Menu_Circle.jpg", center.x, center.y);
-}
 
 void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const {
 
@@ -559,10 +537,7 @@ void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const
 	
 
 }
-void GUI::stickPoly(vector<Point> Points, const int N) const
-{
-	//pWind->DrawImage("images\\MenuIcons\\Menu_REG.JPG", X, Y, N);
-}
+
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 {
 	color DrawingClr;
@@ -584,10 +559,7 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	
 }
 
-void GUI::stickLine(Point P1, Point P2) const
-{
-	pWind->DrawImage("images\\MenuIcons\\Menu_LINE.jpg", P1.x, P1.y, P2.x, P2.y);
-}
+
 
 void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 {
@@ -617,10 +589,12 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 
 }
 
-void GUI::stickOval(Point P1, Point P2) const
+void GUI::DrawImg(string str, int startX, int startY, int endX, int endY)
 {
-	pWind->DrawImage("images\\MenuIcons\\Menu_Oval.jpg", P1.x, P1.y, P2.x, P2.y);
+	pWind->DrawImage(str, startX, startY, endX, endY);
 }
+
+
 
 
 

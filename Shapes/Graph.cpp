@@ -148,10 +148,13 @@ vector<shape*> Graph::GetSelected()
 void Graph::Draw(GUI* pUI) const
 {
 	pUI->ClearDrawArea();
-	int i = 0;
-	for (auto &shapePointer : shapesList)
-		if (shapesList[i]->HiddenItems() == false)
-		shapePointer->Draw(pUI);
+	for (auto& shapePointer : shapesList)
+	{
+		if (!shapePointer->HiddenItems())
+			shapePointer->Draw(pUI);
+		if (shapePointer->IsSticked())
+			shapePointer->stick(pUI);
+	}
 }
 vector <shape*>Graph::getlistofshspes()
 {
@@ -246,6 +249,10 @@ void Graph::Delete(vector<shape*>list, shape* pFig)
 		}
 		i++;
 	}
+}
+
+void Graph::SendBack(shape* pFig)
+{
 }
 
 shape* Graph::Getshape(int x, int y) const
