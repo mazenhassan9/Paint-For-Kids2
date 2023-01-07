@@ -646,22 +646,6 @@ void GUI::DrawImg(string str, int startX, int startY, int endX, int endY)
 
 
 
-
-
-
-void GUI::stickOval(Point P1, Point P2) const
-{
-	pWind->DrawImage(str, startX, startY, endX, endY);
-}
-
-<<<<<<< Updated upstream
-void GUI::stickOval(Point P1, Point P2) const
-{
-	pWind->DrawImage("images\\MenuIcons\\Menu_Oval.jpg", P1.x, P1.y, P2.x, P2.y);
-}
-
-
-
 void GUI::setFillColor(color c)
 {
 	
@@ -742,20 +726,4 @@ int GUI::getoriginaly1()
 	return y1;
 }
 
-int  GUI::getoriginalx0()
-{
-	return x0;
-}
-int GUI::getoriginalx1()
-{
-	return x1;
-}
-int GUI::getoriginaly0()
-{
-	return y0;
-}
-int GUI::getoriginaly1()
-{
-	return y1;
-}
 

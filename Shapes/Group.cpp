@@ -148,7 +148,7 @@ void  Group::RESIZE(double size)
 	}
 
 }
-void Group::mapshape(GUI* pUI)
+void Group::stick(GUI* pUI) const
 {
 
 }
@@ -156,3 +156,4 @@ void Group::mapshape(GUI* pUI)
 {
 
 }
+

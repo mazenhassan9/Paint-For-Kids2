@@ -240,6 +240,12 @@
     <ClCompile Include="operations\opStickimage.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\OpZoom.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\OpZoomin_out.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -438,6 +444,12 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opStickimage.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\OpZoom.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\OpZoomin_out.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

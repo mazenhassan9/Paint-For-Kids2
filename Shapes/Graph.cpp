@@ -297,17 +297,13 @@ shape* Graph::Getshape(int x, int y) const
 	}
 
 	return nullptr;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
 }
+
 void Graph::mapshapes(GUI* pUI)
 {
 	for (auto& itr : shapesList)
 	{
 		itr->mapshape(pUI);
 	}
-=======
->>>>>>> ec3dffe11c86db3ae37b9fcedf38190f298cbe1c
->>>>>>> Stashed changes
+
 }

@@ -3,14 +3,7 @@
 #include "Group.h"
 #include <fstream>
 #include <vector>
-<<<<<<< Updated upstream
-#include <stack>
-=======
-<<<<<<< HEAD
-=======
-#include <stack>
->>>>>>> ec3dffe11c86db3ae37b9fcedf38190f298cbe1c
->>>>>>> Stashed changes
+
 
 using namespace std;
 
@@ -46,9 +39,6 @@ public:
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	shape* getcopied()const;
 	void setcopied(shape* cs);
-	void mapshapes(GUI* pUI);
-
-
 	void mapshapes(GUI* pUI);
 	shape* GetLastSelected() const;
 	operationType GetlastOperation() const;

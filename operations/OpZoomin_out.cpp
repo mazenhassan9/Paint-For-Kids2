@@ -1,9 +1,9 @@
 #include "OpZoomin_out.h"
-#include "Shapes/Shape.h"
+#include "..\Shapes/Shape.h"
 
-#include "controller.h"
+#include "..\controller.h"
 
-#include "GUI\GUI.h"
+#include "..\GUI\GUI.h"
 
 OpZoomin_out::OpZoomin_out(controller* pCont) :operation(pCont)
 {
