@@ -8,7 +8,7 @@ public:
 	opResize(controller* pCont);
 	virtual ~opResize();
 
-	//Add rectangle to the controller
+
 	virtual void Execute();
 
 };
