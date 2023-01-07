@@ -13,6 +13,7 @@ public:
 	Oval(const Oval* lhs);
 	virtual ~Oval();
 	virtual void Draw(GUI* pUI) const;
+	virtual void stick(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
 	virtual void Rotate();
 	virtual string Getinfo() const;

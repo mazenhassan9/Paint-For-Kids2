@@ -148,7 +148,9 @@ vector<shape*> Graph::GetSelected()
 void Graph::Draw(GUI* pUI) const
 {
 	pUI->ClearDrawArea();
+	int i = 0;
 	for (auto &shapePointer : shapesList)
+		if (shapesList[i]->HiddenItems() == false)
 		shapePointer->Draw(pUI);
 }
 vector <shape*>Graph::getlistofshspes()

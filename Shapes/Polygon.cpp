@@ -41,6 +41,11 @@ void polygon::Draw(GUI* pUI) const
 	pUI->DrawPoly(Corners,vertices, ShpGfxInfo);
 }
 
+void polygon::stick(GUI* pUI) const
+{
+	pUI->stickPoly(Corners, vertices);
+}
+
 
 void polygon::Move(int x, int y)
 {

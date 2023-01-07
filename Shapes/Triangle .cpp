@@ -40,6 +40,11 @@ void Triangle::Draw(GUI* pUI) const
 	pUI->DrawTri(Corner1, Corner2 , Corner3 , ShpGfxInfo);
 }
 
+void Triangle::stick(GUI* pUI) const
+{
+	pUI->stickTri(Corner1, Corner2, Corner3);
+}
+
 bool Triangle::Get(int x, int y) const
 {
 	double denominator = ((Corner2.y - Corner3.y) * (Corner1.x - Corner3.x) + (Corner3.x - Corner2.x) * (Corner1.y - Corner3.y));

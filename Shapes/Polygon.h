@@ -14,6 +14,7 @@ public:
 	polygon(const polygon* lhs);
 	virtual ~polygon();
 	virtual void Draw(GUI* pUI) const;
+	virtual void stick(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
 	virtual void Move(int x, int y);
 	virtual void Rotate();

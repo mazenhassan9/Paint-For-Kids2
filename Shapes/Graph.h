@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <stack>
+
 using namespace std;
 
 //forward decl
@@ -19,6 +20,7 @@ private:
 	vector<operationType> operations; 
 	shape* copiedshape;
 	vector<shape*>deletedShapes, modifiedShapes; 
+	
 public:										
 	Graph();
 	~Graph();
@@ -44,4 +46,6 @@ public:
 	shape* GetLastModified();
 	void Add(vector<shape*>, shape*);	//generic function to add shape in a ceration vector
 	void Delete(vector<shape*>, shape*); //generic function to delete shape in a ceration vector
+	void SendBack(shape* pFig);
+	
 };

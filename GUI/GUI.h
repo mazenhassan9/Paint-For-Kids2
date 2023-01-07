@@ -23,7 +23,7 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 	bool isFilled;	//shape Filled or not
 	int BorderWdth;	//Width of shape borders
 	bool isSelected;	//true if the shape is selected.
-
+	bool isHidden;
 };
 
 
@@ -49,6 +49,7 @@ class GUI
 		ICON_SQUARE,
 		ICON_Reg,
 		ICON_Irreg,
+		ICON_STICK,
 		ICON_Fillcolor,
 		ICON_Single_Fill,
 		ICON_PENWIDTH,
@@ -65,9 +66,11 @@ class GUI
 		Icon_Save,
 		ICON_Load,
 		ICON_ZOOM,
+		ICON_SENDTOBACK,
 		ICON_GROUP,
 		ICON_UNGROUOP,
 		ICON_SWITCH,
+		
 		ICON_EXIT,		//Exit icon
 
 
@@ -152,15 +155,20 @@ public:
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
-
+	void StickRec(Point P1, Point P2) const;
 	void DrawTri(Point P1, Point P2, Point p4, GfxInfo RectGfxInfo) const;
-
+	void stickTri(Point P1, Point P2, Point p4) const;
 	void DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const; // Draw a Circle
+	void stickCir(Point center, Point edge) const;
 	void DrawSquare(Point P1, double sidelen, GfxInfo SquareGfxInfo) const; // Draw a square
-	void DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const;
-	void DrawPoly(vector<Point> Points, const int N, GfxInfo RectGfxInfo) const;
+	void stickSquare(Point P1, double sidelen) const;
+	void DrawLine(Point P1, Point P2, GfxInfo OvalGfxInfo) const;
+	void stickLine(Point P1, Point P2) const;
+	void DrawPoly(vector<Point> Points, const int N , GfxInfo OvalGfxInfo) const;
+	void stickPoly(vector<Point> Points, const int N) const;
 	void DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const;
-
+	void stickOval(Point P1, Point P2) const;
+	
 
 	///Make similar functions for drawing all other shapes.
 

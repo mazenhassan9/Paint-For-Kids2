@@ -39,6 +39,13 @@ void Circle::Draw(GUI* pUI) const
 	pUI->DrawCir(center, Corner, ShpGfxInfo);
 }
 
+void Circle::stick(GUI* pUI) const
+{
+	pUI->stickCir(center, Corner);
+}
+
+
+
 bool Circle::Get(int x, int y) const
 {
 	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));

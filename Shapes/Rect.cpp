@@ -37,6 +37,11 @@ void Rect::Draw(GUI* pUI) const
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
 
+void Rect::stick(GUI* pUI) const
+{
+	pUI->StickRec(Corner1, Corner2);
+}
+
 bool Rect::Get(int x, int y) const
 {
 	if (((x >= Corner1.x && x <= Corner2.x) || (x <= Corner1.x && x >= Corner2.x)) &&

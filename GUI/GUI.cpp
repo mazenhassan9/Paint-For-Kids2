@@ -104,6 +104,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Reg: return DRAW_POLY;
 			case ICON_Irreg: return DRAW_IRPOLY;
 			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_STICK: return STICK;
 			case ICON_Fillcolor: return CHNG_FILL_CLR;
 			case ICON_PENWIDTH: return PENWIDTH;
 			case ICON_PEN: return CHNG_DRAW_CLR;
@@ -121,6 +122,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_ZOOM: return ZOOM;
 			case Icon_Save: return SAVE;
 			case ICON_Load: return LOAD;
+			case ICON_SENDTOBACK: return SENDTOBACK;
 			case ICON_Single_Fill: return CHNG_S_FILL_CLR;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
@@ -231,6 +233,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SQUARE] = "images\\MenuIcons\\Menu_SQUARE.jpg";
 	MenuIconImages[ICON_Reg] = "images\\MenuIcons\\Menu_REG.JPG";
 	MenuIconImages[ICON_Irreg] = "images\\MenuIcons\\Menu_IRREG.JPG";
+	MenuIconImages[ICON_STICK] = "images\\MenuIcons\\STICK.JPG";
 	MenuIconImages[ICON_Fillcolor] = "images\\MenuIcons\\Menu_Fillcolor.jpg";
 	MenuIconImages[ICON_PENWIDTH] = "images\\MenuIcons\\PENWIDTH.jpg";
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\pen.jpg";
@@ -244,6 +247,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Resize] = "images\\MenuIcons\\Resize.jpg";
 	MenuIconImages[ICON_Rotate] = "images\\MenuIcons\\Rotate.jpg";
 	MenuIconImages[ICON_ZOOM] = "images\\MenuIcons\\zoom.jpg";
+	MenuIconImages[ICON_SENDTOBACK] = "images\\MenuIcons\\SENDTOBACK.jpg";
 	MenuIconImages[Icon_Save] = "images\\MenuIcons\\Save.jpg";
 	MenuIconImages[ICON_Load] = "images\\MenuIcons\\Load.jpg";
 	MenuIconImages[ICON_Single_Fill] = "images\\MenuIcons\\Menu_Single_Fill_color.jpg";
@@ -410,8 +414,16 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		
 	pWind->DrawRectangle(P1.x, P1.y, P2.x,P2.y, style);
 	
+	
 	/*pWind->DrawRectangle(P1.x, P1.y, P2.x, P1.y+(P1.x-P2.x), style);*/
 
+}
+
+void GUI::StickRec(Point P1, Point P2) const
+{
+	
+
+	pWind->DrawImage("images\\MenuIcons\\Menu_Rect.jpg", P1.x, P1.y, P2.x, P2.y);
 }
 
 void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
@@ -441,6 +453,11 @@ void GUI::DrawSquare(Point P1,double sidelen, GfxInfo SquareGfxInfo) const
 		
 	pWind->DrawRectangle(P1.x, P1.y,P1.x+sidelen,P1.y+sidelen, style);
 	
+	
+}
+void GUI::stickSquare(Point P1, double sidelen) const
+{
+	pWind->DrawImage("images\\MenuIcons\\Menu_SQUARE.jpg", P1.x, P1.y, P1.x + sidelen, P1.y + sidelen);
 }
 void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 	color DrawingClr;
@@ -464,7 +481,12 @@ void GUI::DrawTri(Point P1, Point P2, Point p3, GfxInfo RectGfxInfo) const {
 	else
 		style = FRAME;
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, p3.x, p3.y, style);
+	
+}
 
+void GUI::stickTri(Point P1, Point P2, Point p3) const
+{
+	//pWind->DrawImage("images\\MenuIcons\\Menu_Tri.jpg", P1.x, P1.y, P2.x, P2.y, p3.x, p3.y);
 }
 
 void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
@@ -493,8 +515,13 @@ void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 			style = FRAME;
 
 		pWind->DrawCircle(center.x, center.y, R, style);
-
+		
 	
+}
+
+void GUI::stickCir(Point center, Point edge) const
+{
+	pWind->DrawImage("images\\MenuIcons\\Menu_Circle.jpg", center.x, center.y);
 }
 
 void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const {
@@ -532,6 +559,10 @@ void GUI::DrawPoly(vector <Point> Points,const int N, GfxInfo PolyGfxInfo) const
 	
 
 }
+void GUI::stickPoly(vector<Point> Points, const int N) const
+{
+	//pWind->DrawImage("images\\MenuIcons\\Menu_REG.JPG", X, Y, N);
+}
 void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 {
 	color DrawingClr;
@@ -550,7 +581,12 @@ void GUI::DrawLine(Point P1, Point P2, GfxInfo LineGfxInfo) const
 	
 	style = FRAME;
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	
+}
 
+void GUI::stickLine(Point P1, Point P2) const
+{
+	pWind->DrawImage("images\\MenuIcons\\Menu_LINE.jpg", P1.x, P1.y, P2.x, P2.y);
 }
 
 void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
@@ -576,9 +612,17 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 	else
 		style = FRAME;
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+	
 
 
 }
+
+void GUI::stickOval(Point P1, Point P2) const
+{
+	pWind->DrawImage("images\\MenuIcons\\Menu_Oval.jpg", P1.x, P1.y, P2.x, P2.y);
+}
+
+
 
 void GUI::setFillColor(color c)
 {
