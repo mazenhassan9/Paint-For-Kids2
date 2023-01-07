@@ -41,6 +41,16 @@ GUI::GUI()
 	originaly0 = y0;
 	originalx1 = x1;
 	originaly1 = y1;
+
+	x0 = 0;
+	y0 = ToolBarHeight;
+	x1 = width;
+	y1 = height - StatusBarHeight;
+
+	originalx0 = x0;
+	originaly0 = y0;
+	originalx1 = x1;
+	originaly1 = y1;
 }
 
 
@@ -53,9 +63,13 @@ void GUI::GetLastClick(int& x, int& y) const
 {
 	pWind->GetMouseCoord(x,y);
 	
+	pWind->GetMouseCoord(x,y);
+	
 }
 void GUI::GetPointClicked(int& x, int& y) const
 {
+	pWind->WaitMouseClick(x,y);	//Wait for mouse click
+
 	pWind->WaitMouseClick(x,y);	//Wait for mouse click
 
 }
@@ -627,7 +641,6 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 		style = FRAME;
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 	
-
 }
 
 void GUI::DrawImg(string str, int startX, int startY, int endX, int endY)
@@ -639,6 +652,12 @@ void GUI::DrawImg(string str, int startX, int startY, int endX, int endY)
 
 
 
+
+<<<<<<< Updated upstream
+void GUI::stickOval(Point P1, Point P2) const
+{
+	pWind->DrawImage(str, startX, startY, endX, endY);
+}
 
 
 
@@ -703,6 +722,23 @@ bool GUI::IsinPlayingArea(int x, int y) const
 GUI::~GUI()
 {
 	delete pWind;
+}
+
+int  GUI::getoriginalx0()
+{
+	return x0;
+}
+int GUI::getoriginalx1()
+{
+	return x1;
+}
+int GUI::getoriginaly0()
+{
+	return y0;
+}
+int GUI::getoriginaly1()
+{
+	return y1;
 }
 
 int  GUI::getoriginalx0()

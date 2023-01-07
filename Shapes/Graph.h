@@ -46,6 +46,8 @@ public:
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	shape* getcopied()const;
 	void setcopied(shape* cs);
+	void mapshapes(GUI* pUI);
+
 
 	void mapshapes(GUI* pUI);
 	shape* GetLastSelected() const;
