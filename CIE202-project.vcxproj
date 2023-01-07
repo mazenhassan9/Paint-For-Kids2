@@ -197,7 +197,6 @@
     <ClCompile Include="operations\opSwitch.cpp" />
     <ClCompile Include="operations\Opungroup.cpp" />
     <ClCompile Include="operations\OpZoom.cpp" />
-    <ClCompile Include="operations\OpZoomin_out.cpp" />
     <ClCompile Include="opPlayingArea.cpp" />
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
@@ -268,7 +267,6 @@
     <ClInclude Include="operations\opSwitch.h" />
     <ClInclude Include="operations\Opungroup.h" />
     <ClInclude Include="operations\OpZoom.h" />
-    <ClInclude Include="operations\OpZoomin_out.h" />
     <ClInclude Include="opPlayingArea.h" />
     <ClInclude Include="opResize.h" />
     <ClInclude Include="resource.h" />

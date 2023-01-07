@@ -117,6 +117,11 @@ class GUI
 	int x1;
 	int y1;
 
+	int prevx0;
+	int prevy0;
+	int prevx1;
+	int prevy1;
+
 
 	int originalx0;
 	int originaly0;

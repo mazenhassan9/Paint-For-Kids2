@@ -46,10 +46,8 @@ void OpZoom::Execute()
 	if (ssh == 3)
 	{
 		/*pUI->PrintMessage("Enter the zooming factor");*/
-		double ss = stod(pUI->GetSrting());
+		
 		pUI->ClearStatusBar();
-		double x_factor = (pUI->getoriginalx1() - pUI->getoriginalx0()) / 2 * ss;
-		double y_factor = (pUI->getoriginaly1() - pUI->getoriginaly0()) / 2 * ss;
 		Point p1 = { pUI->getoriginalx0(),pUI->getoriginaly0() }, p2 = { pUI->getoriginalx1() ,pUI->getoriginaly1() };
 		pUI->set0(p1);
 		pUI->set1(p2);

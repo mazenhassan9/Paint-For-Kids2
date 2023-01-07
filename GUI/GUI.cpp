@@ -51,6 +51,11 @@ GUI::GUI()
 	originaly0 = y0;
 	originalx1 = x1;
 	originaly1 = y1;
+
+	 prevx0 = x0;
+	 prevy0 = y0;
+	 prevx1 = x1;
+	 prevy1 = y1;
 }
 
 
@@ -199,29 +204,36 @@ bool GUI::Getmouseclik(int& x, int& y)
 }
 void  GUI::Mapx(int& x) const
 {
-	//x= x0 + x * (x1 - x0) / width;
-	if (x1 - x0 == 0) 
+	
+	if (x1 - x0 == 0)
 		return;
-	x= (x - x0) * width / (x1 - x0);	
+	
+	x= prevx0 + (x - x0) * (prevx1 - prevx0) / (x1 - x0);
+	
 }
-//x' = (x - x0) * width / (x1 - x0);
-//y' = toolbarheigh + (y - y0) * (h - toolbarheigh) / (y1 - y0);
 
 void GUI::Mapy(int& y) const
 {
-	if (y1 - y0 == 0)
+	if ((y1 - y0) == 0)
 		return;
-	y = ToolBarHeight + (y - y0) * ((height - StatusBarHeight) - ToolBarHeight) / (y1 - y0);
-	//y= y0 + (y - ToolBarHeight) * (y1 - y0) / ((height - StatusBarHeight) - ToolBarHeight);
+	
+	
+	y= prevy0 + (y - y0) * (prevy1 - prevy0) / (y1 - y0);
+	
 }
 
 void GUI::set0(Point& p0)
 {
+	prevx0 = x0;
+	prevy0 = y0;
+
 	x0 = p0.x;
 	y0 = p0.y;
 }
 void GUI::set1(Point& p1)
 {
+	prevx1 = x1;
+	prevy1 = y1;
 	x1 = p1.x;
 	y1 = p1.y;
 }
@@ -711,19 +723,19 @@ GUI::~GUI()
 
 int  GUI::getoriginalx0()
 {
-	return x0;
+	return originalx0;
 }
 int GUI::getoriginalx1()
 {
-	return x1;
+	return originalx1;
 }
 int GUI::getoriginaly0()
 {
-	return y0;
+	return originaly0;
 }
 int GUI::getoriginaly1()
 {
-	return y1;
+	return originaly1;
 }
 
 
