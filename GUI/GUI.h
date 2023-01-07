@@ -8,6 +8,8 @@
 #include <string>
 using namespace std;
 
+
+
 struct Point	//To be used for shapes points
 {
 	int x, y;
@@ -110,6 +112,16 @@ class GUI
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 		MenuIconWidth;		//Width of each icon in toolbar menu
 
+	int x0;
+	int y0;
+	int x1;
+	int y1;
+
+
+	int originalx0;
+	int originaly0;
+	int originalx1;
+	int originaly1;
 
 	color DrawColor;		//Drawing color
 	color FillColor;		//Filling color
@@ -143,7 +155,10 @@ public:
 	void MouseFlush();
 	void KeyboardFlush();
 	bool Getmouseclik(int& x, int& y);
-
+	void Mapx(int& x) const;
+	void Mapy(int& y) const;
+	void set0(Point& p0);
+	void set1(Point& p1);
 	// Output Functions  ---------------------------
 	window* CreateWind(int, int, int, int) const; //creates the application window
 	void CreateDrawToolBar();	//creates Draw mode toolbar & menu
@@ -189,6 +204,10 @@ public:
 	int getInterfaceMode()const;
 	bool IsinDrawingArea(int x, int y) const;
 	bool IsinPlayingArea(int x, int y) const;
+	int getoriginalx0();
+	int getoriginalx1();
+	int getoriginaly0();
+	int getoriginaly1();
 	~GUI();
 };
 

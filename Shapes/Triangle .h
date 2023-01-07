@@ -1,5 +1,6 @@
 #pragma once
 #include "Shape.h"
+
 class Triangle : public shape
 {
 private :
@@ -21,4 +22,5 @@ public :
 	virtual void Load(ifstream& Infile);
 	virtual shape* Copy();
 	virtual void RESIZE(double size);
+	virtual void mapshape(GUI* pUI);
 };

@@ -32,6 +32,16 @@ GUI::GUI()
 
 	CreateDrawToolBar();
 	CreateStatusBar();
+
+	x0 = 0;
+	y0 = ToolBarHeight;
+	x1 = width;
+	y1 = height - StatusBarHeight;
+
+	originalx0 = x0;
+	originaly0 = y0;
+	originalx1 = x1;
+	originaly1 = y1;
 }
 
 
@@ -42,11 +52,13 @@ GUI::GUI()
 //======================================================================================//
 void GUI::GetLastClick(int& x, int& y) const
 {
-	pWind->GetMouseCoord(x, y);
+	pWind->GetMouseCoord(x,y);
+	
 }
 void GUI::GetPointClicked(int& x, int& y) const
 {
-	pWind->WaitMouseClick(x, y);	//Wait for mouse click
+	pWind->WaitMouseClick(x,y);	//Wait for mouse click
+
 }
 void GUI::GetLastKey(char& K) const
 {
@@ -176,6 +188,34 @@ bool GUI::Getmouseclik(int& x, int& y)
 {
 	clicktype out = pWind->GetMouseClick(x, y);
 	return (out != NO_CLICK);
+}
+void  GUI::Mapx(int& x) const
+{
+	//x= x0 + x * (x1 - x0) / width;
+	if (x1 - x0 == 0) 
+		return;
+	x= (x - x0) * width / (x1 - x0);	
+}
+//x' = (x - x0) * width / (x1 - x0);
+//y' = toolbarheigh + (y - y0) * (h - toolbarheigh) / (y1 - y0);
+
+void GUI::Mapy(int& y) const
+{
+	if (y1 - y0 == 0)
+		return;
+	y = ToolBarHeight + (y - y0) * ((height - StatusBarHeight) - ToolBarHeight) / (y1 - y0);
+	//y= y0 + (y - ToolBarHeight) * (y1 - y0) / ((height - StatusBarHeight) - ToolBarHeight);
+}
+
+void GUI::set0(Point& p0)
+{
+	x0 = p0.x;
+	y0 = p0.y;
+}
+void GUI::set1(Point& p1)
+{
+	x1 = p1.x;
+	y1 = p1.y;
 }
 ////////////////////////////////////////////////////
 
@@ -491,6 +531,8 @@ void GUI::stickTri(Point P1, Point P2, Point p3) const
 
 void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 {
+
+
 	int R = sqrt(pow(center.x - edge.x, 2) + pow(center.y - edge.y, 2));
 	
 		color DrawingClr;
@@ -613,7 +655,10 @@ void GUI::DrawOval(Point P1, Point P2, GfxInfo OvalGfxInfo) const
 		style = FRAME;
 	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 	
+<<<<<<< Updated upstream
+=======
 
+>>>>>>> Stashed changes
 
 }
 
@@ -622,6 +667,14 @@ void GUI::stickOval(Point P1, Point P2) const
 	pWind->DrawImage("images\\MenuIcons\\Menu_Oval.jpg", P1.x, P1.y, P2.x, P2.y);
 }
 
+<<<<<<< Updated upstream
+void GUI::stickOval(Point P1, Point P2) const
+{
+	pWind->DrawImage("images\\MenuIcons\\Menu_Oval.jpg", P1.x, P1.y, P2.x, P2.y);
+}
+
+=======
+>>>>>>> Stashed changes
 
 
 void GUI::setFillColor(color c)
@@ -685,5 +738,22 @@ bool GUI::IsinPlayingArea(int x, int y) const
 GUI::~GUI()
 {
 	delete pWind;
+}
+
+int  GUI::getoriginalx0()
+{
+	return x0;
+}
+int GUI::getoriginalx1()
+{
+	return x1;
+}
+int GUI::getoriginaly0()
+{
+	return y0;
+}
+int GUI::getoriginaly1()
+{
+	return y1;
 }
 

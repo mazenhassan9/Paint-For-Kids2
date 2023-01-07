@@ -31,7 +31,7 @@ public:
 	void setBorderwidth(double bw);
 	static int Get_Count();
 
-	
+	virtual void mapshape(GUI* pUI) = 0;
 
 
 	///The following functions should be supported by the shape class

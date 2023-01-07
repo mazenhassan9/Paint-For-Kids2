@@ -231,7 +231,15 @@
     <ClCompile Include="operations\Opungroup.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="opDublicateGraph.cpp">
+=======
+<<<<<<< HEAD
+    <ClCompile Include="operations\OpZoom.cpp">
+=======
+    <ClCompile Include="opDublicateGraph.cpp">
+>>>>>>> ec3dffe11c86db3ae37b9fcedf38190f298cbe1c
+>>>>>>> Stashed changes
       <Filter>Operations</Filter>
     </ClCompile>
   </ItemGroup>
@@ -425,7 +433,15 @@
     <ClInclude Include="operations\Opungroup.h">
       <Filter>Operations</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="opDublicateGraph.h">
+=======
+<<<<<<< HEAD
+    <ClInclude Include="operations\OpZoom.h">
+=======
+    <ClInclude Include="opDublicateGraph.h">
+>>>>>>> ec3dffe11c86db3ae37b9fcedf38190f298cbe1c
+>>>>>>> Stashed changes
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

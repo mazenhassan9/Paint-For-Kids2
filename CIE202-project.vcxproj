@@ -196,6 +196,7 @@
     <ClCompile Include="operations\opStickimage.cpp" />
     <ClCompile Include="operations\opSwitch.cpp" />
     <ClCompile Include="operations\Opungroup.cpp" />
+    <ClCompile Include="operations\OpZoom.cpp" />
     <ClCompile Include="opPlayingArea.cpp" />
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
@@ -265,6 +266,7 @@
     <ClInclude Include="operations\opStickimage.h" />
     <ClInclude Include="operations\opSwitch.h" />
     <ClInclude Include="operations\Opungroup.h" />
+    <ClInclude Include="operations\OpZoom.h" />
     <ClInclude Include="opPlayingArea.h" />
     <ClInclude Include="opResize.h" />
     <ClInclude Include="resource.h" />

@@ -169,3 +169,11 @@ shape* Circle::Copy()
 	shape* S = new Circle(this);
 	return S;
 }
+void Circle::mapshape(GUI* pUI)
+{
+	pUI->Mapx(center.x);
+	pUI->Mapx(Corner.x);
+	pUI->Mapy(center.y);
+	pUI->Mapy(Corner.y);
+}
+

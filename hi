@@ -1,0 +1,9 @@
+False  0  0  255  3
+3
+SQUARE  0  204  259  270  325  0  0  255  False
+LINE  1  389  309  548  386  0  0  255  
+CIRCLE  2  523  190  636  254  0  0  255  False
+Group
+SQUARE  0  204  259  270  325  0  0  255  False
+CIRCLE  2  523  190  636  254  0  0  255  False
+LINE  1  389  309  548  386  0  0  255  

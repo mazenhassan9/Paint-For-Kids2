@@ -14,7 +14,7 @@
 #include "opChangePenColor.h"
 #include"opChangeBorderColor.h"
 #include"operations/OpAddIrPoly.h"
-//#include"operations/opSelect.h"
+#include"operations/OpZoom.h"
 #include"operations/opDelete.h"
 #include"operations/opChangeFill.h"
 #include "operations/opBorderwidth.h"
@@ -91,9 +91,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opChangeBorderColor(this);
 			break;
 
-		//case Select: Replaced withoud using an icon
-			//pOp = new opSelect(this);
-			//break;
+		case ZOOM:
+			pOp = new OpZoom(this);
+			break;
 		case DEL:
 			pOp = new opDelete(this);
 			break;

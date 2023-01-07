@@ -184,3 +184,13 @@ shape* Rect::Copy()
 	shape* S = new Rect(this);
 	return S;
 }
+
+void Rect::mapshape(GUI* pUI)
+{
+
+
+	pUI->Mapx(Corner1.x);
+	pUI->Mapx(Corner2.x);
+	pUI->Mapy(Corner1.y);
+	pUI->Mapy(Corner2.y);
+}

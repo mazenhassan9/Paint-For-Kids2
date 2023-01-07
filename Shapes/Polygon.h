@@ -28,5 +28,5 @@ public:
 	int direction(Point a, Point b, Point c)const;
 
 	bool isIntersect(line l1, line l2)const;
-
+	virtual void mapshape(GUI* pUI);
 };
