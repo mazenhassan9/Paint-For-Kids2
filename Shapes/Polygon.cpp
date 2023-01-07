@@ -297,8 +297,8 @@ void polygon::mapshape(GUI* pUI)
 	centerx /= vertices;
 	centery /= vertices;
 
-	pUI->Mapx(centerx);
-	pUI->Mapy(centery);
+	/*pUI->Mapx(centerx);
+	pUI->Mapy(centery);*/
 	
 	int sideL = sqrt(pow(Corners[0].x-Corners[1].x,2)+ pow(Corners[0].y - Corners[1].y, 2));
 
