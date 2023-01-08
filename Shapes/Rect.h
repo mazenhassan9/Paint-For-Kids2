@@ -8,6 +8,7 @@ class Rect : public shape
 private:
 	Point Corner1;	
 	Point Corner2;
+	//controller* control;
 public:
 	Rect();
 	Rect(Point , Point, GfxInfo shapeGfxInfo );
@@ -26,5 +27,7 @@ public:
 	virtual shape* Copy();
 	virtual void mapshape(GUI* pUI);
 	virtual void DuplicateGraph();
+	virtual void paste(int x,int y);
+	virtual void ScrambleGraph();
 };
 

@@ -201,6 +201,7 @@
     <ClCompile Include="operations\OpZoom.cpp" />
     <ClCompile Include="opPlayingArea.cpp" />
     <ClCompile Include="opResize.cpp" />
+    <ClCompile Include="opScrambleGraph.cpp" />
     <ClCompile Include="Shapes\Circle.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Group.cpp" />
@@ -273,6 +274,7 @@
     <ClInclude Include="operations\OpZoom.h" />
     <ClInclude Include="opPlayingArea.h" />
     <ClInclude Include="opResize.h" />
+    <ClInclude Include="opScrambeGraph.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Circle.h" />
     <ClInclude Include="Shapes\Graph.h" />

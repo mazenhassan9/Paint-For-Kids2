@@ -223,3 +223,4 @@ void Triangle::mapshape(GUI* pUI)
 void Triangle::DuplicateGraph(){}
 
 
+void Triangle::ScrambleGraph(){}

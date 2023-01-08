@@ -23,6 +23,4 @@ void opPaste::Execute()
 	S2->Move(P1.x, P1.y);
 	pGr->Addshape(S2);
 
-	
-
 }

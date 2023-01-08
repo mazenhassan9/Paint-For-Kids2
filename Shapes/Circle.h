@@ -27,5 +27,6 @@ public:
 	virtual void RESIZE(double size);
 	virtual shape* Copy();
 	virtual void DuplicateGraph();
+	virtual void ScrambleGraph();
 	virtual Point GetFirstPoint() const;
 };

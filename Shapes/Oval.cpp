@@ -198,3 +198,5 @@ shape* Oval::Copy()
  void Oval::DuplicateGraph() {
 
  }
+
+ void Oval::ScrambleGraph(){}

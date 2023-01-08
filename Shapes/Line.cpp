@@ -180,3 +180,5 @@ void Line::mapshape(GUI* pUI)
 void Line::DuplicateGraph() {
 
 }
+
+void Line::ScrambleGraph(){}

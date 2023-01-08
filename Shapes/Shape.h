@@ -2,6 +2,7 @@
 #include "..\defs.h"
 #include "..\GUI\GUI.h"
 #include<fstream>
+#include "../controller.h"
 
 //Base class for all shapes
 class shape
@@ -57,4 +58,6 @@ public:
 	void Hide(bool s);					
 	bool HiddenItems();
 	virtual void DuplicateGraph()=0;
+	virtual void ScrambleGraph() = 0;
+
 };
