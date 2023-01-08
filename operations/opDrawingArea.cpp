@@ -13,6 +13,7 @@ opDrawingArea::~opDrawingArea()
 
 void opDrawingArea::Execute()
 {
+
 	Point P1,P2;
 	char key = -1;
 	shape* S3;
@@ -22,7 +23,7 @@ void opDrawingArea::Execute()
 	pUI->ClearStatusBar();
 	
 	//Select Operation & multi select.
-
+	
 	pUI->GetLastClick(P1.x, P1.y);
 	shape* S1 = pGr->Getshape(P1.x, P1.y);
 	shape* S2 = pGr->GetLastSelected();
@@ -66,26 +67,10 @@ void opDrawingArea::Execute()
 
 		
 	}
-	//pUI->GetLastKey(key);
-	//cout << key << endl;
-	//if (key == 100) //"D" is press
-	//{
-	//	if (S2)
-	//	{
-	//		for (auto& itr : Shapes)
-	//		{
-	//			pGr->DeleteShape(itr);
-	//			pGr->Draw(pUI);
-	// Trial of Delete Operation (with D) key
-	//		}
-	//	}
-	//}
-	//pUI->KeyboardFlush();
-
 	
 		
 	
-
+	
 	//Drag  Operation
 	
 	int refresh = 0; //to slow down the drawing. 
@@ -118,7 +103,6 @@ void opDrawingArea::Execute()
 	
 	//pUI->ClearStatusBar();
 
-	
 	
 	
 	

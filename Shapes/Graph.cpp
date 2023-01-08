@@ -161,6 +161,7 @@ vector<shape*> Graph::GetSelected()
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {
+
 	int Img_width=62, Img_Height=100;
 
 	string img = "images\\card.jpg";
@@ -328,9 +329,12 @@ bool Graph::UnHideone(int x, int y, GUI* pGUI)
 
 void Graph::HideAll(bool s)
 {
-	for (auto& itr : shapesList)
+	if (!shapesList.empty())
 	{
-		itr->Hide(s);
+		for (auto& itr : shapesList)
+		{
+			itr->Hide(s);
+		}
 	}
 }
 
@@ -341,15 +345,17 @@ shape* Graph::Getshape(int x, int y) const
 
 
 	///Add your code here to search for a shape given a point x,y	
-	for (auto& itr : shapesList)
+	if (!shapesList.empty())
 	{
-		if (itr->Get(x, y))
-
+		for (auto& itr : shapesList)
 		{
-			return itr;
+			if (itr->Get(x, y))
+
+			{
+				return itr;
+			}
 		}
 	}
-
 	return nullptr;
 }
 

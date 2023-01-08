@@ -46,15 +46,12 @@ public:
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	shape* getcopied()const;
 	void setcopied(shape* cs);
-
-
 	void mapshapes(GUI* pUI);
-	
-	
-	
 	void SendBack(shape* pFig);
 	void HideAll(bool s);
 	void DuplicateGraph();
+	int matchshapes();
+	bool UnHideone(int x, int y, GUI* pGUI);
 
 	//Undo Functions
 	void AddOperation(operationType op);
@@ -64,8 +61,7 @@ public:
 	shape* GetLastModified(); //shapes state before modification
 	void AddDeletedShape(shape*pShp, bool s);
 	void AddModifiedShape(shape* pShp, bool s);
-	bool UnHideone(int x, int y, GUI* pGUI);
-	int matchshapes();
+	
 
 	//Redo Functions
 	void AddOperationUndo(operationType op);
