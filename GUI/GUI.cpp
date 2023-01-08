@@ -346,6 +346,7 @@ void GUI::CreatePlayToolBar()
 	///TODO: write code to create Play mode menu
 	string MenuItemImages[PLAY_ICON_COUNT];
 	
+	
 	MenuItemImages[PLAY_ICON_FIGCOLOR] = "images\\MenuIcons\\FIGURE_COLOR.jpg";
 	MenuItemImages[PLAY_ICON_BACKDRAW] = "images\\MenuIcons\\BACK_Draw.jpg";
 	MenuItemImages[PLAY_ICON_HIDE] = "images\\MenuIcons\\HideGraph.jpg";

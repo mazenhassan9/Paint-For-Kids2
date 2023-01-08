@@ -50,4 +50,6 @@ public:
 	void SendBack(shape* pFig);
 	void HideAll(bool s);
 	void DuplicateGraph();
+	bool UnHideone(int x, int y, GUI* pGUI);
+	int matchshapes();
 };

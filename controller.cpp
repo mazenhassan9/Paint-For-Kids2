@@ -147,7 +147,7 @@ operation* controller::createOperation(operationType OpType)
 		case GROUP:
 			pOp = new OpGroup(this);
 			break;
-		case SWITCH:
+		case SWITCH: 
 			pOp = new opSwitch(this);
 			break;
 		case STATUS:	//a click on the status bar ==> no operation
@@ -167,9 +167,18 @@ operation* controller::createOperation(operationType OpType)
 		case DUPLICATE_GRAPH:
 			pOp = new opDuplicateGraph(this);
 			break;
-		case HIDE_GRAPH:
+		case HIDE_GRAPH://OpUnhide
 			pOp = new opHideGraph(this);
 			break;
+<<<<<<< Updated upstream
+=======
+		default:
+			if(pGUI->getInterfaceMode() == 0)
+				pOp = new opDrawingArea(this);
+			else
+				pOp = new opPlayingArea(this);
+
+>>>>>>> Stashed changes
 
 	}
 

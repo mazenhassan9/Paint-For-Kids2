@@ -71,3 +71,12 @@ bool shape::HiddenItems()
 {
 	return isHidden;
 }
+
+GfxInfo shape::getGraphics()
+{
+	return ShpGfxInfo;
+}
+int shape::getID()
+{
+	return ID;
+}

@@ -29,7 +29,8 @@ public:
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
 	virtual string Getinfo() const = 0;  	//print all figure info on the status bar
 	virtual Point GetFirstPoint() const = 0;
-	
+	GfxInfo getGraphics();
+	int getID();
 
 	virtual void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	virtual void ChngFillClr(color Fclr);	//changes the shape's filling color

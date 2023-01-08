@@ -9,6 +9,7 @@
 #include"Rect.h"
 #include"Square.h"
 #include"Triangle .h"
+#include <windows.h>
 
 Graph::Graph()
 {
@@ -334,6 +335,20 @@ void Graph::AddModifiedShape(shape* pShp, bool s)
 void Graph::SendBack(shape* pFig)
 {
 }
+bool Graph::UnHideone(int x, int y, GUI* pGUI)
+{
+	shape* s = Getshape(x, y);
+	if(s)
+	{
+
+		int i = 0;
+		s->Hide(false);
+		Draw(pGUI);
+		return true;
+	}
+	return false;
+
+}
 
 void Graph::HideAll(bool s)
 {
@@ -379,7 +394,75 @@ void Graph::DuplicateGraph() {
 	}
 }
 
+int Graph::matchshapes()
+{
 
+	int i = 0;
+	shape* sh1 = nullptr;
+	shape* sh2 = nullptr;
+	int match = 2;
+
+	for (auto& itr : shapesList)
+	{
+		if (itr->HiddenItems() == false)
+		{
+			if (i == 0)
+			{
+				sh1 = itr;
+				i++;
+			}	
+			else
+				sh2 = itr;
+		}
+	}
+	
+	if (sh1 && sh2)
+	{
+		match = 0;
+		Sleep(2000);
+		Line* line1 = dynamic_cast<Line*>(sh1);
+		Line* line2 = dynamic_cast<Line*>(sh2);
+		Circle* circle1 = dynamic_cast<Circle*>(sh1);
+		Circle* circle2 = dynamic_cast<Circle*>(sh2);
+		Oval* oval1 = dynamic_cast<Oval*>(sh1);
+		Oval* oval2 = dynamic_cast<Oval*>(sh2);
+		Rect* rect1 = dynamic_cast<Rect*>(sh1);
+		Rect* rect2 = dynamic_cast<Rect*>(sh2);
+		Square* square1 = dynamic_cast<Square*>(sh1);
+		Square* square2 = dynamic_cast<Square*>(sh2);
+		Triangle* triangle1 = dynamic_cast<Triangle*>(sh1);
+		Triangle* triangle2 = dynamic_cast<Triangle*>(sh2);
+		polygon* polygon1 = dynamic_cast<polygon*>(sh1);
+		polygon* polygon2 = dynamic_cast<polygon*>(sh2);
+		
+		
+		if ((line1 && line2) || (circle1 && circle2) || (oval1 && oval2) || (rect1 && rect2) ||
+			(square1 && square2) || (triangle1 && triangle2) || (polygon1 && polygon2))
+		{
+			GfxInfo g1 = sh1->getGraphics();
+			GfxInfo g2 = sh2->getGraphics();
+			if
+				(g1.BorderWdth == g2.BorderWdth && g1.isFilled == g2.isFilled && g1.DrawClr.ucBlue == g2.DrawClr.ucBlue &&
+					g1.DrawClr.ucGreen == g2.DrawClr.ucGreen && g1.DrawClr.ucRed == g2.DrawClr.ucRed
+					&& g1.FillClr.ucBlue == g2.FillClr.ucBlue && g1.FillClr.ucRed == g2.FillClr.ucRed && g1.FillClr.ucGreen == g2.FillClr.ucGreen)
+			{
+				auto loc1 = remove(shapesList.begin(), shapesList.end(), sh1);
+				shapesList.erase(loc1);
+				auto loc2 = remove(shapesList.begin(), shapesList.end(), sh2);
+				shapesList.erase(loc2);
+				delete sh1, sh2;
+				match = 1;
+			}
+		}
+
+		if (match == 0)
+		{
+			sh1->Hide(true);
+			sh2->Hide(true);
+		}
+	}
+	return match;
+}
 
 
 

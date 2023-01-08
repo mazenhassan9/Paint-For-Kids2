@@ -74,6 +74,7 @@ class GUI
 		ICON_DUPLICATE,
 		ICON_SWITCH,
 		
+		
 		ICON_EXIT,		//Exit icon
 
 
@@ -95,6 +96,9 @@ class GUI
 		PLAY_ICON_FIGCOLOR,
 		PLAY_ICON_BACKDRAW,
 		PLAY_ICON_HIDE,
+
+
+
 		PLAY_ICON_SWITCH,
 		PLAY_ICON_EXIT,//Note: Icons are ordered here as they appear in menu
 		//If you want to change the menu icons order, change the order here
