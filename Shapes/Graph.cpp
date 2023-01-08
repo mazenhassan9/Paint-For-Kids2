@@ -307,3 +307,17 @@ void Graph::mapshapes(GUI* pUI)
 	}
 
 }
+
+
+void Graph::DuplicateGraph() {
+	for (auto& itr : shapesList)
+	{
+		itr->DuplicateGraph();
+	}
+}
+
+
+
+
+
+

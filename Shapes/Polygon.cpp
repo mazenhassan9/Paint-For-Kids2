@@ -335,3 +335,7 @@ void polygon::mapshape(GUI* pUI)
 
 	sidelent = Corner2.x - origin.x;*/
 }
+
+void polygon::DuplicateGraph() {
+
+}

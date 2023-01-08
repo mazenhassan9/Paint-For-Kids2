@@ -40,6 +40,7 @@ enum operationType //The operations supported (you can add more if needed)
 	CHNG_BOR_CLR,  //Change border color
 	SWITCH ,
 	BORDER_WIDTH ,
+	DUPLICATE_GRAPH,
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,	//A click on the drawing area

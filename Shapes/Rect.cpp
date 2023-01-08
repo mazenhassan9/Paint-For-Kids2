@@ -197,3 +197,19 @@ void Rect::mapshape(GUI* pUI)
 	pUI->Mapy(Corner1.y);
 	pUI->Mapy(Corner2.y);
 }
+
+void Rect:: DuplicateGraph() {
+	int centerx, centery, x, y, a, b;
+	centerx = (Corner1.x + Corner2.x) / 2;
+	centery = (Corner1.y + Corner2.y) / 2;
+
+	x = centerx - 0.5 * centerx;
+	y = centery - 0.5 * centery;
+	a = centerx + 0.5 * centerx;
+	b = centery + 0.5 * centery;
+	RESIZE(0.5);
+	Move(x, y);
+	shape* duplicate = new Rect();
+	duplicate = Copy();
+	duplicate->Move(a, b);
+}

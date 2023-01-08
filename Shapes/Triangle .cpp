@@ -199,3 +199,7 @@ void Triangle::mapshape(GUI* pUI)
 	pUI->Mapy(Corner2.y);
 	pUI->Mapy(Corner3.y);
 }
+
+void Triangle::DuplicateGraph(){}
+
+

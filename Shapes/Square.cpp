@@ -204,3 +204,5 @@ void Square::mapshape(GUI* pUI)
 	
 	sidelent = abs(Corner2.x - origin.x);
 }
+
+void Square::DuplicateGraph(){}

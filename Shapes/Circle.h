@@ -26,4 +26,5 @@ public:
 	virtual void Load(ifstream& Infile);
 	virtual void RESIZE(double size);
 	virtual shape* Copy();
+	virtual void DuplicateGraph();
 };

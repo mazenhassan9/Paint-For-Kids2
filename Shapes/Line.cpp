@@ -162,3 +162,6 @@ void Line::mapshape(GUI* pUI)
 
 	
 }
+void Line::DuplicateGraph() {
+
+}

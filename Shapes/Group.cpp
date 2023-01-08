@@ -156,4 +156,4 @@ void Group::mapshape(GUI* pUI)
 {
 
 }
-
+void Group::DuplicateGraph() {}

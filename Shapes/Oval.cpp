@@ -178,3 +178,7 @@ shape* Oval::Copy()
 	pUI->Mapy(P1.y);
 	pUI->Mapy(P2.y);
 }
+
+ void Oval::DuplicateGraph() {
+
+ }

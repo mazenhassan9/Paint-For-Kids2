@@ -31,6 +31,7 @@
 #include"operations/OpCut.h"
 #include "operations/opStickimage.h"
 #include "operations/opSendBack.h"
+#include"opDublicateGraph.h"
 
 //Constructor
 controller::controller()
@@ -158,7 +159,9 @@ operation* controller::createOperation(operationType OpType)
 		case STICK:
 			pOp = new opStickimage(this);
 			break;
-
+		case DUPLICATE_GRAPH:
+			pOp = new opDuplicateGraph(this);
+			break;
 		default:
 			pOp = new opDrawingArea(this);
 

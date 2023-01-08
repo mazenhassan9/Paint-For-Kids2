@@ -149,6 +149,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Load: return LOAD;
 			case ICON_SENDTOBACK: return SENDTOBACK;
 			case ICON_Single_Fill: return CHNG_S_FILL_CLR;
+			case ICON_DUPLICATE: return DUPLICATE_GRAPH;
 			case ICON_SWITCH: return SWITCH;
 			case ICON_EXIT: return EXIT;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -313,6 +314,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Single_Fill] = "images\\MenuIcons\\Menu_Single_Fill_color.jpg";
 	MenuIconImages[ICON_GROUP] = "images\\MenuIcons\\group.jpg";
 	MenuIconImages[ICON_UNGROUOP] = "images\\MenuIcons\\ungroup.jpg";
+	MenuIconImages[ICON_DUPLICATE]= "images\\MenuIcons\\Duplicate.jpg";
 	MenuIconImages[ICON_SWITCH] = "images\\MenuIcons\\SWITCH.JPG";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 

@@ -177,3 +177,8 @@ void Circle::mapshape(GUI* pUI)
 	pUI->Mapy(Corner.y);
 }
 
+
+
+void Circle::DuplicateGraph() {
+
+}

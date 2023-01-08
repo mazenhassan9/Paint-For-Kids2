@@ -22,4 +22,5 @@ public:
 	virtual shape* Copy();
 	virtual void RESIZE(double size);
 	virtual void mapshape(GUI* pUI);
+	virtual void DuplicateGraph();
 };
