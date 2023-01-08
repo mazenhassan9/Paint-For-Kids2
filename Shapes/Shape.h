@@ -34,7 +34,7 @@ public:
 
 	virtual void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	virtual void ChngFillClr(color Fclr);	//changes the shape's filling color
-	void setBorderwidth(double bw);
+	virtual void setBorderwidth(double bw);
 	static int Get_Count();
 
 	virtual void mapshape(GUI* pUI) = 0;

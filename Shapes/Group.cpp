@@ -153,6 +153,14 @@ void  Group::RESIZE(double size)
 	}
 
 }
+void Group::setBorderwidth(double bw)
+{
+	for (auto& itr : groupshapesList)
+	{
+		itr->setBorderwidth(bw);
+	}
+}
+
 void Group::stick(GUI* pUI) const
 {
 
