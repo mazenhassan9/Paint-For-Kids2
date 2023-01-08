@@ -15,6 +15,7 @@ public:
 	virtual void stick(GUI* pUI) const;
 	virtual bool Get(int x, int y) const;
 	virtual void Move(int x, int y);
+	virtual Point GetFirstPoint() const;
 	virtual void Rotate();
 	virtual string Getinfo() const;
 	virtual void Save(ofstream& OutFile);

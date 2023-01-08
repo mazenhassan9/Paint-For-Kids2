@@ -38,6 +38,13 @@ void Oval::Draw(GUI* pUI) const
 
 void Oval::stick(GUI* pUI) const
 {
+
+	int x = min(P1.x, P2.x);
+	int y = min(P1.y, P2.y);
+	int width = sqrt(pow((P2.x - P1.x), 2));
+	int height = sqrt(pow((P2.y - P1.y), 2));
+	string img = "images\\MenuIcons\\Menu_Oval.jpg";
+	pUI->DrawImg(img, x, y, width, height);
 	
 }
 
@@ -48,6 +55,14 @@ bool Oval::Get(int x, int y) const
 		((y >= P1.y && y <= P2.y) || (y <= P1.y && y >= P2.y)))
 		return true;
 	return false;
+}
+
+Point Oval::GetFirstPoint() const
+{
+	int x = min(P1.x, P2.x);
+	int y = min(P1.y, P2.y);
+	Point P1 = { x,y };
+	return P1;
 }
 
 

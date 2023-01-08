@@ -95,6 +95,11 @@ bool  Group::Get(int x, int y) const
 	return 0;
 }
 
+Point Group::GetFirstPoint() const
+{
+	return Point();
+}
+
 void  Group::Rotate()
 {
 	for (auto& itr : groupshapesList)

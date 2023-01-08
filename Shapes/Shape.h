@@ -27,7 +27,7 @@ public:
 	virtual void stick(GUI* pUI) const = 0;
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
 	virtual string Getinfo() const = 0;  	//print all figure info on the status bar
-	
+	virtual Point GetFirstPoint() const = 0;
 	
 
 	virtual void ChngDrawClr(color Dclr);	//changes the shape's drawing color

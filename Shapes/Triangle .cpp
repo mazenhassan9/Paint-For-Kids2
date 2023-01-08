@@ -42,10 +42,20 @@ void Triangle::Draw(GUI* pUI) const
 
 void Triangle::stick(GUI* pUI) const
 {
-	int width = sqrt(pow((Corner3.x - Corner2.x), 2));
-	int height = sqrt(pow((Corner2.y - Corner1.y), 2));
+	int height, width,x,y;
+	int height1 = sqrt(pow((Corner2.y - Corner1.y), 2));
+	int height2 = sqrt(pow((Corner3.y - Corner1.y), 2));
+	int height3 = sqrt(pow((Corner3.y - Corner2.y), 2));
+
+	int width1 = sqrt(pow((Corner1.x - Corner2.x), 2));
+	int width2 = sqrt(pow((Corner3.x - Corner2.x), 2));
+	int width3 = sqrt(pow((Corner3.x - Corner1.x), 2));
+	width = max(max(width1, width2), width3);
+	height = max(max(height1,height2),height3);
+	x = min(min(Corner1.x, Corner2.x),Corner3.x);
+	y = min(min(Corner1.y, Corner2.y), Corner3.y);
 	string img = "images\\MenuIcons\\Menu_Tri.jpg";
-	pUI->DrawImg(img, Corner2.x, Corner1.y, width, height);
+	pUI->DrawImg(img, x, y, width+1, height+1);
 }
 
 bool Triangle::Get(int x, int y) const
@@ -55,6 +65,14 @@ bool Triangle::Get(int x, int y) const
 	double b = ((Corner3.y - Corner1.y) * (x - Corner3.x) + (Corner1.x - Corner3.x) * (y - Corner3.y)) / denominator;
 	double c = 1 - a - b;
 	return (0 <= a && a <= 1 && 0 <= b && b <= 1 && 0 <= c && c <= 1);
+}
+
+Point Triangle::GetFirstPoint() const
+{
+	int x = min(min(Corner1.x, Corner2.x), Corner3.x);
+	int y = min(min(Corner1.y, Corner2.y), Corner3.y);
+	Point P1 = { x,y };
+	return P1;
 }
 
 string Triangle::Getinfo() const

@@ -179,6 +179,7 @@ operationType GUI::GetUseroperation() const
 			{
 			
 			case PLAY_ICON_SWITCH: return SWITCH;
+			case PLAY_ICON_HIDE:	return HIDE_GRAPH;
 			case PLAY_ICON_EXIT: return EXIT;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -347,7 +348,7 @@ void GUI::CreatePlayToolBar()
 	
 	MenuItemImages[PLAY_ICON_FIGCOLOR] = "images\\MenuIcons\\FIGURE_COLOR.jpg";
 	MenuItemImages[PLAY_ICON_BACKDRAW] = "images\\MenuIcons\\BACK_Draw.jpg";
-	MenuItemImages[PLAY_ICON_PEXIT] = "images\\MenuIcons\\PExit.jpg";
+	MenuItemImages[PLAY_ICON_HIDE] = "images\\MenuIcons\\HideGraph.jpg";
 	MenuItemImages[PLAY_ICON_SWITCH] = "images\\MenuIcons\\SWITCH.JPG";
 	MenuItemImages[PLAY_ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 

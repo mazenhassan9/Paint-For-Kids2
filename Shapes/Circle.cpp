@@ -41,6 +41,11 @@ void Circle::Draw(GUI* pUI) const
 
 void Circle::stick(GUI* pUI) const
 {
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int x = center.x - radius;
+	int y = center.y - radius;
+	string img = "images\\MenuIcons\\Menu_Circle.jpg";
+	pUI->DrawImg(img,x,y,(2*radius),(2*radius));
 	
 }
 
@@ -48,7 +53,7 @@ void Circle::stick(GUI* pUI) const
 
 bool Circle::Get(int x, int y) const
 {
-	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 
 	int pDistance = sqrt(pow((center.x - x), 2) + pow((center.y - y), 2));
 
@@ -60,7 +65,7 @@ bool Circle::Get(int x, int y) const
 
 void Circle::Move(int x, int y)
 {
-	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 	this->center.x = x;
 	this->center.y = y;
 	this->Corner.x = this->center.x + radius;
@@ -112,7 +117,7 @@ string Circle::Getinfo() const
 	else
 		FillColor = "Non_Filled";
 	ShpGfxInfo.DrawClr.ucRed;
-	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 
 	string message = "Circle   " + to_string(ID) + "    Center (" + to_string(center.x) + " , " + to_string(center.y)
 		+ ")   Radius= " + to_string(radius)
@@ -158,7 +163,7 @@ void Circle::Load(ifstream& Infile)
 void Circle::RESIZE(double size) 
 {
 	
-	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 
 	this->Corner.x = this->center.x + (radius * size);
 	this->Corner.y = this->center.y + (radius * size);
@@ -181,4 +186,13 @@ void Circle::mapshape(GUI* pUI)
 
 void Circle::DuplicateGraph() {
 
+}
+
+Point Circle::GetFirstPoint() const
+{
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int x = center.x - radius;
+	int y = center.y - radius;
+	Point P1 = { x,y };
+	return P1;
 }

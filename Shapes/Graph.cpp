@@ -147,11 +147,24 @@ vector<shape*> Graph::GetSelected()
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {
+	int Img_width=62, Img_Height=100;
+
+	string img = "images\\card.jpg";
+	Point P;
 	pUI->ClearDrawArea();
 	for (auto& shapePointer : shapesList)
 	{
 		if (!shapePointer->HiddenItems())
+		{
 			shapePointer->Draw(pUI);
+
+		}
+		else
+		{
+			P = shapePointer->GetFirstPoint();
+			if(P.x)
+				pUI->DrawImg(img, P.x, P.y, Img_width, Img_Height);
+		}
 		if (shapePointer->IsSticked())
 			shapePointer->stick(pUI);
 	}
@@ -278,6 +291,14 @@ void Graph::Delete(vector<shape*>list, shape* pFig)
 
 void Graph::SendBack(shape* pFig)
 {
+}
+
+void Graph::HideAll(bool s)
+{
+	for (auto& itr : shapesList)
+	{
+		itr->Hide(s);
+	}
 }
 
 shape* Graph::Getshape(int x, int y) const

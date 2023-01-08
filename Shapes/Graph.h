@@ -47,5 +47,6 @@ public:
 	void Add(vector<shape*>, shape*);	//generic function to add shape in a ceration vector
 	void Delete(vector<shape*>, shape*); //generic function to delete shape in a ceration vector
 	void SendBack(shape* pFig);
+	void HideAll(bool s);
 	void DuplicateGraph();
 };

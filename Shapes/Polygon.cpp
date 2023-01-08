@@ -122,6 +122,22 @@ bool polygon::Get(int x, int y) const
 	return count & 1;
 }
 
+Point polygon::GetFirstPoint() const
+{
+	int x = Corners[0].x, y = Corners[0].y;
+	for (int i = 1; i < vertices; i++)
+	{
+		if (x > Corners[i].x)
+			x = Corners[i].x;
+		if (y > Corners[i].y)
+			y = Corners[i].y;
+		
+	}
+	Point P1 = { x,y };
+	return P1;
+
+}
+
 string polygon::Getinfo() const
 {
 	string FillColor;

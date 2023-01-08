@@ -41,6 +41,7 @@ enum operationType //The operations supported (you can add more if needed)
 	SWITCH ,
 	BORDER_WIDTH ,
 	DUPLICATE_GRAPH,
+	HIDE_GRAPH,
 	EXIT,			//Exit the application
 
 	DRAWING_AREA,	//A click on the drawing area

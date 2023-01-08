@@ -52,6 +52,11 @@ bool Square::Get(int x, int y) const
 	return false;
 }
 
+Point Square::GetFirstPoint() const
+{
+	return origin;
+}
+
 void Square::Move(int x, int y)
 {
 	Point Corner2 = { origin.x + sidelent,origin.y + sidelent };

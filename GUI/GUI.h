@@ -94,7 +94,7 @@ class GUI
 		//TODO: Add more icons names here
 		PLAY_ICON_FIGCOLOR,
 		PLAY_ICON_BACKDRAW,
-		PLAY_ICON_PEXIT,
+		PLAY_ICON_HIDE,
 		PLAY_ICON_SWITCH,
 		PLAY_ICON_EXIT,//Note: Icons are ordered here as they appear in menu
 		//If you want to change the menu icons order, change the order here

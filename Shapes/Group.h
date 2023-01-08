@@ -21,7 +21,7 @@ public:
 	void ChngFillClr(color Fclr);	
 	void ungroup();
 	virtual bool Get(int x, int y) const ; 
-
+	virtual Point GetFirstPoint() const;
 	virtual void Rotate();	
 	virtual void Move(int x, int y) ;		
 	vector<shape*> getgroupshapes();
