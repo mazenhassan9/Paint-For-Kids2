@@ -41,11 +41,12 @@ public:
 	void setcopied(shape* cs);
 	void mapshapes(GUI* pUI);
 	shape* GetLastSelected() const;
-	operationType GetlastOperation() const;
-	shape* GetLastDeleted();
-	shape* GetLastModified();
-	void Add(vector<shape*>, shape*);	//generic function to add shape in a ceration vector
-	void Delete(vector<shape*>, shape*); //generic function to delete shape in a ceration vector
+	operationType GetlastOperation();
+	shape* GetLastAdded();
+	shape* GetLastDeleted();	//shapes before deleted.
+	shape* GetLastModified(); //shapes state before modification
+	void AddDeletedShape(shape*pShp, bool s);
+	void AddModifiedShape(shape* pShp, bool s);
 	void SendBack(shape* pFig);
 	void HideAll(bool s);
 	void DuplicateGraph();

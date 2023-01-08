@@ -21,8 +21,8 @@ void OpRotate::Execute()
 	
 	if (sh)
 	{
+		pGr->AddModifiedShape(sh->Copy(), true);
 		
-		//pGr->DeleteShape(sh);
 		
 		sh->Rotate();
 

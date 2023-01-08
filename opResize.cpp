@@ -24,6 +24,7 @@ void opResize::Execute()
 
 	if (sh)
 	{
+		pGr->AddModifiedShape(sh->Copy(), true);
 		pUI->PrintMessage("Enter resize ratio: ");
 		size = stod(pUI->GetSrting());
 		while (size <= 0)

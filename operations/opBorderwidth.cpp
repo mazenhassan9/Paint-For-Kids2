@@ -21,6 +21,7 @@ void opBorderwidth::Execute()
 	shape* bw = pGr->GetLastSelected();
 	if (bw)
 	{
+		pGr->AddModifiedShape(bw->Copy(), true);
 		pUI->PrintMessage("pick a Border width");
 		double h = stod(pUI->GetSrting());
 		bw->setBorderwidth(h);

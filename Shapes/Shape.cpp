@@ -20,6 +20,11 @@ shape::shape(GfxInfo shapeGfxInfo)
 
 
  
+int shape::GetID() const
+{
+	return ID;
+}
+
 void shape::SetSelected(bool s)
 {	ShpGfxInfo.isSelected = s; }
 

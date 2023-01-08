@@ -34,14 +34,25 @@ void Graph::AddOperation(operationType op)
 	operations.push_back(op);
 }
 
-operationType Graph::GetlastOperation() const
+operationType Graph::GetlastOperation() 
 {
 	if (!operations.empty())
 	{
 		operationType r = operations.back();
+		operations.pop_back();
 		return r;
 	}
 	
+}
+
+shape* Graph::GetLastAdded()
+{
+	if (!shapesList.empty())
+	{
+		shape* output = shapesList.back()->Copy();
+		shapesList.pop_back();
+		return output;
+	}
 }
 
 //==================================================================================//
@@ -157,10 +168,11 @@ void Graph::Draw(GUI* pUI) const
 		if (!shapePointer->HiddenItems())
 		{
 			shapePointer->Draw(pUI);
-
+			
 		}
 		else
 		{
+			shapePointer->SetSticked(false);
 			P = shapePointer->GetFirstPoint();
 			if(P.x)
 				pUI->DrawImg(img, P.x, P.y, Img_width, Img_Height);
@@ -258,36 +270,66 @@ void Graph::setcopied(shape* cs)
 shape* Graph::GetLastDeleted() 
 {
 	shape* output = deletedShapes.back()->Copy();
-	Delete(deletedShapes, output);
+	deletedShapes.pop_back();
 	return output;
 }
 
 shape* Graph::GetLastModified() 
 {
 	shape* output = modifiedShapes.back()->Copy();
-	Delete(modifiedShapes, output);
+	modifiedShapes.pop_back();
 	return output;
 }
 
-void Graph::Add(vector<shape*>list, shape* pShp)
+void Graph::AddDeletedShape(shape* pShp, bool s)
 {
-	list.push_back(pShp);
-}
-
-void Graph::Delete(vector<shape*>list, shape* pFig)
-{
-	int i = 0;
-	for (auto& itr : list)
+	if (s)
 	{
-
-		if (pFig == itr)
+		deletedShapes.push_back(pShp);
+	}
+	else
+	{
+		int i = 0;
+		for (auto& itr : deletedShapes)
 		{
-			shapesList[i] = shapesList.back();
-			shapesList.pop_back();
+
+			if (pShp == itr)
+			{
+				deletedShapes[i] = deletedShapes.back();
+				deletedShapes.pop_back();
+			}
+			i++;
 		}
-		i++;
+
 	}
 }
+
+void Graph::AddModifiedShape(shape* pShp, bool s)
+{
+	if (s)
+	{
+		modifiedShapes.push_back(pShp);
+	}
+	else
+	{
+		int i = 0;
+		for (auto& itr : modifiedShapes)
+		{
+
+			if (pShp == itr)
+			{
+				modifiedShapes[i] = modifiedShapes.back();
+				modifiedShapes.pop_back();
+			}
+			i++;
+		}
+
+	}
+}
+
+
+
+
 
 void Graph::SendBack(shape* pFig)
 {

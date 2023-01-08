@@ -246,6 +246,7 @@
     <ClCompile Include="operations\opHideGraph.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\OpUndo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -450,6 +451,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opHideGraph.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\OpUndo.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

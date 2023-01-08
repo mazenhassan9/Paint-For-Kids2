@@ -21,6 +21,7 @@ void opChangeBorderColor::Execute()
 	shape* bc = pGr->GetLastSelected();
 	if (bc)
 	{
+		pGr->AddModifiedShape(bc->Copy(), true);
 		pUI->PrintMessage("pick a color from the window");
 
 

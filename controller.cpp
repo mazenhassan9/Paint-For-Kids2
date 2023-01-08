@@ -33,6 +33,7 @@
 #include "operations/opSendBack.h"
 #include"opDublicateGraph.h"
 #include"operations/opHideGraph.h"
+#include"operations/OpUndo.h"
 
 //Constructor
 controller::controller()
@@ -92,6 +93,9 @@ operation* controller::createOperation(operationType OpType)
 		case CHNG_BOR_CLR:
 			pOp = new opChangeBorderColor(this);
 			break;
+		case UNDO:
+			pOp = new oPUndo(this);
+			break;
 
 		case ZOOM:
 			pOp = new OpZoom(this);
@@ -124,7 +128,7 @@ operation* controller::createOperation(operationType OpType)
 		case PENWIDTH :
 			pOp = new opPenwidth(this);
 			break;
-		case SENDTOBACK:
+		case SEND_BACK:
 			pOp = new opSendBack(this);
 			break;
 
@@ -166,9 +170,6 @@ operation* controller::createOperation(operationType OpType)
 		case HIDE_GRAPH:
 			pOp = new opHideGraph(this);
 			break;
-		default:
-			pOp = new opDrawingArea(this);
-
 
 	}
 
@@ -232,7 +233,10 @@ void controller::Run()
 		//3. Execute the created operation
 		if (pOpr)
 		{
-			pGraph->AddOperation(OpType);
+			if(OpType >= 0 && OpType < 16)
+			{
+				pGraph->AddOperation(OpType);
+			}
 			pOpr->Execute();//Execute
 			delete pOpr;	//operation is not needed any more ==> delete it
 			pOpr = nullptr;

@@ -19,6 +19,8 @@ Line::Line(Point p1, Point p2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 
 Line::Line(const Line* lhs)
 {
+	this->ID = lhs->ID;
+
 	this->P1.x = lhs->P1.x;
 	this->P2.x = lhs->P2.x;
 	this->P1.y = lhs->P1.y;

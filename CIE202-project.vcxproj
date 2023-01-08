@@ -196,6 +196,7 @@
     <ClCompile Include="operations\opSendBack.cpp" />
     <ClCompile Include="operations\opStickimage.cpp" />
     <ClCompile Include="operations\opSwitch.cpp" />
+    <ClCompile Include="operations\OpUndo.cpp" />
     <ClCompile Include="operations\Opungroup.cpp" />
     <ClCompile Include="operations\OpZoom.cpp" />
     <ClCompile Include="opPlayingArea.cpp" />
@@ -267,6 +268,7 @@
     <ClInclude Include="operations\opSendBack.h" />
     <ClInclude Include="operations\opStickimage.h" />
     <ClInclude Include="operations\opSwitch.h" />
+    <ClInclude Include="operations\OpUndo.h" />
     <ClInclude Include="operations\Opungroup.h" />
     <ClInclude Include="operations\OpZoom.h" />
     <ClInclude Include="opPlayingArea.h" />

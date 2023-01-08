@@ -22,6 +22,7 @@ polygon::polygon(vector <Point> C,int N, GfxInfo shapeGfxInfo) : shape(shapeGfxI
 
 polygon::polygon(const polygon* lhs)
 {
+	this->ID = lhs->ID;
 	this->Corners = lhs->Corners;
 	this->vertices = lhs->vertices;
 	this->ShpGfxInfo.DrawClr = lhs->ShpGfxInfo.DrawClr;
@@ -44,6 +45,24 @@ void polygon::Draw(GUI* pUI) const
 
 void polygon::stick(GUI* pUI) const
 {
+	int x = Corners[0].x, y = Corners[0].y;
+	int width = 0, height = 0;
+	for (int i = 1; i < vertices; i++)
+	{
+		if (x > Corners[i].x)
+			x = Corners[i].x;
+		if (y > Corners[i].y)
+			y = Corners[i].y;
+		for (int j = 0; j < vertices; j++)
+		{
+			if (sqrt(pow((Corners[i].x - Corners[j].x), 2)) > width)
+				width = sqrt(pow((Corners[i].x - Corners[j].x), 2));
+
+			if (sqrt(pow((Corners[i].y - Corners[j].y), 2)) > height)
+				height = sqrt(pow((Corners[i].y - Corners[j].y), 2));
+		}
+	}
+
 
 }
 

@@ -18,6 +18,8 @@ Triangle::Triangle(Point p1, Point p2,Point p3 , GfxInfo shapeGfxInfo) : shape (
 
 Triangle::Triangle(const Triangle* lhs)
 {
+	this->ID = lhs->ID;
+
 	this->Corner1.x = lhs->Corner1.x;
 	this->Corner2.x = lhs->Corner2.x;
 	this->Corner1.y = lhs->Corner1.y;

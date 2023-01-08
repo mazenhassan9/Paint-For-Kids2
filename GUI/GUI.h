@@ -58,7 +58,7 @@ class GUI
 		ICON_PEN,
 		ICON_Borderwidth,
 		ICON_Bordercolor,
-		//ICON_Select,
+		ICON_UNDO,
 		ICON_Delete,
 		ICON_COPY,
 		ICON_CUT,

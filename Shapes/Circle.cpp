@@ -18,6 +18,7 @@ Circle::Circle(Point circenter, Point radius, GfxInfo shapeGfxInfo) :shape(shape
 
 Circle::Circle(const Circle* lhs) 
 {
+	this->ID = lhs->ID;
 	this->center.x = lhs->center.x;
 	this->Corner.x = lhs->Corner.x;
 	this->center.y = lhs->center.y;
@@ -41,7 +42,7 @@ void Circle::Draw(GUI* pUI) const
 
 void Circle::stick(GUI* pUI) const
 {
-	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 	int x = center.x - radius;
 	int y = center.y - radius;
 	string img = "images\\MenuIcons\\Menu_Circle.jpg";
@@ -69,7 +70,7 @@ void Circle::Move(int x, int y)
 	this->center.x = x;
 	this->center.y = y;
 	this->Corner.x = this->center.x + radius;
-	this->Corner.y = this->center.y+radius;
+	this->Corner.y = this->center.y;
 }
 
 void Circle::Rotate()
@@ -166,7 +167,7 @@ void Circle::RESIZE(double size)
 	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 
 	this->Corner.x = this->center.x + (radius * size);
-	this->Corner.y = this->center.y + (radius * size);
+	this->Corner.y = this->center.y;
 }
 
 shape* Circle::Copy()
@@ -190,7 +191,7 @@ void Circle::DuplicateGraph() {
 
 Point Circle::GetFirstPoint() const
 {
-	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2));
+	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;
 	int x = center.x - radius;
 	int y = center.y - radius;
 	Point P1 = { x,y };

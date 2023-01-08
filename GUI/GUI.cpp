@@ -135,7 +135,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PEN: return CHNG_DRAW_CLR;
 			case ICON_Borderwidth: return BORDER_WIDTH;
 			case ICON_Bordercolor: return CHNG_BOR_CLR;
-			//case ICON_Select: return Select;
+			case ICON_UNDO: return UNDO;
 			case ICON_Delete: return DEL;
 			case ICON_GROUP:return GROUP;
 			case ICON_UNGROUOP:return UNGROUP;
@@ -147,7 +147,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_ZOOM: return ZOOM;
 			case Icon_Save: return SAVE;
 			case ICON_Load: return LOAD;
-			case ICON_SENDTOBACK: return SENDTOBACK;
+			case ICON_SENDTOBACK: return SEND_BACK;
 			case ICON_Single_Fill: return CHNG_S_FILL_CLR;
 			case ICON_DUPLICATE: return DUPLICATE_GRAPH;
 			case ICON_SWITCH: return SWITCH;
@@ -301,7 +301,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\pen.jpg";
 	MenuIconImages[ICON_Borderwidth] = "images\\MenuIcons\\BORDERWIDTH.jpg";
 	MenuIconImages[ICON_Bordercolor] = "images\\MenuIcons\\bordercolor.jpg";
-	//MenuIconImages[ICON_Select] = "images\\MenuIcons\\Select.jpg";
+	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\undo.jpg";
 	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\copy.jpg";
 	MenuIconImages[ICON_CUT] = "images\\MenuIcons\\cut.jpg";
@@ -539,7 +539,7 @@ void GUI::DrawCir(Point center, Point edge, GfxInfo CircleGfxInfo) const
 {
 
 
-	int R = sqrt(pow(center.x - edge.x, 2) + pow(center.y - edge.y, 2));
+	int R = sqrt(pow(center.x - edge.x, 2) + pow(center.y - edge.y, 2)) / 2;
 	
 		color DrawingClr;
 		if (CircleGfxInfo.isSelected)	//shape is selected

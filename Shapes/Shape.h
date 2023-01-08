@@ -20,6 +20,7 @@ public:
 	//shape (const shape & n);
 	virtual ~shape() {}
 
+	int GetID() const;
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 	void SetSticked(bool s);

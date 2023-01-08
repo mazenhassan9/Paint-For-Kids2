@@ -16,6 +16,7 @@ Square::Square(Point P1, double sidelen, GfxInfo shapeGfxInfo) :shape(shapeGfxIn
 
 Square::Square(const Square* lhs)
 {
+	this->ID = lhs->ID;
 	this->origin.x = lhs->origin.x;
 	this->origin.y = lhs->origin.y;
 	this->sidelent = lhs->sidelent;

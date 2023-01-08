@@ -19,6 +19,7 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 
 Rect::Rect(const Rect* lhs)
 {
+	this->ID = lhs->ID;
 	this->Corner1.x = lhs->Corner1.x;
 	this->Corner2.x = lhs->Corner2.x;
 	this->Corner1.y = lhs->Corner1.y;

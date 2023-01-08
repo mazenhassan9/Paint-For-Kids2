@@ -20,6 +20,7 @@ void opChangeFill::Execute()
 	shape* S1 = pGr->GetLastSelected();
 	if (S1)
 	{
+		pGr->AddModifiedShape(S1->Copy(), true);
 		pUI->PrintMessage("pick a color from the window");
 		color picked = pUI->colorpalette();
 		S1->ChngFillClr(picked);

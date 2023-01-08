@@ -21,6 +21,7 @@ void opDelete::Execute()
 	vector<shape*> Shapes = pGr->GetSelected();
 	if (S1)
 	{
+		pGr->AddDeletedShape(S1->Copy(), true);
 		Group* group = dynamic_cast<Group*> (S1);
 		if (group)
 		{

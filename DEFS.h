@@ -3,7 +3,7 @@
 
 
 //This file contais some global constants and definitions to be used in the project.
-enum operationType //The operations supported (you can add more if needed)
+enum operationType //The operations supported (you can add more if needed) //Arranged by who is used for Redo/Undo, and who is not.
 {
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
@@ -13,14 +13,20 @@ enum operationType //The operations supported (you can add more if needed)
 	DRAW_OVAL,
 	DRAW_POLY,
 	DRAW_IRPOLY,
-	CHNG_DRAW_CLR,	//Change the drawing color
-	CHNG_FILL_CLR,	//Change the filling color
-	CHNG_BK_CLR,	//Change background color
 	CHNG_S_FILL_CLR, //change single fill color
-	DEL,			//Delete a shape(s)
+	CHNG_BOR_CLR, //Change border of a single shape
+	RESIZE,
+	DRAG,
+	ROTATE,
+
+	DEL,
+	
+	UNDO,
+	REDO,
+				//Delete a shape(s)
 	MOVE,	//Move a shape(s)
-	RESIZE,			//Resize a shape(s)
-	ROTATE,			//Rotate a shape(s)
+			//Resize a shape(s)
+			//Rotate a shape(s)
 	SEND_BACK,		//Send a shape to the back of all shapes
 	BRNG_FRNT,		//Bring a shape to the front of all shapes
 	SAVE,			//Save the whole graph to a file
@@ -28,8 +34,10 @@ enum operationType //The operations supported (you can add more if needed)
 	GROUP,
 	UNGROUP,
 	ZOOM,
-	//select a shape  
-
+	
+	CHNG_BK_CLR,	//Change background color
+	CHNG_DRAW_CLR,	//Change the drawing color
+	CHNG_FILL_CLR,	//Change the filling color
 	Select,           //select a shape 
 	COPY,
 	CUT,
@@ -37,7 +45,6 @@ enum operationType //The operations supported (you can add more if needed)
 	PENWIDTH,
 	PEN,
 	STICK,
-	CHNG_BOR_CLR,  //Change border color
 	SWITCH ,
 	BORDER_WIDTH ,
 	DUPLICATE_GRAPH,
@@ -48,7 +55,6 @@ enum operationType //The operations supported (you can add more if needed)
 	PLAYING_AREA,
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
-	SENDTOBACK,
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY	,		//Switch interface to Play mode
 
