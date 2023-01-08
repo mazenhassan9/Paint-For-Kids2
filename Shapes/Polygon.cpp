@@ -287,8 +287,8 @@ void polygon::mapshape(GUI* pUI)
 	int centerx = 0, centery = 0;
 	for (int i = 0; i < vertices; i++)
 	{
-		//pUI->Mapx(Corners[i].x);
-		//pUI->Mapy(Corners[i].y);
+		pUI->Mapx(Corners[i].x);
+		pUI->Mapy(Corners[i].y);
 
 
 		centerx += Corners[i].x;
@@ -297,8 +297,8 @@ void polygon::mapshape(GUI* pUI)
 	centerx /= vertices;
 	centery /= vertices;
 
-	/*pUI->Mapx(centerx);
-	pUI->Mapy(centery);*/
+	pUI->Mapx(centerx);
+	pUI->Mapy(centery);
 	
 	int sideL = sqrt(pow(Corners[0].x-Corners[1].x,2)+ pow(Corners[0].y - Corners[1].y, 2));
 
@@ -306,8 +306,10 @@ void polygon::mapshape(GUI* pUI)
 	{
 		Corners[i].x = centerx + (sideL * cos(2 * 3.14 * i / vertices));
 		Corners[i].y = centery + (sideL * sin(2 * 3.14 * i / vertices));
-		pUI->Mapx(Corners[i].x);
-		pUI->Mapy(Corners[i].y);
+	/*	pUI->Mapx(Corners[i].x);
+		pUI->Mapy(Corners[i].y);*/
+		
+
 	}
 
 
