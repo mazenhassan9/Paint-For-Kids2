@@ -1,6 +1,8 @@
 #include "Rect.h"
 #include <iostream>
 #include <math.h>
+#include"Graph.h"
+
 
 Rect::Rect()
 {
@@ -212,4 +214,6 @@ void Rect:: DuplicateGraph() {
 	shape* duplicate = new Rect();
 	duplicate = Copy();
 	duplicate->Move(a, b);
+	Graph* pGr;
+	pGr->Addshape(duplicate);
 }
