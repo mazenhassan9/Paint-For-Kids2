@@ -189,9 +189,6 @@ void Circle::DuplicateGraph() {
 
 }
 
-void Circle:: ScrambleGraph(){}
-
-
 Point Circle::GetFirstPoint() const
 {
 	int radius = sqrt(pow((center.x - Corner.x), 2) + pow((center.y - Corner.y), 2)) / 2;

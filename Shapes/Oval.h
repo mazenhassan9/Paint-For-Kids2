@@ -25,5 +25,4 @@ public:
 	virtual shape* Copy();
 	virtual void mapshape(GUI* pUI);
 	virtual void DuplicateGraph();
-	virtual void ScrambleGraph();
 };

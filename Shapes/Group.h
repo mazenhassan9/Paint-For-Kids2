@@ -32,5 +32,4 @@ public:
 	virtual void RESIZE(double size) ;
 	virtual void stick(GUI* pUI)const;
 	virtual void DuplicateGraph();
-	virtual void ScrambleGraph();
 };

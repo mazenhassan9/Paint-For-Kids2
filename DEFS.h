@@ -48,7 +48,6 @@ enum operationType //The operations supported (you can add more if needed) //Arr
 	SWITCH ,
 	BORDER_WIDTH ,
 	DUPLICATE_GRAPH,
-	SCRAMBLE_GRAPH,
 	HIDE_GRAPH,
 	EXIT,			//Exit the application
 

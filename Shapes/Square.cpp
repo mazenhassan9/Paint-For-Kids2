@@ -212,5 +212,3 @@ void Square::mapshape(GUI* pUI)
 }
 
 void Square::DuplicateGraph(){}
-
-void Square::ScrambleGraph(){}

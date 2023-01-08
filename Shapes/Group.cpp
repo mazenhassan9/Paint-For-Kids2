@@ -162,4 +162,3 @@ void Group::mapshape(GUI* pUI)
 
 }
 void Group::DuplicateGraph() {}
-void Group::ScrambleGraph(){}

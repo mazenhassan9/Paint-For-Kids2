@@ -340,5 +340,3 @@ void polygon::mapshape(GUI* pUI)
 void polygon::DuplicateGraph() {
 
 }
-
-void polygon::ScrambleGraph(){}

@@ -1,8 +1,9 @@
-#pragma once
 #include "Rect.h"
 #include <iostream>
 #include <math.h>
-#include<cstdlib>
+#include"Graph.h"
+
+
 Rect::Rect()
 {
 	ShpGfxInfo.isFilled = false;
@@ -210,17 +211,7 @@ void Rect::mapshape(GUI* pUI)
 	pUI->Mapy(Corner2.y);
 }
 
-void Rect::paste(int x, int y) {
-
-	//Graph* pGr = pControl->getGraph();
-	//GUI* pUI = pControl->GetUI();
-	//shape* S = Copy();
-	//S->Move(x, y);
-	//pGr->Addshape(S);
-
-}
 void Rect:: DuplicateGraph() {
-
 	int centerx, centery, x, y, a, b;
 	centerx = (Corner1.x + Corner2.x) / 2;
 	centery = (Corner1.y + Corner2.y) / 2;
@@ -231,16 +222,9 @@ void Rect:: DuplicateGraph() {
 	b = centery + 0.5 * centery;
 	RESIZE(0.5);
 	Move(x, y);
-	paste(a, b);
-	
-}
-
-void Rect::ScrambleGraph() {
-	int centerx, centery, x, y;
-	centerx = (Corner1.x + Corner2.x) / 2;
-	centery = (Corner1.y + Corner2.y) / 2;
-	srand((unsigned)time(NULL));
-	x = 0 + (rand() % 1000);
-	y = 0 + (rand() % 550);
-	Move(x, y);
+	shape* duplicate = new Rect();
+	duplicate = Copy();
+	duplicate->Move(a, b);
+	Graph* pGr;
+	pGr->Addshape(duplicate);
 }
