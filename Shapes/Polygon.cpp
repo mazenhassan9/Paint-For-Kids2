@@ -332,8 +332,8 @@ void polygon::mapshape(GUI* pUI)
 	centerx /= vertices;
 	centery /= vertices;
 
-	//pUI->Mapx(centerx);
-	//pUI->Mapy(centery);
+	pUI->Mapx(centerx);
+	pUI->Mapy(centery);
 	
 }
 
