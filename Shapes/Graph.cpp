@@ -114,7 +114,7 @@ void Graph::SetSelected(shape* pFig, bool flag)
 {
 	if (flag)
 	{
-		
+		pFig->SetSelected(flag);
 		selectedShapes.push_back(pFig);
 	}
 	else
@@ -153,7 +153,9 @@ shape* Graph::GetLastSelected() const
 }
 vector<shape*> Graph::GetSelected() 
 {
-	return selectedShapes;
+	if(!selectedShapes.empty())
+		return selectedShapes;
+	
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface
@@ -164,29 +166,33 @@ void Graph::Draw(GUI* pUI) const
 	string img = "images\\card.jpg";
 	Point P;
 	pUI->ClearDrawArea();
-	for (auto& shapePointer : shapesList)
+	if (!shapesList.empty())
 	{
-		if (!shapePointer->HiddenItems())
+		for (auto& shapePointer : shapesList)
 		{
-			shapePointer->Draw(pUI);
-			
+			if (!shapePointer->HiddenItems())
+			{
+				shapePointer->Draw(pUI);
+
+			}
+			else
+			{
+				shapePointer->SetSticked(false);
+				P = shapePointer->GetFirstPoint();
+				if (P.x)
+					pUI->DrawImg(img, P.x, P.y, Img_width, Img_Height);
+			}
+			if (shapePointer->IsSticked())
+				shapePointer->stick(pUI);
 		}
-		else
-		{
-			shapePointer->SetSticked(false);
-			P = shapePointer->GetFirstPoint();
-			if(P.x)
-				pUI->DrawImg(img, P.x, P.y, Img_width, Img_Height);
-		}
-		if (shapePointer->IsSticked())
-			shapePointer->stick(pUI);
 	}
 }
 
 
 vector <shape*>Graph::getlistofshspes()
 {
-	return shapesList;
+	if(!shapesList.empty())
+		return shapesList;
 }
 
 void Graph::Save(ofstream& outfile)
@@ -270,65 +276,37 @@ void Graph::setcopied(shape* cs)
 
 shape* Graph::GetLastDeleted() 
 {
-	shape* output = deletedShapes.back()->Copy();
-	deletedShapes.pop_back();
-	return output;
+	if (!deletedShapes.empty())
+	{
+		shape* output = deletedShapes.back()->Copy();
+		deletedShapes.pop_back();
+		return output;
+	}
+	return nullptr;
 }
 
 shape* Graph::GetLastModified() 
 {
-	shape* output = modifiedShapes.back()->Copy();
-	modifiedShapes.pop_back();
-	return output;
+	if (!modifiedShapes.empty())
+	{
+		shape* output = modifiedShapes.back()->Copy();
+		modifiedShapes.pop_back();
+		return output;
+	}
+	return nullptr;
+
 }
 
 void Graph::AddDeletedShape(shape* pShp, bool s)
 {
-	if (s)
-	{
-		deletedShapes.push_back(pShp);
-	}
-	else
-	{
-		int i = 0;
-		for (auto& itr : deletedShapes)
-		{
-
-			if (pShp == itr)
-			{
-				deletedShapes[i] = deletedShapes.back();
-				deletedShapes.pop_back();
-			}
-			i++;
-		}
-
-	}
+	deletedShapes.push_back(pShp);
+	
 }
 
 void Graph::AddModifiedShape(shape* pShp, bool s)
 {
-	if (s)
-	{
-		modifiedShapes.push_back(pShp);
-	}
-	else
-	{
-		int i = 0;
-		for (auto& itr : modifiedShapes)
-		{
-
-			if (pShp == itr)
-			{
-				modifiedShapes[i] = modifiedShapes.back();
-				modifiedShapes.pop_back();
-			}
-			i++;
-		}
-
-	}
+	modifiedShapes.push_back(pShp);
 }
-
-
 
 
 
@@ -340,8 +318,6 @@ bool Graph::UnHideone(int x, int y, GUI* pGUI)
 	shape* s = Getshape(x, y);
 	if(s)
 	{
-
-		int i = 0;
 		s->Hide(false);
 		Draw(pGUI);
 		return true;
@@ -394,9 +370,56 @@ void Graph::DuplicateGraph() {
 	}
 }
 
+
+void Graph::AddOperationUndo(operationType op)
+{
+	UndoOperations.push_back(op);
+}
+
+operationType Graph::GetLastUndo()
+{
+	if (!UndoOperations.empty())
+	{
+		operationType r = UndoOperations.back();
+		UndoOperations.pop_back();
+		return r;
+	}
+}
+
+shape* Graph::GetLastDeletedUndo()
+{
+	if (!deletedShapesUndo.empty())
+	{
+		shape* output = deletedShapesUndo.back()->Copy();
+
+		deletedShapesUndo.pop_back();
+		return output;
+	}
+}
+
+shape* Graph::GetLastModifiedUndo()
+{
+	if (!modifiedShapesUndo.empty())
+	{
+		shape* output = modifiedShapesUndo.back()->Copy();
+
+		modifiedShapesUndo.pop_back();
+		return output;
+	}
+}
+
+void Graph::AddDeletedShapeUndo(shape* pShp, bool s)
+{
+		deletedShapesUndo.push_back(pShp);
+}
+
+void Graph::AddModifiedShapeUndo(shape* pShp, bool s)
+{	
+		modifiedShapesUndo.push_back(pShp);
+
+}
 int Graph::matchshapes()
 {
-
 	int i = 0;
 	shape* sh1 = nullptr;
 	shape* sh2 = nullptr;

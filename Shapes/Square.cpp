@@ -25,6 +25,8 @@ Square::Square(const Square* lhs)
 	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
 	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
 	this->ShpGfxInfo.isSelected = false;
+	this->isHidden = false;
+
 }
 
 Square::~Square()

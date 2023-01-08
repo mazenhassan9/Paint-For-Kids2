@@ -18,7 +18,6 @@ enum operationType //The operations supported (you can add more if needed) //Arr
 	RESIZE,
 	DRAG,
 	ROTATE,
-
 	DEL,
 	
 	UNDO,

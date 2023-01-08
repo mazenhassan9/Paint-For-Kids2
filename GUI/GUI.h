@@ -59,6 +59,7 @@ class GUI
 		ICON_Borderwidth,
 		ICON_Bordercolor,
 		ICON_UNDO,
+		ICON_REDO,
 		ICON_Delete,
 		ICON_COPY,
 		ICON_CUT,

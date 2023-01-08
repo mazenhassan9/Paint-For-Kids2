@@ -18,38 +18,60 @@ private:
 	vector<shape*> selectedShapes;	//pointer to the currently selected shape
 	vector<Group*> grouplist;
 	vector<operationType> operations; 
+	vector<operationType> UndoOperations;
 	shape* copiedshape;
 	vector<shape*>deletedShapes, modifiedShapes; 
-	
+	vector<shape*>deletedShapesUndo, modifiedShapesUndo;
 public:										
 	Graph();
 	~Graph();
-	void AddOperation(operationType op);
 	
+	vector <shape*> getlistofshspes();
 	void Addshape(shape* pFig); //Adds a new shape to the shapesList
 	void AddsGroup(Group* pShp);
 	void DeleteShape(shape* pFig);
 	void DeleteGroup(Group* pFig);
+
+
 	void SetSelected(shape* pFig,bool flag); //set Selected pointer to a select.
 	vector<shape*> GetSelected();
-	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	shape* Getshape(int x, int y) const; //Search for a shape given a point inside the shape
-	vector <shape*> getlistofshspes();
+	shape* GetLastSelected() const;
+
+	
+	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
+	
+	
 	void Save(ofstream& outfile);	//Save all shapes to a file
 	void load(ifstream& inputfile);	//Load all shapes from a file
 	shape* getcopied()const;
 	void setcopied(shape* cs);
+
+
 	void mapshapes(GUI* pUI);
-	shape* GetLastSelected() const;
+	
+	
+	
+	void SendBack(shape* pFig);
+	void HideAll(bool s);
+	void DuplicateGraph();
+
+	//Undo Functions
+	void AddOperation(operationType op);
 	operationType GetlastOperation();
 	shape* GetLastAdded();
 	shape* GetLastDeleted();	//shapes before deleted.
 	shape* GetLastModified(); //shapes state before modification
 	void AddDeletedShape(shape*pShp, bool s);
 	void AddModifiedShape(shape* pShp, bool s);
-	void SendBack(shape* pFig);
-	void HideAll(bool s);
-	void DuplicateGraph();
 	bool UnHideone(int x, int y, GUI* pGUI);
 	int matchshapes();
+
+	//Redo Functions
+	void AddOperationUndo(operationType op);
+	operationType GetLastUndo();
+	shape* GetLastDeletedUndo();	//shapes before deleted.
+	shape* GetLastModifiedUndo();
+	void AddDeletedShapeUndo(shape* pShp, bool s);
+	void AddModifiedShapeUndo(shape* pShp, bool s);
 };

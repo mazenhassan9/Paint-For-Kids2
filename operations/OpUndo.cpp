@@ -22,18 +22,23 @@ void oPUndo::Execute()
 	shape* S1;
 	pUI->PrintMessage("Undo Seleceted");
 	while (pOp == UNDO)
-	{
+	{	
 		pOp = pGr->GetlastOperation();
+		
 	}
 	if (pOp)
 	{
-		
+		pGr->AddOperationUndo(pOp);
 		if (pOp >= 0 && pOp < 8) //Draw Images
 		{
 			S1 = pGr->GetLastAdded();
-			delete S1;
+			if (S1)
+			{
+				pGr->AddDeletedShapeUndo(S1->Copy(), true);
+				pUI->PrintMessage("Undo Delete Added Done");
+			}
 			S1 = nullptr;
-			pUI->PrintMessage("Undo Done");
+			
 		}
 		else if (pOp >= 8 && pOp < 13) //Modified
 		{
@@ -42,18 +47,25 @@ void oPUndo::Execute()
 			{
 				if (S1->GetID() == itr->GetID())
 				{
-					itr = S1;
+					pGr->AddModifiedShapeUndo(itr->Copy(), true);
+					pGr->DeleteShape(itr);
+					pGr->Addshape(S1);
 
 				}
 			}
+			S1 = nullptr;
 
 		}
 		else if (pOp == 13) //Deleted
 		{
 			S1 = pGr->GetLastDeleted();
-			pGr->Addshape(S1);
-			pUI->PrintMessage("Undo Done");
-
+			if (S1)
+			{
+				pGr->Addshape(S1);
+				pGr->AddDeletedShapeUndo(S1->Copy(), true);
+				pUI->PrintMessage("Undo Done");
+			}
+			S1 = nullptr;
 		}
 	}
 	else

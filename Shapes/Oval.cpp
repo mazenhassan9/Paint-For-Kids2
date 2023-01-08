@@ -26,6 +26,8 @@ Oval::Oval(const Oval* lhs)
 	this->ShpGfxInfo.isFilled = lhs->ShpGfxInfo.isFilled;
 	this->ShpGfxInfo.BorderWdth = lhs->ShpGfxInfo.BorderWdth;
 	this->ShpGfxInfo.isSelected = false;
+	this->isHidden = false;
+
 }
 
 Oval::~Oval()

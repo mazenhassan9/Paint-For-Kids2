@@ -34,6 +34,7 @@
 #include"opDublicateGraph.h"
 #include"operations/opHideGraph.h"
 #include"operations/OpUndo.h"
+#include"operations/OpRedo.h"
 
 //Constructor
 controller::controller()
@@ -95,6 +96,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case UNDO:
 			pOp = new oPUndo(this);
+			break;
+		case REDO:
+			pOp = new OpRedo(this);
 			break;
 
 		case ZOOM:
@@ -170,13 +174,13 @@ operation* controller::createOperation(operationType OpType)
 		case HIDE_GRAPH://OpUnhide
 			pOp = new opHideGraph(this);
 			break;
-
+/*
 		default:
 			if(pGUI->getInterfaceMode() == 0)
 				pOp = new opDrawingArea(this);
 			else
 				pOp = new opPlayingArea(this);
-
+*/
 
 
 	}

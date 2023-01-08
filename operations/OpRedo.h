@@ -1,13 +1,13 @@
 #pragma once
 # include "operation.h"
 
-class oPUndo : public operation
+class OpRedo : public operation
 {
 public:
-	oPUndo(controller* pCont);
+	OpRedo(controller* pCont);
 
 
-	virtual ~oPUndo();
+	virtual ~OpRedo();
 
 	//Execute Play mode toolbar
 	virtual void Execute();

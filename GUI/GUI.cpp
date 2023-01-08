@@ -136,6 +136,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Borderwidth: return BORDER_WIDTH;
 			case ICON_Bordercolor: return CHNG_BOR_CLR;
 			case ICON_UNDO: return UNDO;
+			case ICON_REDO:return REDO;
 			case ICON_Delete: return DEL;
 			case ICON_GROUP:return GROUP;
 			case ICON_UNGROUOP:return UNGROUP;
@@ -302,6 +303,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Borderwidth] = "images\\MenuIcons\\BORDERWIDTH.jpg";
 	MenuIconImages[ICON_Bordercolor] = "images\\MenuIcons\\bordercolor.jpg";
 	MenuIconImages[ICON_UNDO] = "images\\MenuIcons\\undo.jpg";
+	MenuIconImages[ICON_REDO] = "images\\MenuIcons\\redo.jpg";
 	MenuIconImages[ICON_Delete] = "images\\MenuIcons\\Delete.jpg";
 	MenuIconImages[ICON_COPY] = "images\\MenuIcons\\copy.jpg";
 	MenuIconImages[ICON_CUT] = "images\\MenuIcons\\cut.jpg";

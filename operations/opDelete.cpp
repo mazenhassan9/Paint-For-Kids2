@@ -14,26 +14,26 @@ opDelete::~opDelete()
 void opDelete::Execute()
 {
 	
-	Point P1;
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 	shape* S1 = pGr->GetLastSelected();
 	vector<shape*> Shapes = pGr->GetSelected();
 	if (S1)
 	{
-		pGr->AddDeletedShape(S1->Copy(), true);
+		/*
 		Group* group = dynamic_cast<Group*> (S1);
 		if (group)
 		{
 			pGr->DeleteGroup(group);
-			delete group;
+			//delete group;
 		}
+		*/
+			pGr->AddDeletedShape(S1->Copy(), true);
+			for (auto& itr : Shapes)
+			{
+				pGr->DeleteShape(itr);
 
-		for (auto& itr : Shapes)
-		{
-			pGr->DeleteShape(itr);
-			
-		}
+			}
 		
 		pUI->PrintMessage("Delete Operation, All Selected shapes have been deleted");
 	}
