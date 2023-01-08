@@ -217,7 +217,7 @@ void Graph::load(ifstream& inputfile)
 {
 	string name;
 	int Scount;
-	shape* R;
+	shape* R=nullptr;
 	Group* g=nullptr;
 	grouplist.clear();
 	shapesList.clear();
