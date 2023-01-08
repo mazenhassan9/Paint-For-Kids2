@@ -170,15 +170,14 @@ operation* controller::createOperation(operationType OpType)
 		case HIDE_GRAPH://OpUnhide
 			pOp = new opHideGraph(this);
 			break;
-<<<<<<< Updated upstream
-=======
+
 		default:
 			if(pGUI->getInterfaceMode() == 0)
 				pOp = new opDrawingArea(this);
 			else
 				pOp = new opPlayingArea(this);
 
->>>>>>> Stashed changes
+
 
 	}
 
