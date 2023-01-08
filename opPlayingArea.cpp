@@ -17,12 +17,12 @@ void opPlayingArea::Execute()
 	Graph* pGr = pControl->getGraph();
 	GUI* pUI = pControl->GetUI();
 
-	//shape* S2 = pGr->GetLastSelected();
-	//if (S2)
-	//{
-	//	S2->SetSelected(false);
-	//	pGr->SetSelected(S2, false);
-	//}
+	shape* S2 = pGr->GetLastSelected();
+	if (S2)
+	{
+		S2->SetSelected(false);
+		pGr->SetSelected(S2, false);
+	}
 
 	int x, y;
 	pUI->GetPointClicked(x, y);
